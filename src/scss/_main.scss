@@ -1,0 +1,45 @@
+.main {
+    position: relative;
+    height: 100vh;
+}
+
+.hero {
+    @include position(absolute, 50%, auto, auto, $spacing-m);
+    transform: translateY(-50%);
+
+    @include min-vw(s) {
+        left: $spacing-l;
+    }
+
+    @include min-vw(m) {
+        left: $spacing-xl;
+    }
+
+    @include min-vw(l) {
+        left: 100px;
+    }
+
+    &__heading {
+        font-family: 'Montserrat';
+        font-size: 36px;
+
+        @include min-vw(s) {
+            font-size: 40px;
+        }
+
+        @include min-vw(m) {
+            font-size: 60px;
+        }
+    }
+
+    &__subheading {
+        margin: $spacing-m 0;
+        font-size: 20px;
+        font-weight: 400;
+
+        @include min-vw(m) {
+            margin: $spacing-xl 0;
+            font-size: 24px;
+        }
+    }
+}

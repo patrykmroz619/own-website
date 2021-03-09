@@ -1,0 +1,16 @@
+.button {
+    padding: 10px;
+
+    width: 100%;
+    max-width: 230px;
+
+    font-size: $mobile-font-size;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--primary-color);
+
+    border: 3px solid var(--primary-color);
+    background-color: transparent;
+
+    cursor: pointer;
+}

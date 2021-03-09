@@ -5,9 +5,29 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Patryk Mróz | Web Developer</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            rel="preload"
+            as="style"
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Roboto+Mono:wght@400;700&display=swap"
+        />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Roboto+Mono:wght@400;700&display=swap"
+            media="print"
+            onload="this.media='all'"
+        />
         <link rel="stylesheet" href="scss/index.css" />
     </head>
     <body>
+        <main class="main">
+            <header class="hero">
+                <h1 class="hero__heading">Witaj,<br />jestem Patryk</h1>
+                <h2 class="hero__subheading">Full-stack web developer</h2>
+                <button class="button hero__button">Portfolio</button>
+            </header>
+        </main>
         <script type="module" src="./ts/index.js"></script>
     </body>
 </html>
