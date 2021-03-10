@@ -1,10 +1,23 @@
 .main {
     position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
     height: 100vh;
+
+    &__background {
+        width: 100%;
+        max-width: 1300px;
+        height: 60%;
+        @include min-vw(m) {
+            width: 70%;
+            height: 100%;
+        }
+    }
 }
 
 .hero {
-    @include position(absolute, 50%, auto, auto, $spacing-m);
+    @include position(absolute, 30%, auto, auto, $spacing-m);
     transform: translateY(-50%);
 
     @include min-vw(s) {
@@ -13,6 +26,7 @@
 
     @include min-vw(m) {
         left: $spacing-xl;
+        top: 50%;
     }
 
     @include min-vw(l) {
