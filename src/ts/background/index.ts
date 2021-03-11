@@ -13,7 +13,11 @@ const CUBES_AMOUNT = 216;
 export const start = (): void => {
     const scene = new Scene();
     const sceneOfCubes = new Scene();
+    const sceneOfLights1 = new Scene();
+    const sceneOfLights2 = new Scene();
     scene.add(sceneOfCubes);
+    scene.add(sceneOfLights1);
+    scene.add(sceneOfLights2);
 
     const renderer = getRenderer(root);
     const camera = getCamera(root);
@@ -22,10 +26,16 @@ export const start = (): void => {
 
     const primaryColor = getPrimaryColor();
 
-    const pointLight1 = getPointLight(primaryColor, 30, 30, 30, 0.5);
-    const pointLight2 = getPointLight('white', -30, -30, -30, 0.7);
+    const pointLight1 = getPointLight(primaryColor, 35, 35, 25, 0.6);
+    const pointLight2 = getPointLight('white', -30, -30, -30, 0.6);
+    const pointLight3 = getPointLight(primaryColor, 35, -25, -30, 0.6);
+    const pointLight4 = getPointLight(primaryColor, -23, -35, 25, 0.6);
+    const pointLight5 = getPointLight('white', 25, 30, -30, 0.7);
+    const pointLight6 = getPointLight(primaryColor, -25, 30, -35, 0.6);
 
-    scene.add(ambientLight, pointLight1, pointLight2);
+    sceneOfLights1.add(ambientLight, pointLight1, pointLight2, pointLight3);
+
+    sceneOfLights2.add(pointLight4, pointLight5, pointLight6);
 
     const cubes: Mesh[] = [];
 
@@ -35,15 +45,55 @@ export const start = (): void => {
         sceneOfCubes.add(cube);
     }
 
-    shapesAnimation(cubes);
+    const [pauseShapesAnimation, resumeShapesAnimation] = shapesAnimation(
+        cubes
+    );
+
+    let isAnimate = true;
 
     const refresh = () => {
-        sceneOfCubes.rotation.y += 0.005;
-        sceneOfCubes.rotation.z += 0.002;
+        if (isAnimate) {
+            sceneOfCubes.rotation.y += 0.003;
+            sceneOfCubes.rotation.z += 0.001;
+            sceneOfLights1.rotation.z += 0.005;
+            sceneOfLights2.rotation.z -= 0.007;
+            sceneOfLights1.rotation.x -= 0.003;
+            sceneOfLights2.rotation.x += 0.005;
 
-        renderer.render(scene, camera);
-        requestAnimationFrame(refresh);
+            renderer.render(scene, camera);
+            requestAnimationFrame(refresh);
+        }
     };
+
+    const pauseAnimation = () => {
+        isAnimate = false;
+        pauseShapesAnimation();
+    };
+
+    const resumeAnimation = () => {
+        isAnimate = true;
+        resumeShapesAnimation();
+        refresh();
+    };
+
+    const onScroll = () => {
+        if (window.innerHeight < window.scrollY && isAnimate) {
+            pauseAnimation();
+        } else if (window.innerHeight >= window.scrollY && !isAnimate) {
+            resumeAnimation();
+        }
+    };
+
+    const onVisibilityChange = () => {
+        if (document.hidden && isAnimate) {
+            pauseAnimation();
+        } else if (!isAnimate) {
+            resumeAnimation();
+        }
+    };
+
+    window.addEventListener('scroll', onScroll);
+    document.addEventListener('visibilitychange', onVisibilityChange);
 
     refresh();
 };

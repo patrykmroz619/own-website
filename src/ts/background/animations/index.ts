@@ -5,7 +5,9 @@ import { defaultAnimation } from './default';
 import { sphereToRandomAnimation } from './sphereToRandomAnimation';
 import { randomToCubeAnimation } from './randomToCube';
 
-export const shapesAnimation = (cubes: Mesh[]) => {
+type ShapesAnimationType = (cubes: Mesh[]) => [() => void, () => void];
+
+export const shapesAnimation: ShapesAnimationType = (cubes) => {
     const cubesAmount = cubes.length;
 
     const positions = generatePositions(cubesAmount);
@@ -40,4 +42,9 @@ export const shapesAnimation = (cubes: Mesh[]) => {
 
     const pausableTimeout = new PausableTimeout(animate, 5000);
     pausableTimeout.start();
+
+    const pause = () => pausableTimeout.pause();
+    const resume = () => pausableTimeout.resume();
+
+    return [pause, resume];
 };

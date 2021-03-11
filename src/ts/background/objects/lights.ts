@@ -1,4 +1,11 @@
-import { AmbientLight, Color, PointLight } from 'three';
+import {
+    AmbientLight,
+    Color,
+    Mesh,
+    MeshBasicMaterial,
+    PointLight,
+    SphereGeometry,
+} from 'three';
 
 export const getPointLight = (
     color: string,
@@ -9,8 +16,13 @@ export const getPointLight = (
 ): PointLight => {
     const threeColor = new Color(color);
 
+    const geometry = new SphereGeometry(1, 12, 6);
+    const material = new MeshBasicMaterial({ color: threeColor });
+    const sphere = new Mesh(geometry, material);
+
     const light = new PointLight(threeColor, intensity);
     light.position.set(x, y, z);
+    light.add(sphere);
 
     return light;
 };
