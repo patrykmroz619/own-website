@@ -5,10 +5,13 @@ const cursorShadowElement = document.querySelector(
     '.cursorShadow'
 ) as HTMLDivElement;
 
-export const handleCustomCursor = () => {
-    const tl = gsap.timeline({ repeat: -1 });
+const cursorSize = cursorElement.offsetWidth;
+const halfOfCursorSize = cursorSize / 2;
 
-    tl.to(cursorElement, {
+export const handleCustomCursor = () => {
+    const rotateCursor = gsap.timeline({ repeat: -1 });
+
+    rotateCursor.to(cursorElement, {
         rotation: '360',
         duration: 10,
         ease: Linear.easeInOut,
@@ -17,14 +20,18 @@ export const handleCustomCursor = () => {
     const onMouseMove = (e: MouseEvent) => {
         if (e.target instanceof HTMLElement) {
             const rect = e.target.getBoundingClientRect();
+            const middleX = (rect.left + rect.right) / 2;
+            const middleY = (rect.top + rect.bottom) / 2;
 
             if (e.target.dataset.cursor == 'true') {
                 gsap.to(cursorElement, {
-                    x: ((rect.left + rect.right) / 2 + e.pageX) / 2 - 25,
-                    y: ((rect.top + rect.bottom) / 2 + +e.pageY) / 2 - 25,
+                    x: (middleX + e.clientX) / 2 - halfOfCursorSize,
+                    y: (middleY + e.clientY) / 2 - halfOfCursorSize,
                     scale:
-                        (rect.width <= 60 ? rect.width * 1.5 : rect.width) / 40,
-                    duration: 1.2,
+                        (rect.width <= cursorSize + 10
+                            ? rect.width * 1.5
+                            : rect.width) / 40,
+                    duration: 0.3,
                     opacity: 0.2,
                 });
 
@@ -32,33 +39,45 @@ export const handleCustomCursor = () => {
                     opacity: 0.0,
                 });
 
-                tl.play();
+                rotateCursor.play();
             } else {
                 gsap.to(cursorElement, {
-                    x: e.pageX - 25,
-                    y: e.pageY - 25,
+                    x: e.clientX - halfOfCursorSize,
+                    y: e.clientY - halfOfCursorSize,
                     scale: 1,
                     duration: 0.2,
                     opacity: 1,
                 });
 
                 gsap.to(cursorShadowElement, {
-                    x: e.pageX - 25,
-                    y: e.pageY - 25,
+                    x: e.clientX - halfOfCursorSize,
+                    y: e.clientY - halfOfCursorSize,
                     duration: 1.5,
                     opacity: 0.4,
                     ease: Back.easeOut,
                 });
 
-                tl.pause();
+                rotateCursor.pause();
             }
         }
     };
 
     const onClick = () => {
-        gsap.to(cursorElement, {});
+        gsap.to(cursorShadowElement, {});
     };
 
-    window.addEventListener('mousemove', onMouseMove);
-    window.addEventListener('click', onClick);
+    const switchCursor = (enable: boolean) => {
+        if (enable) {
+            window.addEventListener('mousemove', onMouseMove);
+            window.addEventListener('click', onClick);
+        } else {
+            window.removeEventListener('mousemove', onMouseMove);
+            window.removeEventListener('click', onClick);
+        }
+    };
+
+    const media = window.matchMedia('(hover: hover)');
+
+    switchCursor(media.matches);
+    media.addEventListener('change', (e) => switchCursor(e.matches));
 };

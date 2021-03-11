@@ -11,7 +11,7 @@ $cursorSize: 50px;
     border-radius: $cursorSize / 2;
     pointer-events: none;
 
-    @include min-vw(l) {
+    @media (hover: hover) {
         display: block;
     }
 }
@@ -29,7 +29,7 @@ $cursorSize: 50px;
     pointer-events: none;
     opacity: 0.3;
 
-    @include min-vw(l) {
+    @media (hover: hover) {
         display: block;
     }
 }
