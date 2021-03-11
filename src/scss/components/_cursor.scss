@@ -1,0 +1,25 @@
+$cursorSize: 50px;
+
+.cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: $cursorSize;
+    height: $cursorSize;
+    border: 2px dotted var(--primary-color);
+    border-radius: $cursorSize / 2;
+    pointer-events: none;
+}
+
+.cursorShadow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: $cursorSize;
+    height: $cursorSize;
+
+    border: 2px dotted var(--primary-color);
+    border-radius: $cursorSize / 2;
+    pointer-events: none;
+    opacity: 0.3;
+}
