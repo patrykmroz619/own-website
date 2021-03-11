@@ -1,90 +1,96 @@
 .navigation {
-    @include position(fixed, 0, 0, 0, auto);
-    z-index: 1;
-    width: 250px;
-    padding-left: 120px;
+    display: none;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    opacity: 0.4;
+    @include min-vw(l) {
+        display: block;
 
-    transition: 0.3s;
+        @include position(fixed, 0, 0, 0, auto);
+        z-index: 1;
+        width: 250px;
+        padding-left: 120px;
 
-    &:hover {
-        opacity: 1;
-    }
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        opacity: 0.4;
 
-    &__line {
-        flex-grow: 1;
-        width: 1px;
-        background-color: #ffffff88;
-    }
-
-    &__itemList {
-        margin: 50px 0;
-        width: 50px;
-        transform: translateX(-50%);
-    }
-
-    &__item {
-        margin: $spacing-s 0;
-        position: relative;
-        width: 50px;
-        height: 50px;
-        border-radius: 25px;
         transition: 0.3s;
-
-        &::after {
-            border-radius: 25px;
-            content: '';
-            @include position(absolute, 0, 0, 0, 0);
-            border: 1px solid transparent;
-            pointer-events: none;
-        }
 
         &:hover {
-            .navigation__link {
-                color: var(--primary-color);
-            }
+            opacity: 1;
+        }
 
-            .navigation__label {
-                opacity: 1;
-            }
+        &__line {
+            flex-grow: 1;
+            width: 1px;
+            background-color: #ffffff88;
+        }
+
+        &__itemList {
+            margin: 50px 0;
+            width: 50px;
+            transform: translateX(-50%);
+        }
+
+        &__item {
+            margin: $spacing-s 0;
+            position: relative;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            transition: 0.3s;
 
             &::after {
-                @keyframes rotate {
-                    from {
-                        transform: rotate(0deg);
-                    }
-                    to {
-                        transform: rotate(360deg);
-                    }
+                border-radius: 25px;
+                content: '';
+                @include position(absolute, 0, 0, 0, 0);
+                border: 1px solid transparent;
+                pointer-events: none;
+            }
+
+            &:hover {
+                .navigation__link {
+                    color: var(--primary-color);
                 }
-                border-top: 1px solid var(--primary-color);
-                animation-name: rotate;
-                animation-duration: 2s;
-                animation-iteration-count: infinite;
-                animation-timing-function: linear;
+
+                .navigation__label {
+                    opacity: 1;
+                }
+
+                &::after {
+                    @keyframes rotate {
+                        from {
+                            transform: rotate(0deg);
+                        }
+                        to {
+                            transform: rotate(360deg);
+                        }
+                    }
+                    border-top: 1px solid var(--primary-color);
+                    animation-name: rotate;
+                    animation-duration: 2s;
+                    animation-iteration-count: infinite;
+                    animation-timing-function: linear;
+                }
             }
         }
-    }
 
-    &__link {
-        @include position(absolute, 0, 0, 0, 0);
-        text-align: center;
-        line-height: 50px;
-        transition: 0.3s;
-    }
+        &__link {
+            @include position(absolute, 0, 0, 0, 0);
+            text-align: center;
+            line-height: 50px;
+            transition: 0.3s;
+        }
 
-    &__label {
-        @include position(absolute, 0, -90px, 0, auto);
-        font-size: 12px;
-        text-align: left;
-        width: 80px;
-        line-height: 50px;
-        opacity: 0;
-        transition: 0.3s;
-        pointer-events: none;
+        &__label {
+            @include position(absolute, 0, -90px, 0, auto);
+            font-size: 12px;
+            text-align: left;
+            width: 80px;
+            line-height: 50px;
+            opacity: 0;
+            transition: 0.3s;
+            pointer-events: none;
+        }
     }
 }
