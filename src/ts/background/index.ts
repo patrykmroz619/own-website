@@ -4,6 +4,7 @@ import { getCube } from './objects/cube';
 import { getAmbientLight, getPointLight } from './objects/lights';
 import { getRenderer } from './objects/renderer';
 import { shapesAnimation } from './animations';
+import { getPrimaryColor } from '../utils/primaryColor';
 
 const root = document.querySelector('.main__background') as HTMLDivElement;
 
@@ -18,7 +19,10 @@ export const start = (): void => {
     const camera = getCamera(root);
 
     const ambientLight = getAmbientLight();
-    const pointLight1 = getPointLight('red', 30, 30, 30, 0.5);
+
+    const primaryColor = getPrimaryColor();
+
+    const pointLight1 = getPointLight(primaryColor, 30, 30, 30, 0.5);
     const pointLight2 = getPointLight('white', -30, -30, -30, 0.7);
 
     scene.add(ambientLight, pointLight1, pointLight2);
