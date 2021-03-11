@@ -21,14 +21,48 @@
         <link rel="stylesheet" href="scss/index.css" />
     </head>
     <body>
+        <nav class="navigation">
+            <span class="navigation__line navigation__line--top"></span>
+            <ul class="navigation__itemList">
+                <li class="navigation__item">
+                    <a class="navigation__link" data-cursor="true">1</a>
+                    <p class="navigation__label">Start</p>
+                </li>
+                <li class="navigation__item">
+                    <a class="navigation__link" data-cursor="true">2</a>
+                    <p class="navigation__label">O mnie</p>
+                </li>
+                <li class="navigation__item">
+                    <a class="navigation__link" data-cursor="true">3</a>
+                    <p class="navigation__label">Portfolio</p>
+                </li>
+                <li class="navigation__item">
+                    <a class="navigation__link" data-cursor="true">4</a>
+                    <p class="navigation__label">Technologie</p>
+                </li>
+                <li class="navigation__item">
+                    <a class="navigation__link" data-cursor="true">5</a>
+                    <p class="navigation__label">Kontakt</p>
+                </li>
+            </ul>
+            <span class="navigation__line navigation__line--bottom"></span>
+        </nav>
         <main class="main">
             <header class="hero">
                 <h1 class="hero__heading">Witaj,<br />jestem Patryk</h1>
                 <h2 class="hero__subheading">Full-stack web developer</h2>
-                <button class="button hero__button">Portfolio</button>
+                <button class="button hero__button" data-cursor="true">
+                    <span class="button__border button__border--top"></span>
+                    <span class="button__border button__border--bottom"></span>
+                    <span class="button__border button__border--left"></span>
+                    <span class="button__border button__border--right"></span>
+                    Portfolio
+                </button>
             </header>
             <div class="main__background" >
         </main>
+        <div class="cursor"> </div>
+        <div class="cursorShadow"></div>
         <script type="module" src="./ts/index.js"></script>
     </body>
 </html>

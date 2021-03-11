@@ -10,7 +10,7 @@
         max-width: 1300px;
         height: 60%;
         @include min-vw(m) {
-            width: 70%;
+            width: 75%;
             height: 100%;
         }
     }
@@ -19,6 +19,7 @@
 .hero {
     @include position(absolute, 30%, auto, auto, $spacing-m);
     transform: translateY(-50%);
+    z-index: 1;
 
     @include min-vw(s) {
         left: $spacing-l;
@@ -31,6 +32,10 @@
 
     @include min-vw(l) {
         left: 100px;
+    }
+
+    @include min-vw(xl) {
+        left: 150px;
     }
 
     &__heading {

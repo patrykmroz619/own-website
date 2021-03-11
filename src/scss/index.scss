@@ -1,10 +1,11 @@
 @import './global/variables';
+@import './utils/mixins';
+
 @import './global/reset';
 @import './global/global';
 
-@import './utils/mixins';
-
-@import './components//cursor';
+@import './components/cursor';
 @import './components/button';
+@import './components/navigation';
 
 @import './main';
