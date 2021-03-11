@@ -1,6 +1,9 @@
 body * {
     font-family: 'Roboto Mono', sans-serif;
-    cursor: none;
+
+    @include min-vw(l) {
+        cursor: none;
+    }
 }
 
 body {
