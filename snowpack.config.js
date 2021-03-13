@@ -1,7 +1,14 @@
 /** @type {import("snowpack").SnowpackUserConfig } */
+// eslint-disable-next-line no-undef
 module.exports = {
     mount: {
         src: '/',
+    },
+    alias: {
+        '@utils': './src/ts/utils',
+    },
+    packageOptions: {
+        types: true,
     },
     plugins: [
         '@snowpack/plugin-typescript',

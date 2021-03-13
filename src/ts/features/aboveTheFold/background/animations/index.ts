@@ -1,6 +1,6 @@
 import { Mesh } from 'three';
 import { generatePositions } from '../positions';
-import { PausableTimeout } from '../../utils/PausableTimeout';
+import { PausableTimeout } from '@utils/PausableTimeout';
 import { defaultAnimation } from './default';
 import { sphereToRandomAnimation } from './sphereToRandomAnimation';
 import { randomToCubeAnimation } from './randomToCube';

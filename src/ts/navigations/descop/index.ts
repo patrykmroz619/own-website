@@ -1,8 +1,8 @@
-import { applyDetectorCallback } from '../utils/sectionDetector';
+import { applyViewDetectorCallback } from '@utils/viewDetector';
 
 const descopNavItems = [...document.querySelectorAll('.navigation__link')];
 
-export const handleNavigation = () => {
+export const handleDescopNavigation = () => {
     const setActiveItem = (idOfSection: string) => {
         descopNavItems.forEach((item: Element) => {
             const hrefValue = item.getAttribute('href')?.slice(1);
@@ -14,5 +14,6 @@ export const handleNavigation = () => {
             }
         });
     };
-    applyDetectorCallback(setActiveItem);
+
+    applyViewDetectorCallback(setActiveItem);
 };

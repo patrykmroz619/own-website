@@ -4,14 +4,14 @@ import { getCube } from './objects/cube';
 import { getAmbientLight, getPointLight } from './objects/lights';
 import { getRenderer } from './objects/renderer';
 import { shapesAnimation } from './animations';
-import { getPrimaryColor } from '../utils/primaryColor';
-import { mediaQuery } from '../utils/mediaQuery';
+import { getPrimaryColor } from '@utils/primaryColor';
+import { mediaQuery } from '@utils/mediaQuery';
 
 const root = document.querySelector('.main__background') as HTMLDivElement;
 
 const CUBES_AMOUNT = 216;
 
-export const start = (): void => {
+export const setBackgroundAnimation = (): void => {
     const scene = new Scene();
 
     const setMobilePosition = () => scene.position.set(0, -30, 0);

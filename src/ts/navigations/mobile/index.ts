@@ -1,4 +1,4 @@
-import { applyDetectorCallback } from '../utils/sectionDetector';
+import { applyViewDetectorCallback } from '@utils/viewDetector';
 import { BackgroundTextChange, closeMenu, openMenu } from './actions';
 
 const burger = document.querySelector('.burger') as HTMLButtonElement;
@@ -12,7 +12,7 @@ const backgroundText = document.querySelector(
 
 let isMobileMenuOpen = false;
 
-export const handleMobileMenu = () => {
+export const handleMobileNavigation = () => {
     const onBurgerClick = () => {
         if (isMobileMenuOpen) {
             burger.classList.add('active');
@@ -36,7 +36,7 @@ export const handleMobileMenu = () => {
         }
     };
 
-    applyDetectorCallback(onSectionDetect);
+    applyViewDetectorCallback(onSectionDetect);
 
     burger.addEventListener('click', onBurgerClick);
     menuItems.forEach((item) => {

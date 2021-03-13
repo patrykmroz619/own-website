@@ -1,8 +1,8 @@
 import { gsap } from 'gsap';
-import { splitText } from '../utils/splitText';
-import { getPrimaryColor } from '../utils/primaryColor';
+import { splitText } from '@utils/splitText';
+import { getPrimaryColor } from '@utils/primaryColor';
 
-export const heroTextEffect = () => {
+export const setHeroTextEffect = () => {
     const primaryColor = getPrimaryColor();
     const chars = [
         ...splitText('.hero__heading--first-line'),

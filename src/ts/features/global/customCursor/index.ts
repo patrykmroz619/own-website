@@ -1,5 +1,5 @@
 import { gsap, Linear, Back } from 'gsap';
-import { mediaQuery } from '../utils/mediaQuery';
+import { mediaQuery } from '@utils/mediaQuery';
 
 const cursorElement = document.querySelector('.cursor') as HTMLDivElement;
 const cursorShadowElement = document.querySelector(
