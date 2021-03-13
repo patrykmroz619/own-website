@@ -25,23 +25,42 @@
             <span class="navigation__line navigation__line--top"></span>
             <ul class="navigation__itemList">
                 <li class="navigation__item">
-                    <a class="navigation__link" data-cursor="true">1</a>
+                    <a class="navigation__link" href="#start" data-cursor="true"
+                        >1</a
+                    >
                     <p class="navigation__label">Start</p>
                 </li>
                 <li class="navigation__item">
-                    <a class="navigation__link" data-cursor="true">2</a>
+                    <a class="navigation__link" href="#about" data-cursor="true"
+                        >2</a
+                    >
                     <p class="navigation__label">O mnie</p>
                 </li>
                 <li class="navigation__item">
-                    <a class="navigation__link" data-cursor="true">3</a>
+                    <a
+                        class="navigation__link"
+                        href="#portfolio"
+                        data-cursor="true"
+                        >3</a
+                    >
                     <p class="navigation__label">Portfolio</p>
                 </li>
                 <li class="navigation__item">
-                    <a class="navigation__link" data-cursor="true">4</a>
+                    <a
+                        class="navigation__link"
+                        href="#technologies"
+                        data-cursor="true"
+                        >4</a
+                    >
                     <p class="navigation__label">Technologie</p>
                 </li>
                 <li class="navigation__item">
-                    <a class="navigation__link" data-cursor="true">5</a>
+                    <a
+                        class="navigation__link"
+                        href="#contact"
+                        data-cursor="true"
+                        >5</a
+                    >
                     <p class="navigation__label">Kontakt</p>
                 </li>
             </ul>
@@ -55,31 +74,37 @@
         </button>
         <nav class="mobileMenu">
             <ul class="mobileMenu__itemList">
-                <li class="mobileMenu__item">
-                    <a href="#" class="mobileMenu__link">Start</a>
+                <li class="mobileMenu__item" data-section-id="start">
+                    <a href="#start" class="mobileMenu__link">Start</a>
                 </li>
-                <li class="mobileMenu__item">
-                    <a href="#" class="mobileMenu__link">O mnie</a>
+                <li class="mobileMenu__item" data-section-id="about">
+                    <a href="#about" class="mobileMenu__link">O mnie</a>
                 </li>
-                <li class="mobileMenu__item">
-                    <a href="#" class="mobileMenu__link">Portfolio</a>
+                <li class="mobileMenu__item" data-section-id="portfolio">
+                    <a href="#portfolio" class="mobileMenu__link">Portfolio</a>
                 </li>
-                <li class="mobileMenu__item">
+                <li class="mobileMenu__item" data-section-id="technologies">
                     <a
-                        href="#"
+                        href="#technologies"
                         class="mobileMenu__link mobileMenu__link--active"
                         >Technologie</a
                     >
                 </li>
-                <li class="mobileMenu__item">
-                    <a href="#" class="mobileMenu__link">Kontakt</a>
+                <li class="mobileMenu__item" data-section-id="contact">
+                    <a href="#contact" class="mobileMenu__link">Kontakt</a>
                 </li>
             </ul>
-            <p class="mobileMenu__backgroundText">Technologie</p>
+            <p class="mobileMenu__backgroundText"></p>
         </nav>
-        <main class="main">
+        <main id="start" class="section main">
             <header class="hero">
-                <h1 class="hero__heading">Witaj,<br />jestem Patryk</h1>
+                <h1 class="hero__heading">
+                    <span class="hero__heading--first-line">Witaj,</span>
+                    <br />
+                    <span class="hero__heading--second-line"
+                        >jestem Patryk</span
+                    >
+                </h1>
                 <h2 class="hero__subheading">Full-stack web developer</h2>
                 <button class="button hero__button" data-cursor="true">
                     <span class="button__border button__border--top"></span>
@@ -91,6 +116,10 @@
             </header>
             <div class="main__background"></div>
         </main>
+        <section id="about" class="section">O mnie</section>
+        <section id="portfolio" class="section">Portfolio</section>
+        <section id="technologies" class="section">Technologie</section>
+        <section id="contact" class="section">Kontakt</section>
         <div class="cursor"></div>
         <div class="cursorShadow"></div>
         <script type="module" src="./ts/index.js"></script>

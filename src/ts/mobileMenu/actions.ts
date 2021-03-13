@@ -1,9 +1,6 @@
 import { gsap } from 'gsap';
 
-const menu = document.querySelector('.mobileMenu') as HTMLElement;
-const menuItems = document.querySelectorAll('.mobileMenu__item');
-
-export const openMenu = () => {
+export const openMenu = (menu: HTMLElement, menuItems: Element[]) => {
     const timeline = gsap.timeline();
 
     timeline.to(menu, {
@@ -18,7 +15,7 @@ export const openMenu = () => {
     });
 };
 
-export const closeMenu = () => {
+export const closeMenu = (menu: HTMLElement, menuItems: Element[]) => {
     const timeline = gsap.timeline();
 
     timeline.to(menu, {
@@ -31,4 +28,11 @@ export const closeMenu = () => {
             opacity: 0,
         });
     });
+};
+
+export const BackgroundTextChange = (
+    item: Element,
+    backgroundText: HTMLElement
+) => {
+    backgroundText.textContent = item.textContent;
 };
