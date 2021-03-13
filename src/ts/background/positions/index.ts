@@ -7,9 +7,9 @@ import { getSpherePositions } from './sphere';
 export const generatePositions = (
     objectAmount: number
 ): BackgroundShapePositions => ({
-    cube: getCubePositions(objectAmount, 2),
+    cube: getCubePositions(objectAmount, 2.2),
     multiSpheres: getMultiSpherePositions(objectAmount, 50, 10),
-    helix: getHelixPositions(objectAmount, 25),
+    helix: getHelixPositions(objectAmount, 27),
     sphere: getSpherePositions(objectAmount, 30),
-    random: getRandomPositions(objectAmount, 50),
+    random: getRandomPositions(objectAmount, 70),
 });

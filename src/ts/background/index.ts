@@ -1,10 +1,11 @@
-import { Scene, Mesh } from 'three';
+import { Scene, Mesh, AmbientLight } from 'three';
 import { getCamera } from './objects/camera';
 import { getCube } from './objects/cube';
 import { getAmbientLight, getPointLight } from './objects/lights';
 import { getRenderer } from './objects/renderer';
 import { shapesAnimation } from './animations';
 import { getPrimaryColor } from '../utils/primaryColor';
+import { mediaQuery } from '../utils/mediaQuery';
 
 const root = document.querySelector('.main__background') as HTMLDivElement;
 
@@ -12,6 +13,12 @@ const CUBES_AMOUNT = 216;
 
 export const start = (): void => {
     const scene = new Scene();
+
+    const setMobilePosition = () => scene.position.set(0, -30, 0);
+    const setDescopPosition = () => scene.position.set(45, 0, 0);
+
+    mediaQuery('(min-width: 640px)', setDescopPosition, setMobilePosition);
+
     const sceneOfCubes = new Scene();
     const sceneOfLights1 = new Scene();
     const sceneOfLights2 = new Scene();
@@ -22,9 +29,9 @@ export const start = (): void => {
     const renderer = getRenderer(root);
     const camera = getCamera(root);
 
-    const ambientLight = getAmbientLight();
-
     const primaryColor = getPrimaryColor();
+
+    const ambientLight = getAmbientLight(primaryColor);
 
     const pointLight1 = getPointLight(primaryColor, 35, 35, 25, 0.6);
     const pointLight2 = getPointLight('white', -30, -30, -30, 0.6);

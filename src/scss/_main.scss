@@ -6,20 +6,19 @@
     height: 100vh;
 
     &__background {
+        position: relative;
         width: 100%;
-        max-width: 1300px;
-        height: 60%;
-        @include min-vw(m) {
-            width: 75%;
-            height: 100%;
-        }
+        height: 100%;
+        opacity: 0.6;
+        z-index: -1;
     }
 }
 
 .hero {
     @include position(absolute, 30%, auto, auto, $spacing-m);
     transform: translateY(-50%);
-    z-index: 1;
+    padding: $spacing-l;
+    background-color: #11111199;
 
     @include min-vw(s) {
         left: $spacing-l;

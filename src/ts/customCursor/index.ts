@@ -1,4 +1,5 @@
 import { gsap, Linear, Back } from 'gsap';
+import { mediaQuery } from '../utils/mediaQuery';
 
 const cursorElement = document.querySelector('.cursor') as HTMLDivElement;
 const cursorShadowElement = document.querySelector(
@@ -66,18 +67,16 @@ export const handleCustomCursor = () => {
         gsap.to(cursorShadowElement, {});
     };
 
-    const switchCursor = (enable: boolean) => {
-        if (enable) {
-            window.addEventListener('mousemove', onMouseMove);
-            window.addEventListener('click', onClick);
-        } else {
-            window.removeEventListener('mousemove', onMouseMove);
-            window.removeEventListener('click', onClick);
-        }
+    const onQueryMatch = () => {
+        window.addEventListener('mousemove', onMouseMove);
+        window.addEventListener('click', onClick);
     };
 
-    const media = window.matchMedia('(hover: hover)');
+    const onQueryNotMatch = () => {
+        window.removeEventListener('mousemove', onMouseMove);
+        window.removeEventListener('click', onClick);
+        rotateCursor.pause();
+    };
 
-    switchCursor(media.matches);
-    media.addEventListener('change', (e) => switchCursor(e.matches));
+    mediaQuery('(hover: hover)', onQueryMatch, onQueryNotMatch);
 };

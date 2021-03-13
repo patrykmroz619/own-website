@@ -27,6 +27,6 @@ export const getPointLight = (
     return light;
 };
 
-export const getAmbientLight = (): AmbientLight => {
-    return new AmbientLight(0xffffff, 0.01);
+export const getAmbientLight = (color?: string): AmbientLight => {
+    return new AmbientLight(color ?? 0xffffff, 0.2);
 };
