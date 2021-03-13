@@ -1,5 +1,5 @@
-import { Scene, Mesh, AmbientLight } from 'three';
 import { getCamera } from './objects/camera';
+import { Scene, Mesh, AmbientLight } from 'three';
 import { getCube } from './objects/cube';
 import { getAmbientLight, getPointLight } from './objects/lights';
 import { getRenderer } from './objects/renderer';
