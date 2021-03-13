@@ -1,5 +1,5 @@
+import { getCssVariable } from './cssVariables';
+
 export const getPrimaryColor = () => {
-    return getComputedStyle(document.documentElement)
-        .getPropertyValue('--primary-color')
-        .trim();
+    return getCssVariable('--primary-color');
 };
