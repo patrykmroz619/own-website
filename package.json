@@ -5,8 +5,7 @@
     "main": "index.js",
     "scripts": {
         "start": "snowpack dev",
-        "build": "snowpack build",
-        "prepare": "husky install"
+        "build": "snowpack build"
     },
     "repository": {
         "type": "git",
@@ -45,7 +44,7 @@
         }
     },
     "lint-staged": {
-        "*.ts": "eslint --cache --fix",
+        "*.{js,ts}": "eslint ./**/*.ts",
         "*.{js,css,md}": "prettier --write"
     }
 }
