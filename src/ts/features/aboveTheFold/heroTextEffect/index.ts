@@ -1,9 +1,9 @@
 import { gsap } from 'gsap';
 import { splitText } from '@utils/splitText';
 import { getPrimaryColor } from '@utils/primaryColor';
+import { getCssVariable } from '@utils/cssVariables';
 
 export const setHeroTextEffect = () => {
-    const primaryColor = getPrimaryColor();
     const chars = [
         ...splitText('.hero__heading--first-line'),
         ...splitText('.hero__heading--second-line'),
@@ -12,6 +12,7 @@ export const setHeroTextEffect = () => {
     const onMouseEnter = (char: HTMLElement) => {
         const tl = gsap.timeline();
 
+        const primaryColor = getPrimaryColor();
         tl.to(char, {
             scaleY: 1.4,
             color: primaryColor,
@@ -25,10 +26,12 @@ export const setHeroTextEffect = () => {
     };
 
     const onMouseLeave = (char: HTMLElement) => {
+        const fontColor = getCssVariable('--font-color');
         gsap.to(char, {
             scale: 1,
-            color: '#eee',
+            color: fontColor,
             duration: 0.3,
+            clearProps: 'color',
         });
     };
 

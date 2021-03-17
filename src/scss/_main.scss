@@ -18,7 +18,7 @@
     @include position(absolute, 30%, auto, auto, $spacing-m);
     transform: translateY(-50%);
     padding: $spacing-l;
-    background-color: #11111199;
+    background-color: var(--bg-transparent-layer);
 
     @include min-vw(s) {
         left: $spacing-l;

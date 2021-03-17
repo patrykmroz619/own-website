@@ -13,6 +13,8 @@ export const openMenu = (menu: HTMLElement, menuItems: Element[]) => {
             opacity: 1,
         });
     });
+
+    menu.classList.remove('mobileMenu--close');
 };
 
 export const closeMenu = (menu: HTMLElement, menuItems: Element[]) => {
@@ -28,6 +30,8 @@ export const closeMenu = (menu: HTMLElement, menuItems: Element[]) => {
             opacity: 0,
         });
     });
+
+    menu.classList.add('mobileMenu--close');
 };
 
 export const BackgroundTextChange = (

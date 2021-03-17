@@ -1,6 +1,6 @@
 import { applyViewDetectorCallback } from '@utils/viewDetector';
 
-const descopNavItems = [...document.querySelectorAll('.navigation__link')];
+const descopNavItems = [...document.querySelectorAll('.descopMenu__link')];
 
 export const handleDescopNavigation = () => {
     const setActiveItem = (idOfSection: string) => {

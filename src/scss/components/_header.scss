@@ -1,0 +1,47 @@
+.header {
+    @include position(absolute, 0, 0, auto, 0);
+    padding: $spacing-m;
+    z-index: 10;
+
+    // &__toggler {
+    // }
+}
+
+.colorModeToggler {
+    position: relative;
+
+    $item-size: 25px;
+    height: $item-size;
+
+    &__item {
+        position: relative;
+        width: $item-size;
+        height: $item-size;
+        z-index: 1;
+
+        transition: 1s;
+        opacity: 0.5;
+        transform: scale(0.6);
+
+        &.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        &--lightMode {
+            fill: white;
+
+            &.active {
+                fill: goldenrod;
+            }
+        }
+
+        &--darkMode {
+            fill: black;
+
+            &.active {
+                fill: white;
+            }
+        }
+    }
+}

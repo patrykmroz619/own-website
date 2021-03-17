@@ -1,4 +1,4 @@
-.navigation {
+.descopMenu {
     display: none;
 
     @include min-vw(l) {
@@ -23,7 +23,7 @@
         &__line {
             flex-grow: 1;
             width: 1px;
-            background-color: #ffffff88;
+            background-color: var(--font-color);
         }
 
         &__itemList {
@@ -49,11 +49,11 @@
             }
 
             &:hover {
-                .navigation__link {
+                .descopMenu__link {
                     color: var(--primary-color);
                 }
 
-                .navigation__label {
+                .descopMenu__label {
                     opacity: 1;
                 }
 

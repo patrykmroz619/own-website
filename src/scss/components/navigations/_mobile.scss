@@ -138,9 +138,11 @@ $burger-height: 25px;
     &--close {
         pointer-events: none;
         opacity: 0;
+        z-index: -2;
     }
 
     @include min-vw(l) {
         display: none;
+        z-index: 0;
     }
 }
