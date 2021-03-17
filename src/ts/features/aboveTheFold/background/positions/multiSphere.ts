@@ -15,8 +15,9 @@ export const getMultiSpherePositions = (
         const z = Math.random() * radius * 2 - radius;
 
         for (let i = 0; i < twoThirdsRootOfObjectAmount; i++) {
-            const alpha = Math.acos(-1 + (2 * i) / 36);
-            const beta = Math.sqrt(36 * Math.PI) * alpha;
+            const alpha = Math.acos(-1 + (2 * i) / twoThirdsRootOfObjectAmount);
+            const beta =
+                Math.sqrt(twoThirdsRootOfObjectAmount * Math.PI) * alpha;
 
             multiSpherePositions.push({
                 x: x + sphereRadius * Math.cos(beta) * Math.sin(alpha),

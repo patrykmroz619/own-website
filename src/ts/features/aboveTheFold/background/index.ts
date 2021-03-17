@@ -9,7 +9,7 @@ import { mediaQuery } from '@utils/mediaQuery';
 
 const root = document.querySelector('.main__background') as HTMLDivElement;
 
-const CUBES_AMOUNT = 216;
+const CUBES_AMOUNT = 125;
 
 export const setBackgroundAnimation = (): void => {
     const scene = new Scene();
