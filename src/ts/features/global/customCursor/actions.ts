@@ -1,5 +1,5 @@
 import gsap, { Back } from 'gsap';
-import { cursorSize, halfOfCursorSize } from './index';
+import { halfOfCursorSize } from './index';
 
 export const onInteractiveElement = (
     e: MouseEvent,
