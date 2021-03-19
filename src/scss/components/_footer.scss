@@ -1,0 +1,7 @@
+.footer {
+    @include position(absolute, auto, 0, 0, 0);
+    padding: 5px;
+    font-size: 13px;
+    text-align: center;
+    opacity: 0.8;
+}
