@@ -1,10 +1,7 @@
 .header {
     @include position(absolute, 0, 0, auto, 0);
-    padding: $spacing-m;
+    padding: $spacing-s;
     z-index: 10;
-
-    // &__toggler {
-    // }
 }
 
 .colorModeToggler {

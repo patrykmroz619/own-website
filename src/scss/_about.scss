@@ -1,0 +1,104 @@
+.about {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+
+    @include min-vw(l) {
+        margin-left: $spacing-xxl;
+        margin-right: $spacing-xxxl;
+        padding: 0;
+    }
+
+    @include min-vw(xl) {
+        margin-left: $spacing-xxxl;
+    }
+
+    &__contentSection {
+        padding: $spacing-s;
+
+        @include min-vw(xs) {
+            padding: $spacing-m;
+        }
+
+        @include min-vw(s) {
+            padding: $spacing-l;
+        }
+
+        @include min-vw(xxl) {
+            margin-left: $spacing-xxxl;
+            margin-right: $spacing-xl;
+        }
+    }
+
+    &__imageSection {
+        display: none;
+
+        @include min-vw(l) {
+            display: block;
+            order: -1;
+        }
+    }
+
+    .contentSection {
+        &__heading {
+            margin-bottom: $spacing-s;
+
+            @include min-vw(s) {
+                margin-bottom: $spacing-m;
+            }
+        }
+
+        &__text {
+            margin-bottom: $spacing-xs;
+
+            @include min-vw(s) {
+                margin-bottom: $spacing-s;
+            }
+        }
+
+        &__advantages {
+            position: relative;
+            margin-top: $spacing-xs;
+            font-size: 18px;
+            color: var(--font-color);
+
+            @include min-vw(xs) {
+                font-size: 20px;
+            }
+
+            @include min-vw(s) {
+                font-size: 24px;
+            }
+
+            @keyframes caret {
+                from {
+                    opacity: 0;
+                }
+
+                to {
+                    opacity: 1;
+                }
+            }
+
+            &::after {
+                content: '_';
+                font-size: 25px;
+                font-weight: bold;
+                color: var(--primary-color);
+
+                animation: caret 0.3s infinite alternate-reverse;
+            }
+        }
+    }
+
+    .imageSection {
+        &__image {
+            object-fit: cover;
+            object-position: center;
+            min-width: 250px;
+            width: 30vw;
+            max-width: 400px;
+        }
+    }
+}

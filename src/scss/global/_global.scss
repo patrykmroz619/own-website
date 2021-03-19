@@ -27,13 +27,32 @@ h2 {
 }
 
 h2 {
-    @include min-vw(s) {
-        font-size: 26px;
+    @include min-vw(xs) {
+        font-size: 30px;
     }
 
     @include min-vw(s) {
         font-size: 36px;
     }
+
+    @include min-vw(m) {
+        font-size: 46px;
+    }
+
+    @include min-vw(l) {
+        font-size: 54px;
+    }
+}
+
+p {
+    font-size: $mobile-font-size;
+    @include min-vw(l) {
+        font-size: $descop-font-size;
+    }
+}
+
+strong {
+    color: var(--primary-color);
 }
 
 .section {

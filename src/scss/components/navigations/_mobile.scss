@@ -2,7 +2,7 @@ $burger-width: 32px;
 $burger-height: 25px;
 
 .burger {
-    @include position(fixed, $spacing-m, $spacing-m);
+    @include position(fixed, $spacing-s, $spacing-s);
     width: $burger-width;
     height: $burger-height;
     z-index: 15;
@@ -81,7 +81,7 @@ $burger-height: 25px;
     }
 
     &__item {
-        margin-bottom: $spacing-s;
+        margin-bottom: $spacing-xs;
         text-align: right;
         width: 130px;
         transform: translateX(20px);
