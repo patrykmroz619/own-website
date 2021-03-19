@@ -3,11 +3,12 @@ import { splitText } from '@utils/splitText';
 import { getPrimaryColor } from '@utils/primaryColor';
 import { getCssVariable } from '@utils/cssVariables';
 
-export const setHeroTextEffect = () => {
-    const chars = [
-        ...splitText('.hero__heading--first-line'),
-        ...splitText('.hero__heading--second-line'),
-    ];
+export const applyTextEffects = (classesOfElements: string[]) => {
+    const chars: HTMLElement[] = [];
+
+    classesOfElements.forEach((classOfElement) =>
+        chars.push(...splitText(classOfElement))
+    );
 
     const onMouseEnter = (char: HTMLElement) => {
         const tl = gsap.timeline();

@@ -61,7 +61,7 @@
             position: relative;
             margin-top: $spacing-xs;
             font-size: 18px;
-            color: var(--font-color);
+            color: var(--primary-color);
 
             @include min-vw(xs) {
                 font-size: 20px;
@@ -85,7 +85,7 @@
                 content: '_';
                 font-size: 25px;
                 font-weight: bold;
-                color: var(--primary-color);
+                color: var(--font-color);
 
                 animation: caret 0.3s infinite alternate-reverse;
             }

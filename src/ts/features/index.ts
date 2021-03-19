@@ -1,13 +1,13 @@
 import { handleCustomCursor } from './global/customCursor';
-import { setHeroTextEffect } from './aboveTheFold/heroTextEffect';
 import { handleColorSchemes } from './global/colorScheme';
+import { runOnHoverTextEffect } from './global/onHoverTextEffect';
 import { runAboutSectionEffects } from './about';
 
 export const runFeatures = () => {
     handleCustomCursor();
-    setHeroTextEffect();
 
     handleColorSchemes();
+    runOnHoverTextEffect();
     runAboutSectionEffects();
 
     window.addEventListener('DOMContentLoaded', () => {
