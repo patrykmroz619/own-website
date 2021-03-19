@@ -11,5 +11,5 @@ export const generatePositions = (
     multiSpheres: getMultiSpherePositions(objectAmount, 50, 12),
     helix: getHelixPositions(objectAmount, 24),
     sphere: getSpherePositions(objectAmount, 25),
-    random: getRandomPositions(objectAmount, 70),
+    random: getRandomPositions(objectAmount, 55),
 });

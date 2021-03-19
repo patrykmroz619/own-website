@@ -5,9 +5,9 @@ export const getHelixPositions = (objectAmount: number, radius: number) => {
 
     for (let i = 0; i < objectAmount; i += 2) {
         const alpha = Math.acos(-1 + (2 * i) / objectAmount);
-        const beta = (Math.sqrt(objectAmount * Math.PI) * alpha) / 3;
+        const beta = (Math.sqrt(objectAmount * Math.PI) * alpha) / 2.4;
 
-        const y = (i - objectAmount + objectAmount / 2) / 1.2;
+        const y = (i - objectAmount + objectAmount / 2) / 1.3;
 
         const v = new Object3D();
 
