@@ -24,27 +24,21 @@ const revealAnimation = (project: Element) => {
         links,
     } = getProjectsElements(project);
 
+    gsap.set([name, description, technologiesHeading, technologies, links], {
+        opacity: 0,
+        y: 25,
+    });
+
     const timeline = gsap.timeline();
 
     timeline.to(name, { opacity: 1, y: 0 });
-    timeline.to(description, { opacity: 1, y: 0 }, '-=0.25');
-    timeline.to(technologiesHeading, { opacity: 1, y: 0 }, '-=0.25');
+    timeline.to(description, { opacity: 1, y: 0 }, '-=0.3');
+    timeline.to(technologiesHeading, { opacity: 1, y: 0 }, '-=0.3');
     technologies.forEach((technology) => {
-        timeline.to(technology, { opacity: 1, y: 0 }, '-=0.4');
+        timeline.to(technology, { opacity: 1, y: 0 }, '-=0.45');
     });
     links.forEach((link) => {
-        timeline.to(link, { opacity: 1, y: 0 }, '-=0.25');
-    });
-};
-
-const hideAnimation = (project: Element) => {
-    const projectElements = getProjectsElements(project);
-
-    const timeline = gsap.timeline();
-
-    timeline.to(Object.values(projectElements), { opacity: 0 });
-    timeline.set(Object.values(projectElements), {
-        y: 25,
+        timeline.to(link, { opacity: 1, y: 0 }, '-=0.3');
     });
 };
 
@@ -57,7 +51,6 @@ export const setActiveProject = (index: number) => {
             revealAnimation(projects[i]);
         } else {
             projects[i].classList.remove('active');
-            hideAnimation(projects[i]);
         }
     }
 };
