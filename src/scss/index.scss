@@ -8,8 +8,13 @@
 @import './components/navigations/mobile';
 @import './components/navigations/descop';
 @import './components/button';
+@import './components/link';
 @import './components/cursor';
 @import './components/footer';
 
 @import './main';
 @import './about';
+
+@import './portfolio';
+@import './portfolio/project';
+@import './portfolio/projectsNavigation';

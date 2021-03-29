@@ -1,6 +1,6 @@
 body * {
     @include min-vw(l) {
-        // cursor: none;
+        cursor: none;
     }
 }
 
@@ -22,7 +22,9 @@ svg * {
 }
 
 h1,
-h2 {
+h2,
+h3,
+h4 {
     font-family: 'Montserrat';
 }
 
@@ -46,7 +48,7 @@ h2 {
 
 p {
     font-size: $mobile-font-size;
-    @include min-vw(l) {
+    @include min-vw(m) {
         font-size: $descop-font-size;
     }
 }

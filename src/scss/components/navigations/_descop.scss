@@ -6,8 +6,8 @@
 
         @include position(fixed, 0, 0, 0, auto);
         z-index: 1;
-        width: 250px;
-        padding-left: 120px;
+        width: $spacing-xxl * 2;
+        padding-left: $spacing-xxl;
 
         display: flex;
         flex-direction: column;
