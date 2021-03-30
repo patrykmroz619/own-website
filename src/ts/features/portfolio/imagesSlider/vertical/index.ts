@@ -84,6 +84,7 @@ const onSpeedUpdate = (newSpeed: number) => {
 
 const onRootScroll = (e: WheelEvent) => {
     e.preventDefault();
+    e.stopImmediatePropagation();
     speed += e.deltaY;
     onSpeedUpdate(speed);
 };

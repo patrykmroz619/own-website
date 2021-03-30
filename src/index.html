@@ -21,202 +21,204 @@
         <link rel="stylesheet" href="scss/index.css" />
     </head>
     <body>
-        <nav class="descopMenu">
-            <span class="descopMenu__line descopMenu__line--top"></span>
-            <ul class="descopMenu__itemList">
-                <li class="descopMenu__item">
-                    <a
-                        class="descopMenu__link"
-                        href="#start"
-                        data-cursor="true"
-                        data-cursor-scale="2"
-                        >1</a
-                    >
-                    <p class="descopMenu__label">Start</p>
-                </li>
-                <li class="descopMenu__item">
-                    <a
-                        class="descopMenu__link"
-                        href="#about"
-                        data-cursor="true"
-                        data-cursor-scale="2"
-                        >2</a
-                    >
-                    <p class="descopMenu__label">O mnie</p>
-                </li>
-                <li class="descopMenu__item">
-                    <a
-                        class="descopMenu__link"
-                        href="#portfolio"
-                        data-cursor="true"
-                        data-cursor-scale="2"
-                        >3</a
-                    >
-                    <p class="descopMenu__label">Portfolio</p>
-                </li>
-                <li class="descopMenu__item">
-                    <a
-                        class="descopMenu__link"
-                        href="#technologies"
-                        data-cursor="true"
-                        data-cursor-scale="2"
-                        >4</a
-                    >
-                    <p class="descopMenu__label">Technologie</p>
-                </li>
-                <li class="descopMenu__item">
-                    <a
-                        class="descopMenu__link"
-                        href="#contact"
-                        data-cursor="true"
-                        data-cursor-scale="2"
-                        >5</a
-                    >
-                    <p class="descopMenu__label">Kontakt</p>
-                </li>
-            </ul>
-            <span class="descopMenu__line descopMenu__line--bottom"></span>
-        </nav>
-        <button class="burger">
-            <span class="burger__belt burger__belt--first"></span>
-            <span class="burger__belt burger__belt--second"></span>
-            <span class="burger__belt burger__belt--third"></span>
-            <p class="burger__label">Menu</p>
-        </button>
-        <nav class="mobileMenu mobileMenu--close">
-            <ul class="mobileMenu__itemList">
-                <li class="mobileMenu__item" data-section-id="start">
-                    <a href="#start" class="mobileMenu__link">Start</a>
-                </li>
-                <li class="mobileMenu__item" data-section-id="about">
-                    <a href="#about" class="mobileMenu__link">O mnie</a>
-                </li>
-                <li class="mobileMenu__item" data-section-id="portfolio">
-                    <a href="#portfolio" class="mobileMenu__link">Portfolio</a>
-                </li>
-                <li class="mobileMenu__item" data-section-id="technologies">
-                    <a
-                        href="#technologies"
-                        class="mobileMenu__link mobileMenu__link--active"
-                        >Technologie</a
-                    >
-                </li>
-                <li class="mobileMenu__item" data-section-id="contact">
-                    <a href="#contact" class="mobileMenu__link">Kontakt</a>
-                </li>
-            </ul>
-            <p class="mobileMenu__backgroundText"></p>
-        </nav>
-        <main id="start" class="section main">
-            <header class="header">
-                <div class="header__toggler colorModeToggler">
-                    <button
-                        class="colorModeToggler__item colorModeToggler__item--lightMode"
-                        data-cursor="true"
-                        data-cursor-scale="1.5"
-                    >
-                        <svg
-                            version="1.1"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="25"
-                            height="25"
-                            viewBox="0 0 45.16 45.16"
+        <div class="wrapper">
+            <nav class="descopMenu">
+                <span class="descopMenu__line descopMenu__line--top"></span>
+                <ul class="descopMenu__itemList">
+                    <li class="descopMenu__item">
+                        <button
+                            class="descopMenu__button"
+                            data-navigation="start"
+                            data-cursor="true"
+                            data-cursor-scale="2"
                         >
-                            <g>
+                            1
+                        </button>
+                        <p class="descopMenu__label">Start</p>
+                    </li>
+                    <li class="descopMenu__item">
+                        <button
+                            class="descopMenu__button"
+                            data-navigation="about"
+                            data-cursor="true"
+                            data-cursor-scale="2"
+                        >
+                            2
+                        </button>
+                        <p class="descopMenu__label">O mnie</p>
+                    </li>
+                    <li class="descopMenu__item">
+                        <button
+                            class="descopMenu__button"
+                            data-navigation="portfolio"
+                            data-cursor="true"
+                            data-cursor-scale="2"
+                        >
+                            3
+                        </button>
+                        <p class="descopMenu__label">Portfolio</p>
+                    </li>
+                    <li class="descopMenu__item">
+                        <button
+                            class="descopMenu__button"
+                            data-navigation="technologies"
+                            data-cursor="true"
+                            data-cursor-scale="2"
+                        >
+                            4
+                        </button>
+                        <p class="descopMenu__label">Technologie</p>
+                    </li>
+                    <li class="descopMenu__item">
+                        <button
+                            class="descopMenu__button"
+                            data-navigation="contact"
+                            data-cursor="true"
+                            data-cursor-scale="2"
+                        >
+                            5
+                        </button>
+                        <p class="descopMenu__label">Kontakt</p>
+                    </li>
+                </ul>
+                <span class="descopMenu__line descopMenu__line--bottom"></span>
+            </nav>
+            <button class="burger">
+                <span class="burger__belt burger__belt--first"></span>
+                <span class="burger__belt burger__belt--second"></span>
+                <span class="burger__belt burger__belt--third"></span>
+                <p class="burger__label">Menu</p>
+            </button>
+            <nav class="mobileMenu mobileMenu--close">
+                <ul class="mobileMenu__itemList">
+                    <li class="mobileMenu__item" data-navigation="start">
+                        Start
+                    </li>
+                    <li class="mobileMenu__item" data-navigation="about">
+                        O mnie
+                    </li>
+                    <li class="mobileMenu__item" data-navigation="portfolio">
+                        Portfolio
+                    </li>
+                    <li class="mobileMenu__item" data-navigation="technologies">
+                        Technologie
+                    </li>
+                    <li class="mobileMenu__item" data-navigation="contact">
+                        Kontakt
+                    </li>
+                </ul>
+                <p class="mobileMenu__backgroundText"></p>
+            </nav>
+            <main id="start" class="section main">
+                <header class="header">
+                    <div class="header__toggler colorModeToggler">
+                        <button
+                            class="colorModeToggler__item colorModeToggler__item--lightMode"
+                            data-cursor="true"
+                            data-cursor-scale="1.5"
+                        >
+                            <svg
+                                version="1.1"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="25"
+                                height="25"
+                                viewBox="0 0 45.16 45.16"
+                            >
                                 <g>
-                                    <path
-                                        d="M22.58,11.269c-6.237,0-11.311,5.075-11.311,11.312s5.074,11.312,11.311,11.312c6.236,0,11.311-5.074,11.311-11.312
-                S28.816,11.269,22.58,11.269z"
-                                    />
                                     <g>
+                                        <path
+                                            d="M22.58,11.269c-6.237,0-11.311,5.075-11.311,11.312s5.074,11.312,11.311,11.312c6.236,0,11.311-5.074,11.311-11.312
+                S28.816,11.269,22.58,11.269z"
+                                        />
                                         <g>
-                                            <path
-                                                d="M22.58,7.944c-1.219,0-2.207-0.988-2.207-2.206V2.207C20.373,0.988,21.361,0,22.58,0c1.219,0,2.207,0.988,2.207,2.207
+                                            <g>
+                                                <path
+                                                    d="M22.58,7.944c-1.219,0-2.207-0.988-2.207-2.206V2.207C20.373,0.988,21.361,0,22.58,0c1.219,0,2.207,0.988,2.207,2.207
                         v3.531C24.787,6.956,23.798,7.944,22.58,7.944z"
-                                            />
-                                        </g>
-                                        <g>
-                                            <path
-                                                d="M22.58,37.215c-1.219,0-2.207,0.988-2.207,2.207v3.53c0,1.22,0.988,2.208,2.207,2.208c1.219,0,2.207-0.988,2.207-2.208
+                                                />
+                                            </g>
+                                            <g>
+                                                <path
+                                                    d="M22.58,37.215c-1.219,0-2.207,0.988-2.207,2.207v3.53c0,1.22,0.988,2.208,2.207,2.208c1.219,0,2.207-0.988,2.207-2.208
                         v-3.53C24.787,38.203,23.798,37.215,22.58,37.215z"
-                                            />
-                                        </g>
-                                        <g>
-                                            <path
-                                                d="M32.928,12.231c-0.861-0.862-0.861-2.259,0-3.121l2.497-2.497c0.861-0.861,2.259-0.861,3.121,0
+                                                />
+                                            </g>
+                                            <g>
+                                                <path
+                                                    d="M32.928,12.231c-0.861-0.862-0.861-2.259,0-3.121l2.497-2.497c0.861-0.861,2.259-0.861,3.121,0
                         c0.862,0.862,0.862,2.26,0,3.121l-2.497,2.497C35.188,13.093,33.791,13.093,32.928,12.231z"
-                                            />
-                                        </g>
-                                        <g>
-                                            <path
-                                                d="M12.231,32.93c-0.862-0.863-2.259-0.863-3.121,0l-2.497,2.496c-0.861,0.861-0.862,2.26,0,3.121
+                                                />
+                                            </g>
+                                            <g>
+                                                <path
+                                                    d="M12.231,32.93c-0.862-0.863-2.259-0.863-3.121,0l-2.497,2.496c-0.861,0.861-0.862,2.26,0,3.121
                         c0.862,0.861,2.26,0.861,3.121,0l2.497-2.498C13.093,35.188,13.093,33.79,12.231,32.93z"
-                                            />
-                                        </g>
-                                        <g>
-                                            <path
-                                                d="M37.215,22.58c0-1.219,0.988-2.207,2.207-2.207h3.531c1.219,0,2.207,0.988,2.207,2.207c0,1.219-0.988,2.206-2.207,2.206
+                                                />
+                                            </g>
+                                            <g>
+                                                <path
+                                                    d="M37.215,22.58c0-1.219,0.988-2.207,2.207-2.207h3.531c1.219,0,2.207,0.988,2.207,2.207c0,1.219-0.988,2.206-2.207,2.206
                         h-3.531C38.203,24.786,37.215,23.799,37.215,22.58z"
-                                            />
-                                        </g>
-                                        <g>
-                                            <path
-                                                d="M7.944,22.58c0-1.219-0.988-2.207-2.207-2.207h-3.53C0.988,20.373,0,21.361,0,22.58c0,1.219,0.988,2.206,2.207,2.206
+                                                />
+                                            </g>
+                                            <g>
+                                                <path
+                                                    d="M7.944,22.58c0-1.219-0.988-2.207-2.207-2.207h-3.53C0.988,20.373,0,21.361,0,22.58c0,1.219,0.988,2.206,2.207,2.206
                         h3.531C6.956,24.786,7.944,23.799,7.944,22.58z"
-                                            />
-                                        </g>
-                                        <g>
-                                            <path
-                                                d="M32.928,32.93c0.862-0.861,2.26-0.861,3.121,0l2.497,2.497c0.862,0.86,0.862,2.259,0,3.12s-2.259,0.861-3.121,0
+                                                />
+                                            </g>
+                                            <g>
+                                                <path
+                                                    d="M32.928,32.93c0.862-0.861,2.26-0.861,3.121,0l2.497,2.497c0.862,0.86,0.862,2.259,0,3.12s-2.259,0.861-3.121,0
                         l-2.497-2.497C32.066,35.188,32.066,33.791,32.928,32.93z"
-                                            />
-                                        </g>
-                                        <g>
-                                            <path
-                                                d="M12.231,12.231c0.862-0.862,0.862-2.259,0-3.121L9.734,6.614c-0.862-0.862-2.259-0.862-3.121,0
+                                                />
+                                            </g>
+                                            <g>
+                                                <path
+                                                    d="M12.231,12.231c0.862-0.862,0.862-2.259,0-3.121L9.734,6.614c-0.862-0.862-2.259-0.862-3.121,0
                         c-0.862,0.861-0.862,2.259,0,3.12l2.497,2.497C9.972,13.094,11.369,13.094,12.231,12.231z"
-                                            />
+                                                />
+                                            </g>
                                         </g>
                                     </g>
                                 </g>
-                            </g>
-                        </svg>
-                    </button>
-                    <button
-                        class="colorModeToggler__item colorModeToggler__item--darkMode"
-                        data-cursor="true"
-                        data-cursor-scale="1.5"
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="25"
-                            height="25"
-                            viewBox="0 0 487.209 487.209"
+                            </svg>
+                        </button>
+                        <button
+                            class="colorModeToggler__item colorModeToggler__item--darkMode"
+                            data-cursor="true"
+                            data-cursor-scale="1.5"
                         >
-                            <path
-                                d="M482.749 327.984a14.83 14.83 0 00-17.254-2.511c-84.865 44.542-192.218 31.155-263.564-40.19-71.348-71.349-84.731-178.707-40.189-263.569a14.797 14.797 0 00-2.53-17.242 14.79 14.79 0 00-17.175-2.927c-24.167 11.997-46.844 28.03-66.981 48.166-100.071 100.081-100.071 262.352 0 362.433 100.104 100.088 262.36 100.088 362.446 0 20.135-20.136 36.162-42.798 48.16-66.966a14.833 14.833 0 00-2.913-17.194z"
-                            />
-                            <path
-                                d="M305.553 272.248a2.117 2.117 0 00.658 2.463 2.127 2.127 0 002.542.072l33.027-23.458 37.503 15.365a2.141 2.141 0 002.468-.647 2.12 2.12 0 00.064-2.545l-23.46-33.042 15.363-37.489c.357-.871.1-1.878-.65-2.464a2.138 2.138 0 00-2.55-.072l-33.021 23.457-37.51-15.36a2.126 2.126 0 00-2.461.645 2.11 2.11 0 00-.063 2.545l23.461 33.042-15.371 37.488zM218.773 94.54l27.255 2.017L258.9 120.65a2.097 2.097 0 002.306 1.074c.925-.194 1.594-.978 1.677-1.92l2.017-27.237 24.099-12.884a2.13 2.13 0 001.076-2.311 2.11 2.11 0 00-1.921-1.671L260.9 73.685l-12.874-24.094a2.095 2.095 0 00-2.304-1.072c-.928.192-1.596.975-1.678 1.919l-2.019 27.238-24.098 12.882a2.135 2.135 0 00-1.077 2.312c.195.92.979 1.607 1.923 1.67zM391.311 67.296l-.831 15.139a2.13 2.13 0 001.426 2.11c.878.313 1.873 0 2.411-.768l8.797-12.338 15.164.823a2.089 2.089 0 002.11-1.415c.319-.888 0-1.88-.765-2.423l-12.347-8.806.815-15.153a2.137 2.137 0 00-1.41-2.111 2.12 2.12 0 00-2.43.768l-8.813 12.355-15.13-.824a2.096 2.096 0 00-2.107 1.416 2.1 2.1 0 00.762 2.424l12.348 8.803z"
-                            />
-                        </svg>
-                    </button>
-                </div>
-            </header>
-            <div class="hero">
-                <h1 class="hero__heading">
-                    <span class="hero__heading--first-line">Witaj,</span>
-                    <br />
-                    <span class="hero__heading--second-line"
-                        >jestem Patryk</span
-                    >
-                </h1>
-                <p class="hero__subheading">&lt;Web developer&nbsp;/></p>
-                <a class="hero__link" href="#portfolio" tabindex="1">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="25"
+                                height="25"
+                                viewBox="0 0 487.209 487.209"
+                            >
+                                <path
+                                    d="M482.749 327.984a14.83 14.83 0 00-17.254-2.511c-84.865 44.542-192.218 31.155-263.564-40.19-71.348-71.349-84.731-178.707-40.189-263.569a14.797 14.797 0 00-2.53-17.242 14.79 14.79 0 00-17.175-2.927c-24.167 11.997-46.844 28.03-66.981 48.166-100.071 100.081-100.071 262.352 0 362.433 100.104 100.088 262.36 100.088 362.446 0 20.135-20.136 36.162-42.798 48.16-66.966a14.833 14.833 0 00-2.913-17.194z"
+                                />
+                                <path
+                                    d="M305.553 272.248a2.117 2.117 0 00.658 2.463 2.127 2.127 0 002.542.072l33.027-23.458 37.503 15.365a2.141 2.141 0 002.468-.647 2.12 2.12 0 00.064-2.545l-23.46-33.042 15.363-37.489c.357-.871.1-1.878-.65-2.464a2.138 2.138 0 00-2.55-.072l-33.021 23.457-37.51-15.36a2.126 2.126 0 00-2.461.645 2.11 2.11 0 00-.063 2.545l23.461 33.042-15.371 37.488zM218.773 94.54l27.255 2.017L258.9 120.65a2.097 2.097 0 002.306 1.074c.925-.194 1.594-.978 1.677-1.92l2.017-27.237 24.099-12.884a2.13 2.13 0 001.076-2.311 2.11 2.11 0 00-1.921-1.671L260.9 73.685l-12.874-24.094a2.095 2.095 0 00-2.304-1.072c-.928.192-1.596.975-1.678 1.919l-2.019 27.238-24.098 12.882a2.135 2.135 0 00-1.077 2.312c.195.92.979 1.607 1.923 1.67zM391.311 67.296l-.831 15.139a2.13 2.13 0 001.426 2.11c.878.313 1.873 0 2.411-.768l8.797-12.338 15.164.823a2.089 2.089 0 002.11-1.415c.319-.888 0-1.88-.765-2.423l-12.347-8.806.815-15.153a2.137 2.137 0 00-1.41-2.111 2.12 2.12 0 00-2.43.768l-8.813 12.355-15.13-.824a2.096 2.096 0 00-2.107 1.416 2.1 2.1 0 00.762 2.424l12.348 8.803z"
+                                />
+                            </svg>
+                        </button>
+                    </div>
+                </header>
+                <div class="hero">
+                    <h1 class="hero__heading">
+                        <span class="hero__heading--first-line">Witaj,</span>
+                        <br />
+                        <span class="hero__heading--second-line"
+                            >jestem Patryk</span
+                        >
+                    </h1>
+                    <p class="hero__subheading">&lt;Web developer&nbsp;/></p>
                     <button
                         class="button hero__button"
                         data-cursor="true"
-                        tabindex="-1"
+                        data-navigation="portfolio"
+                        tabindex="1"
                     >
                         <span class="button__border button__border--top"></span>
                         <span
@@ -230,416 +232,474 @@
                         ></span>
                         Portfolio
                     </button>
-                </a>
-            </div>
-            <div class="main__background"></div>
-        </main>
-        <section id="about" class="section about">
-            <div class="about__contentSection contentSection">
-                <div class="contentSection__headingWrapper">
-                    <h2 class="contentSection__heading">Developer z pasją</h2>
-                    <div class="contentSection__headingBackground"></div>
                 </div>
-                <p class="contentSection__text">
-                    Tworzę software w zakresie web developmentu:
-                    <strong>strony, sklepy, aplikacje</strong> oraz
-                    <strong>serwisy internetowe.</strong>
-                </p>
-                <p class="contentSection__text">
-                    Specjalizuję się w technologiach frontendowych, lecz
-                    rozwijam się jako full-stack developer, poszerzając ciągle
-                    swoje kompetencje z obszaru back-end. Zajmuję się więc
-                    wizualną częścią "internetu", jak również implementacją
-                    wszelakich funkcjonalności po stronie serwera.
-                </p>
-                <p class="contentSection__text">
-                    W dostarczanych przeze mnie rozwiązaniach duży nacisk kładę
-                    na:
-                </p>
-                <div>
-                    <p class="contentSection__advantages">
-                        Optymalizacji pod wyszukiwarki<span
-                            class="contentSection__caret"
-                        ></span>
+                <div class="main__background"></div>
+            </main>
+            <section id="about" class="section about">
+                <div class="about__contentSection contentSection">
+                    <div class="contentSection__headingWrapper">
+                        <h2 class="contentSection__heading">
+                            Developer z pasją
+                        </h2>
+                        <div class="contentSection__headingBackground"></div>
+                    </div>
+                    <p class="contentSection__text">
+                        Tworzę software w zakresie web developmentu:
+                        <strong>strony, sklepy, aplikacje</strong> oraz
+                        <strong>serwisy internetowe.</strong>
                     </p>
+                    <p class="contentSection__text">
+                        Specjalizuję się w technologiach frontendowych, lecz
+                        rozwijam się jako full-stack developer, poszerzając
+                        ciągle swoje kompetencje z obszaru back-end. Zajmuję się
+                        więc wizualną częścią "internetu", jak również
+                        implementacją wszelakich funkcjonalności po stronie
+                        serwera.
+                    </p>
+                    <p class="contentSection__text">
+                        W dostarczanych przeze mnie rozwiązaniach duży nacisk
+                        kładę na:
+                    </p>
+                    <div>
+                        <p class="contentSection__advantages">
+                            Optymalizacji pod wyszukiwarki<span
+                                class="contentSection__caret"
+                            ></span>
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div class="about__imageSection imageSection">
-                <div class="imageSection__imageBox">
-                    <img
-                        class="imageSection__image"
-                        src="assets/images/me.jpg"
-                        alt="Patryk Mróz - fotografia"
-                    />
-                    <div class="imageSection__background"></div>
+                <div class="about__imageSection imageSection">
+                    <div class="imageSection__imageBox">
+                        <img
+                            class="imageSection__image"
+                            src="assets/images/me.jpg"
+                            alt="Patryk Mróz - fotografia"
+                        />
+                        <div class="imageSection__background"></div>
+                    </div>
                 </div>
-            </div>
-        </section>
-        <section id="portfolio" class="section portfolio">
-            <div class="portfolio__headingWrapper">
-                <h2 class="portfolio__heading">Portfolio</h2>
-                <div class="portfolio__headingBackground"></div>
-            </div>
-            <div class="portfolio__projectsNavigation projectsNavigation">
-                <ul class="projectsNavigation__list">
-                    <li
-                        class="projectsNavigation__item"
-                        data-cursor="true"
-                        data-cursor-scale="2"
-                    ></li>
-                    <li
-                        class="projectsNavigation__item"
-                        data-cursor="true"
-                        data-cursor-scale="2"
-                    ></li>
-                    <li
-                        class="projectsNavigation__item"
-                        data-cursor="true"
-                        data-cursor-scale="2"
-                    ></li>
-                    <li
-                        class="projectsNavigation__item"
-                        data-cursor="true"
-                        data-cursor-scale="2"
-                    ></li>
-                    <li
-                        class="projectsNavigation__item"
-                        data-cursor="true"
-                        data-cursor-scale="2"
-                    ></li>
-                </ul>
-            </div>
-            <div class="portfolio__projectsImagesWrapper">
-                <div
-                    class="portfolio__projectsImages portfolio__projectsImages--descop"
-                    data-cursor="true"
-                    data-cursor-scale="6"
-                ></div>
-                <div
-                    class="portfolio__projectsImages portfolio__projectsImages--mobile"
-                >
-                    <img
-                        class="portfolio__image"
-                        src="assets/images/as.jpg"
-                        draggable="false"
-                    />
-                    <img
-                        class="portfolio__image"
-                        src="assets/images/pm-cms.jpg"
-                        draggable="false"
-                    />
-                    <img
-                        class="portfolio__image"
-                        src="assets/images/portfolio.jpg"
-                        draggable="false"
-                    />
-                    <img
-                        class="portfolio__image"
-                        src="assets/images/komornik.jpg"
-                        draggable="false"
-                    />
-                    <img
-                        class="portfolio__image"
-                        src="assets/images/tauzo.jpg"
-                        draggable="false"
-                    />
+            </section>
+            <section id="portfolio" class="section portfolio">
+                <div class="portfolio__headingWrapper">
+                    <h2 class="portfolio__heading">Portfolio</h2>
+                    <div class="portfolio__headingBackground"></div>
                 </div>
-            </div>
-            <div class="portfolio__content">
-                <ul class="portfolio__projects">
-                    <li class="portfolio__project project">
-                        <h3 class="project__name">AS - strona wizytówka</h3>
-                        <div class="project__descriptionWrapper">
-                            <p class="project__description">
-                                Strona internetowa będąca wizytówką firmy AS -
-                                cięcie, wiercenie w betonie. Wykonana
-                                z&nbsp;pomocą Gatsby.
-                            </p>
-                        </div>
-                        <section class="project__technologies">
-                            <h4 class="project__technologiesHeading">
-                                Technologie
-                            </h4>
-                            <ul class="project__listOfTechnologies">
-                                <li class="project__technology">
-                                    Gatsby (React)
-                                </li>
-                                <li class="project__technology">
-                                    Styled components
-                                </li>
-                                <li class="project__technology">
-                                    Framer motion
-                                </li>
-                            </ul>
-                        </section>
-                        <div class="project__linksBox">
-                            <a
-                                class="project__link link"
-                                href="http://ascieciewiercenie.pl"
-                                data-cursor="true"
-                                data-cursor-scale="4"
-                            >
-                                <span class="link__text">Odwiedź stronę</span>
-                                <svg
-                                    class="link__icon"
-                                    viewBox="0 0 492.004 492.004"
-                                    width="20"
-                                    height="20"
+                <div class="portfolio__projectsNavigation projectsNavigation">
+                    <ul class="projectsNavigation__list">
+                        <li
+                            class="projectsNavigation__item"
+                            data-cursor="true"
+                            data-cursor-scale="2"
+                        ></li>
+                        <li
+                            class="projectsNavigation__item"
+                            data-cursor="true"
+                            data-cursor-scale="2"
+                        ></li>
+                        <li
+                            class="projectsNavigation__item"
+                            data-cursor="true"
+                            data-cursor-scale="2"
+                        ></li>
+                        <li
+                            class="projectsNavigation__item"
+                            data-cursor="true"
+                            data-cursor-scale="2"
+                        ></li>
+                        <li
+                            class="projectsNavigation__item"
+                            data-cursor="true"
+                            data-cursor-scale="2"
+                        ></li>
+                    </ul>
+                </div>
+                <div class="portfolio__projectsImagesWrapper">
+                    <div
+                        class="portfolio__projectsImages portfolio__projectsImages--descop"
+                        data-cursor="true"
+                        data-cursor-scale="6"
+                    ></div>
+                    <div
+                        class="portfolio__projectsImages portfolio__projectsImages--mobile"
+                    >
+                        <img
+                            class="portfolio__image"
+                            src="assets/images/as.jpg"
+                            draggable="false"
+                        />
+                        <img
+                            class="portfolio__image"
+                            src="assets/images/pm-cms.jpg"
+                            draggable="false"
+                        />
+                        <img
+                            class="portfolio__image"
+                            src="assets/images/portfolio.jpg"
+                            draggable="false"
+                        />
+                        <img
+                            class="portfolio__image"
+                            src="assets/images/komornik.jpg"
+                            draggable="false"
+                        />
+                        <img
+                            class="portfolio__image"
+                            src="assets/images/tauzo.jpg"
+                            draggable="false"
+                        />
+                    </div>
+                </div>
+                <div class="portfolio__content">
+                    <ul class="portfolio__projects">
+                        <li class="portfolio__project project">
+                            <h3 class="project__name">AS - strona wizytówka</h3>
+                            <div class="project__descriptionWrapper">
+                                <p class="project__description">
+                                    Strona internetowa będąca wizytówką firmy AS
+                                    - cięcie, wiercenie w betonie. Wykonana
+                                    z&nbsp;pomocą Gatsby.
+                                </p>
+                            </div>
+                            <section class="project__technologies">
+                                <h4 class="project__technologiesHeading">
+                                    Technologie
+                                </h4>
+                                <ul class="project__listOfTechnologies">
+                                    <li class="project__technology">
+                                        Gatsby (React)
+                                    </li>
+                                    <li class="project__technology">
+                                        Styled components
+                                    </li>
+                                    <li class="project__technology">
+                                        Framer motion
+                                    </li>
+                                </ul>
+                            </section>
+                            <div class="project__linksBox">
+                                <a
+                                    class="project__link link"
+                                    href="http://ascieciewiercenie.pl"
+                                    data-cursor="true"
+                                    data-cursor-scale="4"
                                 >
-                                    <path
-                                        d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12
+                                    <span class="link__text"
+                                        >Odwiedź stronę</span
+                                    >
+                                    <svg
+                                        class="link__icon"
+                                        viewBox="0 0 492.004 492.004"
+                                        width="20"
+                                        height="20"
+                                    >
+                                        <path
+                                            d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12
                                    c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028
                                    c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265
                                    c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z"
-                                    />
-                                </svg>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="portfolio__project project active">
-                        <h3 class="project__name">PM CMS - Headlees CMS</h3>
-                        <div class="project__descriptionWrapper">
-                            <p class="project__description">
-                                Projekt autorskiego systemu headless CMS.
-                                Obejmujący stworzenie aplikacji typu SPA w React
-                                oraz rest api z pomocą frameworka PHP - Slim. Do
-                                przechowywania danych użyta została baza danych
-                                Mongo DB.
-                            </p>
-                        </div>
-                        <section class="project__technologies">
-                            <h4 class="project__technologiesHeading">
-                                Technologie
-                            </h4>
-                            <ul class="project__listOfTechnologies">
-                                <li class="project__technology">React</li>
-                                <li class="project__technology">
-                                    Redux toolkit
-                                </li>
-                                <li class="project__technology">Typescript</li>
-                                <li class="project__technology">
-                                    Styled components
-                                </li>
-                                <li class="project__technology">PHP</li>
-                                <li class="project__technology">
-                                    Slim framework
-                                </li>
-                                <li class="project__technology">Mongo DB</li>
-                            </ul>
-                        </section>
-                        <div class="project__linksBox">
-                            <a
-                                class="project__link link"
-                                href="https://patrykmroz.pl"
-                                data-cursor="true"
-                                data-cursor-scale="4"
-                            >
-                                <span class="link__text">Odwiedź stronę</span>
-                                <svg
-                                    class="link__icon"
-                                    viewBox="0 0 492.004 492.004"
-                                    width="20"
-                                    height="20"
+                                        />
+                                    </svg>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="portfolio__project project active">
+                            <h3 class="project__name">PM CMS - Headlees CMS</h3>
+                            <div class="project__descriptionWrapper">
+                                <p class="project__description">
+                                    Projekt autorskiego systemu headless CMS.
+                                    Obejmujący stworzenie aplikacji typu SPA w
+                                    React oraz rest api z pomocą frameworka PHP
+                                    - Slim. Do przechowywania danych użyta
+                                    została baza danych Mongo DB.
+                                </p>
+                            </div>
+                            <section class="project__technologies">
+                                <h4 class="project__technologiesHeading">
+                                    Technologie
+                                </h4>
+                                <ul class="project__listOfTechnologies">
+                                    <li class="project__technology">React</li>
+                                    <li class="project__technology">
+                                        Redux toolkit
+                                    </li>
+                                    <li class="project__technology">
+                                        Typescript
+                                    </li>
+                                    <li class="project__technology">
+                                        Styled components
+                                    </li>
+                                    <li class="project__technology">PHP</li>
+                                    <li class="project__technology">
+                                        Slim framework
+                                    </li>
+                                    <li class="project__technology">
+                                        Mongo DB
+                                    </li>
+                                </ul>
+                            </section>
+                            <div class="project__linksBox">
+                                <a
+                                    class="project__link link"
+                                    href="https://patrykmroz.pl"
+                                    data-cursor="true"
+                                    data-cursor-scale="4"
                                 >
-                                    <path
-                                        d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12
+                                    <span class="link__text"
+                                        >Odwiedź stronę</span
+                                    >
+                                    <svg
+                                        class="link__icon"
+                                        viewBox="0 0 492.004 492.004"
+                                        width="20"
+                                        height="20"
+                                    >
+                                        <path
+                                            d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12
                                    c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028
                                    c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265
                                    c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z"
-                                    />
-                                </svg>
-                            </a>
-                            <a
-                                class="project__link link"
-                                data-cursor="true"
-                                data-cursor-scale="4"
-                            >
-                                <span class="link__text">Github</span>
-                                <svg
-                                    class="link__icon"
-                                    viewBox="0 0 492.004 492.004"
+                                        />
+                                    </svg>
+                                </a>
+                                <a
+                                    class="project__link link"
+                                    data-cursor="true"
+                                    data-cursor-scale="4"
                                 >
-                                    <path
-                                        d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12
+                                    <span class="link__text">Github</span>
+                                    <svg
+                                        class="link__icon"
+                                        viewBox="0 0 492.004 492.004"
+                                    >
+                                        <path
+                                            d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12
                                        c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028
                                        c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265
                                        c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z"
-                                        width="20"
-                                        height="20"
-                                    />
-                                </svg>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="portfolio__project project">
-                        <h3 class="project__name">patrykmroz.pl</h3>
-                        <div class="project__descriptionWrapper">
-                            <p class="project__description">
-                                Projekt własnej strony internetowej, wykonanej w
-                                html, scss i typescript.
-                            </p>
-                        </div>
-                        <section class="project__technologies">
-                            <h4 class="project__technologiesHeading">
-                                Technologie
-                            </h4>
-                            <ul class="project__listOfTechnologies">
-                                <li class="project__technology">Typescript</li>
-                                <li class="project__technology">Scss</li>
-                                <li class="project__technology">Gsap</li>
-                                <li class="project__technology">Three.js</li>
-                                <li class="project__technology">Snowpack</li>
-                            </ul>
-                        </section>
-                        <div class="project__linksBox">
-                            <a
-                                class="project__link link"
-                                data-cursor="true"
-                                data-cursor-scale="4"
-                            >
-                                <span class="link__text">Github</span>
-                                <svg
-                                    class="link__icon"
-                                    viewBox="0 0 492.004 492.004"
+                                            width="20"
+                                            height="20"
+                                        />
+                                    </svg>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="portfolio__project project">
+                            <h3 class="project__name">patrykmroz.pl</h3>
+                            <div class="project__descriptionWrapper">
+                                <p class="project__description">
+                                    Projekt własnej strony internetowej,
+                                    wykonanej w html, scss i typescript.
+                                </p>
+                            </div>
+                            <section class="project__technologies">
+                                <h4 class="project__technologiesHeading">
+                                    Technologie
+                                </h4>
+                                <ul class="project__listOfTechnologies">
+                                    <li class="project__technology">
+                                        Typescript
+                                    </li>
+                                    <li class="project__technology">Scss</li>
+                                    <li class="project__technology">Gsap</li>
+                                    <li class="project__technology">
+                                        Three.js
+                                    </li>
+                                    <li class="project__technology">
+                                        Snowpack
+                                    </li>
+                                </ul>
+                            </section>
+                            <div class="project__linksBox">
+                                <a
+                                    class="project__link link"
+                                    data-cursor="true"
+                                    data-cursor-scale="4"
                                 >
-                                    <path
-                                        d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12
+                                    <span class="link__text">Github</span>
+                                    <svg
+                                        class="link__icon"
+                                        viewBox="0 0 492.004 492.004"
+                                    >
+                                        <path
+                                            d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12
                                        c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028
                                        c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265
                                        c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z"
+                                            width="20"
+                                            height="20"
+                                        />
+                                    </svg>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="portfolio__project project">
+                            <h3 class="project__name">Kancelaria komornicza</h3>
+                            <div class="project__descriptionWrapper">
+                                <p class="project__description">
+                                    Strona internetowa dla Komornika Sądowego
+                                    Marka Kędziory w Pułtusku. Projekt wykonany
+                                    z użyciem frameworka Gatsby.
+                                </p>
+                            </div>
+                            <section class="project__technologies">
+                                <h4 class="project__technologiesHeading">
+                                    Technologie
+                                </h4>
+                                <ul class="project__listOfTechnologies">
+                                    <li class="project__technology">
+                                        Gatsby (React)
+                                    </li>
+                                    <li class="project__technology">
+                                        Scss modules
+                                    </li>
+                                    <li class="project__technology">
+                                        Framer motion
+                                    </li>
+                                </ul>
+                            </section>
+                            <div class="project__linksBox">
+                                <a
+                                    class="project__link link"
+                                    href="https://komornik-kedziora.pl"
+                                    data-cursor="true"
+                                    data-cursor-scale="4"
+                                >
+                                    <span class="link__text"
+                                        >Odwiedź stronę</span
+                                    >
+                                    <svg
+                                        class="link__icon"
+                                        viewBox="0 0 492.004 492.004"
                                         width="20"
                                         height="20"
-                                    />
-                                </svg>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="portfolio__project project">
-                        <h3 class="project__name">Kancelaria komornicza</h3>
-                        <div class="project__descriptionWrapper">
-                            <p class="project__description">
-                                Strona internetowa dla Komornika Sądowego Marka
-                                Kędziory w Pułtusku. Projekt wykonany z użyciem
-                                frameworka Gatsby.
-                            </p>
-                        </div>
-                        <section class="project__technologies">
-                            <h4 class="project__technologiesHeading">
-                                Technologie
-                            </h4>
-                            <ul class="project__listOfTechnologies">
-                                <li class="project__technology">
-                                    Gatsby (React)
-                                </li>
-                                <li class="project__technology">
-                                    Scss modules
-                                </li>
-                                <li class="project__technology">
-                                    Framer motion
-                                </li>
-                            </ul>
-                        </section>
-                        <div class="project__linksBox">
-                            <a
-                                class="project__link link"
-                                href="https://komornik-kedziora.pl"
-                                data-cursor="true"
-                                data-cursor-scale="4"
-                            >
-                                <span class="link__text">Odwiedź stronę</span>
-                                <svg
-                                    class="link__icon"
-                                    viewBox="0 0 492.004 492.004"
-                                    width="20"
-                                    height="20"
-                                >
-                                    <path
-                                        d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12
+                                    >
+                                        <path
+                                            d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12
                                    c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028
                                    c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265
                                    c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z"
-                                    />
-                                </svg>
-                            </a>
-                            <a
-                                class="project__link link"
-                                data-cursor="true"
-                                data-cursor-scale="4"
-                            >
-                                <span class="link__text">Github</span>
-                                <svg
-                                    class="link__icon"
-                                    viewBox="0 0 492.004 492.004"
+                                        />
+                                    </svg>
+                                </a>
+                                <a
+                                    class="project__link link"
+                                    data-cursor="true"
+                                    data-cursor-scale="4"
                                 >
-                                    <path
-                                        d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12
+                                    <span class="link__text">Github</span>
+                                    <svg
+                                        class="link__icon"
+                                        viewBox="0 0 492.004 492.004"
+                                    >
+                                        <path
+                                            d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12
                                        c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028
                                        c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265
                                        c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z"
-                                        width="20"
-                                        height="20"
-                                    />
-                                </svg>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="portfolio__project project">
-                        <h3 class="project__name">Tauzo</h3>
-                        <div class="project__descriptionWrapper">
-                            <p class="project__description">
-                                Strona internetowa na zlecenie firmy Tauzo -
-                                żaluzje, plisy, rolety. Serwis wykonany z pomocą
-                                systemu CMS wordpress.
-                            </p>
-                        </div>
-                        <section class="project__technologies">
-                            <h4 class="project__technologiesHeading">
-                                Technologie
-                            </h4>
-                            <ul class="project__listOfTechnologies">
-                                <li class="project__technology">Wordpress</li>
+                                            width="20"
+                                            height="20"
+                                        />
+                                    </svg>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="portfolio__project project">
+                            <h3 class="project__name">Tauzo</h3>
+                            <div class="project__descriptionWrapper">
+                                <p class="project__description">
+                                    Strona internetowa na zlecenie firmy Tauzo -
+                                    żaluzje, plisy, rolety. Serwis wykonany z
+                                    pomocą systemu CMS wordpress.
+                                </p>
+                            </div>
+                            <section class="project__technologies">
+                                <h4 class="project__technologiesHeading">
+                                    Technologie
+                                </h4>
+                                <ul class="project__listOfTechnologies">
+                                    <li class="project__technology">
+                                        Wordpress
+                                    </li>
 
-                                <li class="project__technology">Elementor</li>
-                                <li class="project__technology">PHP</li>
-                            </ul>
-                        </section>
-                        <div class="project__linksBox">
-                            <a
-                                class="project__link link"
-                                href="https://tauzo.pl"
-                                data-cursor="true"
-                                data-cursor-scale="4"
-                            >
-                                <span class="link__text">Odwiedź stronę</span>
-                                <svg
-                                    class="link__icon"
-                                    viewBox="0 0 492.004 492.004"
-                                    width="20"
-                                    height="20"
+                                    <li class="project__technology">
+                                        Elementor
+                                    </li>
+                                    <li class="project__technology">PHP</li>
+                                </ul>
+                            </section>
+                            <div class="project__linksBox">
+                                <a
+                                    class="project__link link"
+                                    href="https://tauzo.pl"
+                                    data-cursor="true"
+                                    data-cursor-scale="4"
                                 >
-                                    <path
-                                        d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12
+                                    <span class="link__text"
+                                        >Odwiedź stronę</span
+                                    >
+                                    <svg
+                                        class="link__icon"
+                                        viewBox="0 0 492.004 492.004"
+                                        width="20"
+                                        height="20"
+                                    >
+                                        <path
+                                            d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12
                                    c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028
                                    c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265
                                    c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z"
-                                    />
-                                </svg>
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
-        <section id="technologies" class="section">Technologie</section>
-        <section id="contact" class="section">
-            Kontakt
-            <footer class="footer">
-                Strona stworzona z 💖
-                &copy;&nbsp;2021&nbsp;-&nbsp;Patryk&nbsp;Mróz
-            </footer>
-        </section>
-        <div class="cursor"></div>
-        <div class="cursorShadow"></div>
+                                        />
+                                    </svg>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section id="technologies" class="section technologies">
+                <div class="technologies__content">
+                    <div class="technologies__headingWrapper">
+                        <h2 class="technologies__heading">Technologie</h2>
+                        <div class="technologies__headingBackground"></div>
+                    </div>
+                    <div class="technologies__description">
+                        <p class="technologies__paragraph">
+                            Głównym obszarem moich zainteresowań jest
+                            <strong>front-end</strong>, a w szczególności
+                            <strong>React</strong> oraz cały jego ekosystem.
+                            Znajomość szerokiej gamy bibliotek javascriptowych
+                            oraz nowoczesnych frameworków takich jak
+                            <strong>Next.js i Gatsby</strong> bazujących na
+                            React umożliwia mi tworzenie wydajnych, szytych na
+                            miarę projektów webowych. W pracy używam też
+                            <strong>Typescript</strong>, którego jedną z wielu
+                            zalet jest to, że przyczynia się do pisania kodu
+                            lepszej jakości.
+                        </p>
+                        <p class="technologies__paragraph">
+                            Wykazuję się również znajomością jezyków
+                            back-endowych
+                            <strong>PHP i Node.js</strong>, jak też ich
+                            frameworków
+                            <strong>Express.js oraz Slim framework</strong>.
+                            Posiadam także doświadczenie w tworzeniu serwisów
+                            internetowych z pomocą systemu
+                            <strong>CMS Wordpress</strong> oraz wtyczki dla
+                            biznesów e-commerce <strong>WooCommerce</strong>.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section id="contact" class="section">
+                Kontakt
+                <footer class="footer">
+                    Strona stworzona z 💖
+                    &copy;&nbsp;2021&nbsp;-&nbsp;Patryk&nbsp;Mróz
+                </footer>
+            </section>
+            <div class="cursor"></div>
+            <div class="cursorShadow"></div>
+        </div>
         <script type="module" src="./ts/index.js"></script>
     </body>
 </html>

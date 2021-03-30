@@ -50,7 +50,7 @@
             }
 
             &:hover {
-                .descopMenu__link {
+                .descopMenu__button {
                     color: var(--primary-color);
                 }
 
@@ -76,10 +76,12 @@
             }
         }
 
-        &__link {
+        &__button {
             @include position(absolute, 0, 0, 0, 0);
+            width: 100%;
             text-align: center;
             line-height: 50px;
+            color: var(--font-color);
             transition: 0.3s;
 
             &.active {
@@ -89,7 +91,7 @@
 
         &__label {
             @include position(absolute, 0, -90px, 0, auto);
-            font-size: 12px;
+            font-size: 11px;
             text-align: left;
             width: 80px;
             line-height: 50px;
