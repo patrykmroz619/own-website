@@ -12,7 +12,7 @@ const CallbacksMap = new Map<
     SectionScrollListenerCallback[]
 >();
 
-export const sectionScrollListener: SectionScrollListenerType = (
+export const addSectionScrollListener: SectionScrollListenerType = (
     identifier,
     callback
 ) => {

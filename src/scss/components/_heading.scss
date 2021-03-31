@@ -1,0 +1,15 @@
+.headingWrapper {
+    position: relative;
+    width: fit-content;
+
+    &__heading {
+        padding: 0 $spacing-s;
+    }
+
+    &__background {
+        @include position(absolute, 0, 0, 0, 0);
+        background-color: var(--primary-color);
+        transform-origin: center left;
+        transform: scaleX(0);
+    }
+}

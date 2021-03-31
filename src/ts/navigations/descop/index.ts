@@ -1,5 +1,3 @@
-import { applyViewDetectorCallback } from '@utils/viewDetector';
-
 const descopNavItems = [...document.querySelectorAll('.descopMenu__link')];
 
 export const handleDescopNavigation = () => {
@@ -14,6 +12,4 @@ export const handleDescopNavigation = () => {
             }
         });
     };
-
-    applyViewDetectorCallback(setActiveItem);
 };

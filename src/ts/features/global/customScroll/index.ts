@@ -1,3 +1,4 @@
+import { dispatchScrollChange } from '@utils/sectionScrollListener';
 import { handleControls } from './controls';
 import { handleNavigateButtons } from './navigateButtons';
 import { scrollAnimation } from './scrollAnimation';
@@ -15,11 +16,20 @@ export const scrollToSectionByIdx = (sectionIdx: number) => {
         sectionIdx >= 0 && sectionIdx < sections.length && !isScrolling;
 
     if (isScrollingEnable) {
-        currentSectionIdx = sectionIdx;
-        const currentSection = sections[currentSectionIdx];
+        const fromSectionIdentifier = sections[currentSectionIdx].getAttribute(
+            'id'
+        );
+        const toSectionIdentifier = sections[sectionIdx].getAttribute('id');
 
-        isScrolling = true;
-        scrollAnimation(currentSection, onScrollComplete);
+        if (fromSectionIdentifier && toSectionIdentifier) {
+            currentSectionIdx = sectionIdx;
+            const currentSection = sections[currentSectionIdx];
+
+            isScrolling = true;
+
+            dispatchScrollChange(fromSectionIdentifier, toSectionIdentifier);
+            scrollAnimation(currentSection, onScrollComplete);
+        }
     }
 };
 

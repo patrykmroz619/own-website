@@ -26,7 +26,7 @@
         }
 
         @include min-vw(xxl) {
-            margin-left: $spacing-xxxl;
+            margin-left: $spacing-xxl;
             margin-right: $spacing-xl;
         }
     }
@@ -42,23 +42,11 @@
 
     .contentSection {
         &__headingWrapper {
-            position: relative;
-        }
-
-        &__heading {
             margin-bottom: $spacing-s;
-            opacity: 0;
 
             @include min-vw(s) {
                 margin-bottom: $spacing-m;
             }
-        }
-
-        &__headingBackground {
-            @include position(absolute, 0, 0, 0, 0);
-            background-color: var(--primary-color);
-            transform-origin: center left;
-            transform: scaleX(0);
         }
 
         &__text {
