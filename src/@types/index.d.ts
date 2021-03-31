@@ -15,3 +15,10 @@ declare type BackgroundShapePositions = Record<
     BackgroundShapesNames,
     Position3d[]
 >;
+
+declare type SectionId =
+    | 'start'
+    | 'about'
+    | 'portfolio'
+    | 'technologies'
+    | 'contact';

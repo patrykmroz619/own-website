@@ -1,16 +1,11 @@
 type SectionScrollListenerCallback = (isSectionVisible: boolean) => void;
 
-type SectionIdentifier = string;
-
 type SectionScrollListenerType = (
-    identifier: SectionIdentifier,
+    identifier: SectionId,
     callback: SectionScrollListenerCallback
 ) => void;
 
-const CallbacksMap = new Map<
-    SectionIdentifier,
-    SectionScrollListenerCallback[]
->();
+const CallbacksMap = new Map<SectionId, SectionScrollListenerCallback[]>();
 
 export const addSectionScrollListener: SectionScrollListenerType = (
     identifier,
@@ -20,10 +15,7 @@ export const addSectionScrollListener: SectionScrollListenerType = (
     CallbacksMap.set(identifier, [...callbacks, callback]);
 };
 
-type DispatchScrollChange = (
-    from: SectionIdentifier,
-    to: SectionIdentifier
-) => void;
+type DispatchScrollChange = (from: SectionId, to: SectionId) => void;
 
 export const dispatchScrollChange: DispatchScrollChange = (from, to) => {
     const fromCallbacks = CallbacksMap.get(from);
