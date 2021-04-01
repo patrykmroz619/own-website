@@ -15,7 +15,9 @@ const getProjectsElements = (project: Element) => {
     return { name, description, technologiesHeading, technologies, links };
 };
 
-const revealAnimation = (project: Element) => {
+let timeline: gsap.core.Timeline;
+
+const fadeIn = (project: Element) => {
     const {
         name,
         description,
@@ -29,7 +31,7 @@ const revealAnimation = (project: Element) => {
         y: 25,
     });
 
-    const timeline = gsap.timeline();
+    timeline = gsap.timeline({ delay: 0.6 });
 
     timeline.to(name, { opacity: 1, y: 0 });
     timeline.to(description, { opacity: 1, y: 0 }, '-=0.3');
@@ -42,15 +44,34 @@ const revealAnimation = (project: Element) => {
     });
 };
 
+const fadeOut = (project: Element) => {
+    const {
+        name,
+        description,
+        technologiesHeading,
+        technologies,
+        links,
+    } = getProjectsElements(project);
+
+    if (timeline) timeline.pause();
+
+    gsap.to(
+        [name, description, technologiesHeading, ...technologies, ...links],
+        {
+            opacity: 0,
+        }
+    );
+};
+
+let beforeActiveElementIndex: number | null = null;
+
 export const setActiveProject = (index: number) => {
     setActiveProjectsNavigationItem(index);
 
-    for (let i = 0; i < projects.length; i++) {
-        if (i === index) {
-            projects[i].classList.add('active');
-            revealAnimation(projects[i]);
-        } else {
-            projects[i].classList.remove('active');
-        }
+    if (beforeActiveElementIndex !== null) {
+        fadeOut(projects[beforeActiveElementIndex]);
     }
+    fadeIn(projects[index]);
+
+    beforeActiveElementIndex = index;
 };

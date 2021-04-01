@@ -1,5 +1,4 @@
-import gsap from 'gsap';
-import { addSectionScrollListener } from '@utils/sectionScrollListener';
+import { gsap } from 'gsap';
 import { getHeadingAnimationTimeline } from '@utils/headingTimeline';
 
 const image = document.querySelector('.imageSection__imageBox') as HTMLElement;

@@ -9,6 +9,7 @@
 
     $item-size: 25px;
     height: $item-size;
+    opacity: 0;
 
     &__item {
         position: relative;

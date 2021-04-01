@@ -22,9 +22,9 @@ const onSlideStart: OnSlideEvent = (x) => {
 export const setActiveElement = (idOfActiveElement: number) => {
     setActiveProject(idOfActiveElement);
 
-    currentElementPosition = idOfActiveElement * window.innerWidth;
-    nextElementPosition = (idOfActiveElement + 1) * window.innerWidth;
-    previousElementPosition = (idOfActiveElement - 1) * window.innerWidth;
+    currentElementPosition = idOfActiveElement * imagesBox.offsetWidth;
+    nextElementPosition = (idOfActiveElement + 1) * imagesBox.offsetWidth;
+    previousElementPosition = (idOfActiveElement - 1) * imagesBox.offsetWidth;
 };
 
 const indexOfLastProject = numberOfProjects - 1;
