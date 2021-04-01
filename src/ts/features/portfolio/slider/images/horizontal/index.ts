@@ -1,5 +1,5 @@
 import { slideEventListener, OnSlideEvent } from '@utils/slideEventListener';
-import { setActiveProject } from '../../contentSlider';
+import { setActiveProject } from '../../content';
 
 const imagesBox = document.querySelector(
     '.portfolio__projectsImages--mobile'
@@ -77,7 +77,7 @@ const slideAnimation = () => {
 
 let unsubscribeSlideListener: () => void = () => null;
 
-export const runMobileSlider = () => {
+export const runHorizontalSlider = () => {
     isSliderActive = true;
     setActiveElement(idOfActiveElement);
     slideAnimation();
@@ -88,7 +88,7 @@ export const runMobileSlider = () => {
     );
 };
 
-export const turnMobileSliderOff = () => {
+export const turnHorizontalSliderOff = () => {
     isSliderActive = false;
     unsubscribeSlideListener();
 };

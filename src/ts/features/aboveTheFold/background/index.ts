@@ -5,7 +5,8 @@ import { getAmbientLight, getPointLight } from './objects/lights';
 import { getRenderer } from './objects/renderer';
 import { shapesAnimation } from './animations';
 import { getPrimaryColor } from '@utils/primaryColor';
-import { mediaQuery } from '@utils/mediaQuery';
+import { addMediaQueryListener } from '@utils/mediaQueryListener';
+import { controlAnimation } from '../controls';
 
 const root = document.querySelector('.main__background') as HTMLDivElement;
 
@@ -17,7 +18,11 @@ export const setBackgroundAnimation = (): void => {
     const setMobilePosition = () => scene.position.set(0, -30, 0);
     const setDescopPosition = () => scene.position.set(45, 0, 0);
 
-    mediaQuery('(min-width: 640px)', setDescopPosition, setMobilePosition);
+    addMediaQueryListener(
+        '(min-width: 640px)',
+        setDescopPosition,
+        setMobilePosition
+    );
 
     const sceneOfCubes = new Scene();
     const sceneOfLights1 = new Scene();
@@ -83,24 +88,7 @@ export const setBackgroundAnimation = (): void => {
         refresh();
     };
 
-    const onScroll = () => {
-        if (window.innerHeight < window.scrollY && isAnimate) {
-            pauseAnimation();
-        } else if (window.innerHeight >= window.scrollY && !isAnimate) {
-            resumeAnimation();
-        }
-    };
-
-    const onVisibilityChange = () => {
-        if (document.hidden && isAnimate) {
-            pauseAnimation();
-        } else if (!isAnimate) {
-            resumeAnimation();
-        }
-    };
-
-    window.addEventListener('scroll', onScroll);
-    document.addEventListener('visibilitychange', onVisibilityChange);
+    controlAnimation(resumeAnimation, pauseAnimation);
 
     refresh();
 };

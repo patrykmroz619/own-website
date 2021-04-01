@@ -4,7 +4,7 @@ import { getImagesObjects } from './objects/imageObjects';
 import { getRenderer } from './objects/cssRenderer';
 import { calculateSpeedForNextFrame } from './animations/calculateSpeed';
 import { transformToPosition } from './animations/transform';
-import { setActiveProject } from '../../contentSlider';
+import { setActiveProject } from '../../content';
 import { OnSlideEvent, slideEventListener } from '@utils/slideEventListener';
 
 const root = document.querySelector(

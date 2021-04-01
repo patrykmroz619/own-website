@@ -1,5 +1,5 @@
-import { gsap, Linear, Back } from 'gsap';
-import { mediaQuery } from '@utils/mediaQuery';
+import { gsap, Linear } from 'gsap';
+import { addMediaQueryListener } from '@utils/mediaQueryListener';
 import { onInteractiveElement, onNotInteractiveElement } from './actions';
 
 const cursorElement = document.querySelector('.cursor') as HTMLDivElement;
@@ -46,5 +46,5 @@ export const handleCustomCursor = () => {
         rotateCursor.pause();
     };
 
-    mediaQuery('(hover: hover)', onQueryMatch, onQueryNotMatch);
+    addMediaQueryListener('(hover: hover)', onQueryMatch, onQueryNotMatch);
 };
