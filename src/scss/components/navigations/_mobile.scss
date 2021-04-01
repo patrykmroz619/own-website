@@ -30,7 +30,6 @@ $burger-height: 25px;
 
         &--third {
             bottom: 0;
-            // transform-origin: center center;
             transform: rotate(0deg);
             transition: 0.5s;
         }
@@ -67,10 +66,13 @@ $burger-height: 25px;
 }
 
 .mobileMenu {
-    @include position(fixed, 0, 0, 0, 0);
+    @include position(fixed, 0, auto, auto, 0);
+    width: 100vw;
+    height: var(--vh);
     background-color: var(--bg-color);
     opacity: 0;
     z-index: 10;
+    overflow: hidden;
 
     &__itemList {
         @include position(absolute, 50%, 50%);
@@ -82,10 +84,16 @@ $burger-height: 25px;
 
     &__item {
         margin-bottom: $spacing-xs;
-        text-align: right;
+        padding: 15px 0;
         width: 130px;
-        transform: translateX(20px);
+
+        font-size: 20px;
+        text-align: right;
+        text-transform: uppercase;
+
         opacity: 0;
+        transform: translateX(20px);
+        transition: 0.3s;
 
         $offset: 25px;
 
@@ -108,19 +116,10 @@ $burger-height: 25px;
         &:nth-child(5) {
             margin-left: 0;
         }
-    }
 
-    &__link {
-        display: block;
-        padding: 15px 0;
-        text-transform: uppercase;
-        font-size: 20px;
-
-        transition: 0.3s;
-    }
-
-    .active &__link {
-        color: var(--primary-color);
+        &.active {
+            color: var(--primary-color);
+        }
     }
 
     &__backgroundText {

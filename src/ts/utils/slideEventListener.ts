@@ -6,7 +6,7 @@ type SlideEventListener = (
     root: HTMLElement,
     onStart?: OnSlideEvent,
     onMove?: OnSlideEvent,
-    onEnd?: OnSlideEvent,
+    onEnd?: (() => void) | null,
     preventDefault?: boolean
 ) => UnsubscribeListener;
 
@@ -32,7 +32,7 @@ export const slideEventListener: SlideEventListener = (
 
     const onMouseUp = (e: MouseEvent) => {
         preventDefault && e.preventDefault();
-        onEnd && onEnd(e.clientX, e.clientY);
+        onEnd && onEnd();
     };
 
     const onTouchStart = (e: TouchEvent) => {
@@ -44,6 +44,7 @@ export const slideEventListener: SlideEventListener = (
     };
 
     const onTouchMove = (e: TouchEvent) => {
+        e.stopPropagation();
         preventDefault && e.preventDefault();
         if (onMove) {
             const touch = e.touches[0];
@@ -54,8 +55,7 @@ export const slideEventListener: SlideEventListener = (
     const onTouchEnd = (e: TouchEvent) => {
         preventDefault && e.preventDefault();
         if (onEnd) {
-            const touch = e.touches[0];
-            onEnd(touch.pageX, touch.pageY);
+            onEnd();
         }
     };
 

@@ -7,24 +7,15 @@ const imagesBox = document.querySelector(
 
 const numberOfProjects = imagesBox.children.length;
 
-let prevSlideX = 0;
 let position = 0;
 let isSliderActive = false;
 let idOfActiveElement = 0;
 let currentElementPosition = 0;
-let nextElementPosition = 0;
-let previousElementPosition = 0;
-
-const onSlideStart: OnSlideEvent = (x) => {
-    prevSlideX = x;
-};
 
 export const setActiveElement = (idOfActiveElement: number) => {
     setActiveProject(idOfActiveElement);
 
     currentElementPosition = idOfActiveElement * imagesBox.offsetWidth;
-    nextElementPosition = (idOfActiveElement + 1) * imagesBox.offsetWidth;
-    previousElementPosition = (idOfActiveElement - 1) * imagesBox.offsetWidth;
 };
 
 const indexOfLastProject = numberOfProjects - 1;
@@ -38,30 +29,34 @@ const changeToPreviousElement = () => {
     setActiveElement(idOfActiveElement);
 };
 
+let startSlideX = 0;
+let prevSlideX = 0;
+let slideActive = true;
+
+const onSlideStart: OnSlideEvent = (x) => {
+    prevSlideX = x;
+    startSlideX = x;
+};
+
 const onSlide: OnSlideEvent = (x) => {
     const delta = prevSlideX - x;
+    const touchDistance = startSlideX - x;
+    prevSlideX = x;
     position += delta;
 
-    const distanceToCurrentElementPosition = Math.abs(
-        currentElementPosition - position
-    );
-    const distanceToNextElementPosition = Math.abs(
-        nextElementPosition - position
-    );
-    const distanceToPrevElementPosition = Math.abs(
-        previousElementPosition - position
-    );
-
-    if (distanceToCurrentElementPosition > distanceToNextElementPosition - 80) {
-        changeToNextElement();
-    } else if (
-        distanceToCurrentElementPosition >
-        distanceToPrevElementPosition - 80
-    ) {
-        changeToPreviousElement();
+    if (slideActive) {
+        if (touchDistance > 100) {
+            changeToNextElement();
+            slideActive = false;
+        } else if (touchDistance < -100) {
+            slideActive = false;
+            changeToPreviousElement();
+        }
     }
+};
 
-    prevSlideX = x;
+const onSlideEnd = () => {
+    slideActive = true;
 };
 
 const slideAnimation = () => {
@@ -84,7 +79,8 @@ export const runHorizontalSlider = () => {
     unsubscribeSlideListener = slideEventListener(
         imagesBox,
         onSlideStart,
-        onSlide
+        onSlide,
+        onSlideEnd
     );
 };
 

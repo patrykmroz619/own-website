@@ -21,7 +21,7 @@ export const fadeInElements = () => {
     timeline = gsap.timeline();
 
     gsap.set(headingWrapper, { opacity: 1 });
-    gsap.set(projectsWrapper, { opacity: 1, x: 0 });
+    gsap.set([projectsWrapper, projectImagesWrapper], { opacity: 1, x: 0 });
 
     const headingTimeline = getHeadingAnimationTimeline(headingWrapper);
 

@@ -3,7 +3,6 @@ $aspectRatio: '6/8';
 .portfolio {
     display: flex;
     flex-direction: column;
-    height: 100vh;
     justify-content: center;
     padding: $spacing-s 0;
 
@@ -44,12 +43,16 @@ $aspectRatio: '6/8';
             display: none;
         }
 
-        @media (min-aspect-ratio: $aspectRatio) and (min-width: 600px) {
+        @media (min-aspect-ratio: $aspectRatio) and (min-width: 1024px) {
             @include position(absolute, $spacing-l, 50%);
             display: block;
             transform: translateX(50%);
             z-index: 2;
         }
+    }
+
+    &__headingWrapper {
+        margin: 0 auto;
     }
 
     &__heading {
@@ -80,7 +83,7 @@ $aspectRatio: '6/8';
             display: none;
             @media (min-aspect-ratio: $aspectRatio) {
                 display: block;
-                height: 100vh;
+                height: var(--vh);
 
                 div,
                 img {
@@ -144,6 +147,7 @@ $aspectRatio: '6/8';
 
     &__projects {
         position: relative;
+        pointer-events: none;
 
         height: 100%;
         margin-top: $spacing-s;

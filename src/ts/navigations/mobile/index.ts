@@ -1,4 +1,5 @@
-import { BackgroundTextChange, closeMenu, openMenu } from './actions';
+import { addAllSectionsScrollListener } from '@utils/sectionScrollListener';
+import { backgroundTextChange, closeMenu, openMenu } from './actions';
 
 const burger = document.querySelector('.burger') as HTMLButtonElement;
 const menu = document.querySelector('.mobileMenu') as HTMLElement;
@@ -11,29 +12,37 @@ const backgroundText = document.querySelector(
 
 let isMobileMenuOpen = false;
 
+const onBurgerClick = () => {
+    if (isMobileMenuOpen) {
+        burger.classList.add('active');
+        openMenu(menu, menuItems);
+    } else {
+        burger.classList.remove('active');
+        closeMenu(menu, menuItems);
+    }
+
+    isMobileMenuOpen = !isMobileMenuOpen;
+};
+
 export const handleMobileNavigation = () => {
-    const onBurgerClick = () => {
-        if (isMobileMenuOpen) {
-            burger.classList.add('active');
-            openMenu(menu, menuItems);
-        } else {
-            burger.classList.remove('active');
-            closeMenu(menu, menuItems);
-        }
+    const onScroll = (from: SectionId, to: SectionId) => {
+        const itemToDisable = menuItems.find(
+            (item) => item.dataset.navigation === from
+        );
+        const itemToEnable = menuItems.find(
+            (item) => item.dataset.navigation === to
+        );
 
-        isMobileMenuOpen = !isMobileMenuOpen;
-    };
-
-    const onSectionDetect = (id: string) => {
-        const item = menuItems.find((item) => item.dataset.sectionId === id);
-        if (item) {
-            menuItems.forEach((item) => item.classList.remove('active'));
+        if (itemToDisable && itemToEnable) {
+            itemToDisable.classList.remove('active');
+            itemToEnable.classList.add('active');
             burger.classList.remove('active');
-            item.classList.add('active');
-            BackgroundTextChange(item, backgroundText);
+            backgroundTextChange(itemToEnable, backgroundText);
             closeMenu(menu, menuItems);
         }
     };
+
+    addAllSectionsScrollListener(onScroll);
 
     burger.addEventListener('click', onBurgerClick);
     menuItems.forEach((item) => {

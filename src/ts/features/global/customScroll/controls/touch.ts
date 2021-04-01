@@ -11,9 +11,9 @@ export const handleTouch = () => {
 
         const distance = touchEndPosition - touchStartPosition;
 
-        if (distance < -50) {
+        if (distance < -100) {
             nextSection();
-        } else if (distance > 50) {
+        } else if (distance > 100) {
             prevSection();
         }
     };

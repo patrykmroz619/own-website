@@ -5,22 +5,44 @@ type SectionScrollListenerType = (
     callback: SectionScrollListenerCallback
 ) => void;
 
-const CallbacksMap = new Map<SectionId, SectionScrollListenerCallback[]>();
+const SectionListenerCallbacksMap = new Map<
+    SectionId,
+    SectionScrollListenerCallback[]
+>();
 
 export const addSectionScrollListener: SectionScrollListenerType = (
     identifier,
     callback
 ) => {
-    const callbacks = CallbacksMap.get(identifier) || [];
-    CallbacksMap.set(identifier, [...callbacks, callback]);
+    const callbacks = SectionListenerCallbacksMap.get(identifier) || [];
+    SectionListenerCallbacksMap.set(identifier, [...callbacks, callback]);
+};
+
+type AllSectionsScrollListenerCallback = (
+    from: SectionId,
+    to: SectionId
+) => void;
+
+type AllSectionsScrollListenerType = (
+    callback: AllSectionsScrollListenerCallback
+) => void;
+
+const allSectionsListenerCallbacks: AllSectionsScrollListenerCallback[] = [];
+
+export const addAllSectionsScrollListener: AllSectionsScrollListenerType = (
+    callback
+) => {
+    allSectionsListenerCallbacks.push(callback);
 };
 
 type DispatchScrollChange = (from: SectionId, to: SectionId) => void;
 
 export const dispatchScrollChange: DispatchScrollChange = (from, to) => {
-    const fromCallbacks = CallbacksMap.get(from);
+    const fromCallbacks = SectionListenerCallbacksMap.get(from);
     fromCallbacks?.forEach((callback) => callback(false));
 
-    const toCallbacks = CallbacksMap.get(to);
+    const toCallbacks = SectionListenerCallbacksMap.get(to);
     toCallbacks?.forEach((callback) => callback(true));
+
+    allSectionsListenerCallbacks.forEach((callback) => callback(from, to));
 };

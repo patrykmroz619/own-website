@@ -34,7 +34,7 @@ export const closeMenu = (menu: HTMLElement, menuItems: Element[]) => {
     menu.classList.add('mobileMenu--close');
 };
 
-export const BackgroundTextChange = (
+export const backgroundTextChange = (
     item: Element,
     backgroundText: HTMLElement
 ) => {

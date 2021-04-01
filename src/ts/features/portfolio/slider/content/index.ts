@@ -1,7 +1,9 @@
 import { gsap } from 'gsap';
 import { setActiveProjectsNavigationItem } from '../navigation';
 
-const projects = [...document.querySelectorAll('.portfolio__project')];
+const projects = [
+    ...document.querySelectorAll('.portfolio__project'),
+] as HTMLElement[];
 
 const getProjectsElements = (project: Element) => {
     const name = project.querySelector('.project__name');
@@ -17,7 +19,7 @@ const getProjectsElements = (project: Element) => {
 
 let timeline: gsap.core.Timeline;
 
-const fadeIn = (project: Element) => {
+const fadeIn = (project: HTMLElement) => {
     const {
         name,
         description,
@@ -25,6 +27,8 @@ const fadeIn = (project: Element) => {
         technologies,
         links,
     } = getProjectsElements(project);
+
+    project.style.pointerEvents = 'initial';
 
     gsap.set([name, description, technologiesHeading, technologies, links], {
         opacity: 0,
@@ -44,7 +48,7 @@ const fadeIn = (project: Element) => {
     });
 };
 
-const fadeOut = (project: Element) => {
+const fadeOut = (project: HTMLElement) => {
     const {
         name,
         description,
@@ -52,6 +56,8 @@ const fadeOut = (project: Element) => {
         technologies,
         links,
     } = getProjectsElements(project);
+
+    project.style.pointerEvents = 'none';
 
     if (timeline) timeline.pause();
 

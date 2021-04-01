@@ -35,7 +35,7 @@ export const scrollToSectionByIdx = (sectionIdx: number) => {
     }
 };
 
-export const scrollToSectionByIdentifier = (sectionIdentifier: string) => {
+export const scrollToSectionByIdentifier = (sectionIdentifier: SectionId) => {
     const sectionIdx = sections.findIndex(
         (section) => section.getAttribute('id') === sectionIdentifier
     );
@@ -51,4 +51,9 @@ export const nextSection = () => scrollToSectionByIdx(currentSectionIdx + 1);
 export const runCustomScroll = () => {
     handleControls();
     handleNavigateButtons();
+    scrollToSectionByIdentifier('start');
+
+    window.addEventListener('resize', () => {
+        scrollAnimation(sections[currentSectionIdx], onScrollComplete);
+    });
 };

@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     transition: 0.5s;
+    pointer-events: none;
 
     @media (min-aspect-ratio: #{$aspectRatio}) {
         justify-content: center;
@@ -30,9 +31,9 @@
     }
 
     &__descriptionWrapper {
-        overflow-x: auto;
         margin-bottom: $spacing-xs;
         opacity: 0;
+        overflow-x: auto;
 
         @include min-vw(s) {
             margin-bottom: $spacing-s;
