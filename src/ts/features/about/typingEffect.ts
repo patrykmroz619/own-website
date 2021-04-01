@@ -4,16 +4,17 @@ const textElement = document.querySelector(
     '.contentSection__advantages'
 ) as HTMLElement;
 
-export const runTyping = () => {
-    let wordIndex = 0;
-    let letterIndex = 0;
+let wordIndex = 0;
+let letterIndex = 0;
 
-    textElement.textContent = '';
+textElement.textContent = '';
 
-    let pauseTime = 0;
-    let oldTime = 0;
+let pauseTime = 0;
+let oldTime = 0;
+let paused = true;
 
-    const typing = (newTime: number) => {
+const typing = (newTime: number) => {
+    if (!paused) {
         const delta = newTime - oldTime;
         pauseTime -= delta;
         oldTime = newTime;
@@ -24,8 +25,9 @@ export const runTyping = () => {
             }
 
             if (words[wordIndex]) {
-                if (words[wordIndex][letterIndex]) {
-                    textElement.textContent += words[wordIndex][letterIndex];
+                const letter = words[wordIndex][letterIndex];
+                if (letter) {
+                    textElement.textContent += letter;
                     letterIndex++;
                     pauseTime = 100;
                 } else {
@@ -38,7 +40,14 @@ export const runTyping = () => {
             }
         }
         requestAnimationFrame(typing);
-    };
+    }
+};
 
+export const runTyping = () => {
+    paused = false;
     typing(0);
+};
+
+export const pauseTyping = () => {
+    paused = true;
 };

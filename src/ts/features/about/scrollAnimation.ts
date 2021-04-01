@@ -10,7 +10,7 @@ const texts = [...document.querySelectorAll('.about__contentSection p')];
 
 let contentTimeline: gsap.core.Timeline;
 
-const fadeIn = () => {
+export const fadeInContent = () => {
     gsap.fromTo(
         image,
         {
@@ -50,7 +50,7 @@ const fadeIn = () => {
     });
 };
 
-const fadeOut = () => {
+export const fadeOutContent = () => {
     gsap.to(image, {
         opacity: 0,
         x: -100,
@@ -59,14 +59,4 @@ const fadeOut = () => {
     contentTimeline.clear(true);
 
     gsap.to([headingWrapper, texts], { opacity: 0, x: 100 });
-};
-
-export const applyScrollAnimations = () => {
-    addSectionScrollListener('about', (sectionVisible) => {
-        if (sectionVisible) {
-            fadeIn();
-        } else {
-            fadeOut();
-        }
-    });
 };
