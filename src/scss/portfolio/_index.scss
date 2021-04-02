@@ -83,7 +83,7 @@ $aspectRatio: '6/8';
             display: none;
             @media (min-aspect-ratio: $aspectRatio) {
                 display: block;
-                height: var(--vh);
+                height: var(--windowHeight);
 
                 div,
                 img {

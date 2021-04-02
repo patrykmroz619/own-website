@@ -4,7 +4,7 @@ const resizeFixVhEvent = new Event('resizefixvh');
 
 export const fixVh = () => {
     const onResize = () => {
-        setCssVariable('--vh', `${window.innerHeight}px`);
+        setCssVariable('--windowHeight', `${window.innerHeight}px`);
         window.dispatchEvent(resizeFixVhEvent);
     };
 

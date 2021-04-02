@@ -68,7 +68,7 @@ $burger-height: 25px;
 .mobileMenu {
     @include position(fixed, 0, auto, auto, 0);
     width: 100vw;
-    height: var(--vh);
+    height: var(--windowHeight);
     background-color: var(--bg-color);
     opacity: 0;
     z-index: 10;
