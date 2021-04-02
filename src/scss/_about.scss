@@ -42,10 +42,14 @@
 
     .contentSection {
         &__headingWrapper {
-            margin-bottom: $spacing-s;
+            margin: 0 auto $spacing-s;
 
             @include min-vw(s) {
                 margin-bottom: $spacing-m;
+            }
+
+            @include min-vw(l) {
+                margin: 0 0 $spacing-m;
             }
         }
 

@@ -7,7 +7,6 @@ import { runAboutSectionEffects } from './about';
 import { runPortfolioEffects } from './portfolio';
 
 export const runFeatures = () => {
-    runCustomScroll();
     handleCustomCursor();
     handleColorSchemes();
     runAboveTheFoldEffects();
@@ -15,4 +14,5 @@ export const runFeatures = () => {
     runOnHoverTextEffect();
     runAboutSectionEffects();
     runPortfolioEffects();
+    runCustomScroll();
 };

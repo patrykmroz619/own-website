@@ -29,7 +29,7 @@ $aspectRatio: '6/8';
     }
 
     &__headingWrapper {
-        margin-bottom: $spacing-xs;
+        margin: 0 auto $spacing-xs;
 
         @include min-vw(s) {
             margin-bottom: $spacing-s;
@@ -53,10 +53,6 @@ $aspectRatio: '6/8';
         @include landscape-and-max-vw(xl) {
             display: none;
         }
-    }
-
-    &__heading {
-        text-align: center;
     }
 
     &__projectsImagesWrapper {

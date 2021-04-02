@@ -3,6 +3,7 @@ import { dispatchScrollChange } from '@utils/sectionScrollListener';
 import { handleControls } from './controls';
 import { handleNavigateButtons } from './navigateButtons';
 import { scrollAnimation } from './scrollAnimation';
+import { hasPageBeenRefreshed } from '@utils/hasPageBeenRefreshed.ts';
 
 export const pageWrapper = document.querySelector('.wrapper') as HTMLElement;
 const sections = [...document.querySelectorAll('.section')] as HTMLElement[];
@@ -31,6 +32,8 @@ export const scrollToSectionByIdx = (sectionIdx: number) => {
 
             dispatchScrollChange(fromSectionIdentifier, toSectionIdentifier);
             scrollAnimation(currentSection, onScrollComplete);
+
+            sessionStorage.setItem('sectionIdx', String(sectionIdx));
         }
     }
 };
@@ -48,10 +51,23 @@ export const scrollToSectionByIdentifier = (sectionIdentifier: SectionId) => {
 export const prevSection = () => scrollToSectionByIdx(currentSectionIdx - 1);
 export const nextSection = () => scrollToSectionByIdx(currentSectionIdx + 1);
 
+const setInitialScrollPosition = () => {
+    if (hasPageBeenRefreshed()) {
+        const currentSectionBeforeReloadIdx = sessionStorage.getItem(
+            'sectionIdx'
+        );
+        if (currentSectionBeforeReloadIdx) {
+            scrollToSectionByIdx(Number(currentSectionBeforeReloadIdx));
+        }
+    } else {
+        scrollToSectionByIdentifier('start');
+    }
+};
+
 export const runCustomScroll = () => {
     handleControls();
     handleNavigateButtons();
-    scrollToSectionByIdentifier('start');
+    setInitialScrollPosition();
 
     window.addEventListener('resizefixvh', () => {
         scrollAnimation(sections[currentSectionIdx], onScrollComplete);
