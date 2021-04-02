@@ -1,15 +1,21 @@
-const descopNavItems = [...document.querySelectorAll('.descopMenu__link')];
+import { addAllSectionsScrollListener } from '@utils/sectionScrollListener';
+
+const descopNavItems = [
+    ...document.querySelectorAll('.descopMenu__button'),
+] as HTMLElement[];
 
 export const handleDescopNavigation = () => {
-    const setActiveItem = (idOfSection: string) => {
-        descopNavItems.forEach((item: Element) => {
-            const hrefValue = item.getAttribute('href')?.slice(1);
-
-            if (idOfSection === hrefValue) {
-                item.classList.add('active');
-            } else {
+    const onScroll = (from: SectionId, to: SectionId) => {
+        descopNavItems.forEach((item) => {
+            if (item.dataset.navigation === from) {
                 item.classList.remove('active');
+            }
+
+            if (item.dataset.navigation === to) {
+                item.classList.add('active');
             }
         });
     };
+
+    addAllSectionsScrollListener(onScroll);
 };
