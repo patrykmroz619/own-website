@@ -107,7 +107,7 @@ export const runVerticalSlider = () => {
     isSliderActive = true;
     slideAnimation();
     idOfCurrentElement = INITIAL_ACTIVE_ELEMENT;
-    setActiveProject(idOfCurrentElement);
+    setActiveElement(idOfCurrentElement);
     unsubscribeSlideListener = slideEventListener(
         root,
         onSlideStart,
