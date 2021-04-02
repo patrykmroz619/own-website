@@ -53,7 +53,7 @@ export const runCustomScroll = () => {
     handleNavigateButtons();
     scrollToSectionByIdentifier('start');
 
-    window.addEventListener('resize', () => {
+    window.addEventListener('resizefixvh', () => {
         scrollAnimation(sections[currentSectionIdx], onScrollComplete);
     });
 };

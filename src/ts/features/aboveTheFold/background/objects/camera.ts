@@ -13,7 +13,7 @@ export const getCamera = (targetElement: HTMLElement): PerspectiveCamera => {
         camera.aspect = targetElement.offsetWidth / targetElement.offsetHeight;
         camera.updateProjectionMatrix();
     };
-    window.addEventListener('resize', onResize);
+    window.addEventListener('resizefixvh', onResize);
 
     onResize();
 

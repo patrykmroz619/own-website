@@ -6,7 +6,7 @@ export const getRenderer = (targetElement: HTMLElement): WebGLRenderer => {
     const onResize = () => {
         renderer.setSize(targetElement.offsetWidth, targetElement.offsetHeight);
     };
-    window.addEventListener('resize', onResize);
+    window.addEventListener('resizefixvh', onResize);
 
     onResize();
 
