@@ -5,6 +5,7 @@ import { runAboveTheFoldEffects } from './aboveTheFold';
 import { runOnHoverTextEffect } from './global/onHoverTextEffect';
 import { runAboutSectionEffects } from './about';
 import { runPortfolioEffects } from './portfolio';
+import { runTechnologiesEffects } from './technologies';
 
 export const runFeatures = () => {
     handleCustomCursor();
@@ -14,5 +15,7 @@ export const runFeatures = () => {
     runOnHoverTextEffect();
     runAboutSectionEffects();
     runPortfolioEffects();
+    runTechnologiesEffects();
+
     runCustomScroll();
 };

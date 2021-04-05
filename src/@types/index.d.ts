@@ -22,3 +22,10 @@ declare type SectionId =
     | 'portfolio'
     | 'technologies'
     | 'contact';
+
+declare type Technology = {
+    name: string;
+    iconSrc?: string;
+};
+
+declare type TechnologiesBoardScheme = Array<Array<Technology | null>>;

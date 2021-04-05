@@ -11,14 +11,5 @@ export const controlAnimation = (resume: Callback, pause: Callback) => {
         }
     };
 
-    const onVisibilityChange = () => {
-        if (document.hidden) {
-            pause();
-        } else {
-            resume();
-        }
-    };
-
     addSectionScrollListener('start', onSectionScroll);
-    document.addEventListener('visibilitychange', onVisibilityChange);
 };
