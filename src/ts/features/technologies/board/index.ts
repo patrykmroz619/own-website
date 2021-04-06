@@ -1,6 +1,7 @@
 import { Scene, Vector2 } from 'three';
 import { CSS3DObject } from 'three/examples/jsm/renderers/CSS3DRenderer';
 import { boardScheme } from './boardScheme';
+import { runMoveEffectOnScene } from './move';
 import { generateBoard } from './objects/board';
 import { getCamera } from './objects/camera';
 import { getRenderer } from './objects/cssRenderer';
@@ -17,13 +18,17 @@ const mouse = new Vector2();
 
 scene.add(...objects);
 
+runMoveEffectOnScene(scene);
+
 let isBoardAnimation = false;
 
 const randomReplace = () => {
-    const randomIndex1 = Math.floor(Math.random() * objects.length);
-    const randomIndex2 = Math.floor(Math.random() * objects.length);
+    if (isBoardAnimation && document.visibilityState === 'visible') {
+        const randomIndex1 = Math.floor(Math.random() * objects.length);
+        const randomIndex2 = Math.floor(Math.random() * objects.length);
 
-    replacePosition(objects[randomIndex1], objects[randomIndex2]);
+        replacePosition(objects[randomIndex1], objects[randomIndex2]);
+    }
     setTimeout(randomReplace, 5000);
 };
 
@@ -36,8 +41,6 @@ window.addEventListener('mousemove', (e) => onMove(e.clientX, e.clientY));
 
 const boardAnimation = () => {
     if (isBoardAnimation) {
-        scene.rotation.y = (mouse.x - 0.5) / 5;
-        scene.rotation.x = (mouse.y - 0.5) / 5;
         renderer.render(scene, camera);
         requestAnimationFrame(boardAnimation);
     }

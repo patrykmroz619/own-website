@@ -24,17 +24,25 @@ export const shapesAnimation: ShapesAnimationType = (cubes) => {
         const currentAnimationName =
             animations[iterationOfAnimation % animations.length];
 
-        iterationOfAnimation++;
+        if (document.visibilityState === 'visible') {
+            iterationOfAnimation++;
 
-        switch (currentAnimationName) {
-            case 'cube':
-                randomToCubeAnimation(cubes, positions[currentAnimationName]);
-                break;
-            case 'random':
-                sphereToRandomAnimation(cubes, positions[currentAnimationName]);
-                break;
-            default:
-                defaultAnimation(cubes, positions[currentAnimationName]);
+            switch (currentAnimationName) {
+                case 'cube':
+                    randomToCubeAnimation(
+                        cubes,
+                        positions[currentAnimationName]
+                    );
+                    break;
+                case 'random':
+                    sphereToRandomAnimation(
+                        cubes,
+                        positions[currentAnimationName]
+                    );
+                    break;
+                default:
+                    defaultAnimation(cubes, positions[currentAnimationName]);
+            }
         }
 
         pausableTimeout.start(currentAnimationName == 'cube' ? 23000 : 8000);

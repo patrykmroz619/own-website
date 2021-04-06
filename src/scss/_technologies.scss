@@ -1,18 +1,24 @@
+$aspectRatio: '8/5';
+
 .technologies {
     display: flex;
     flex-direction: column;
 
-    @include min-vw(l) {
+    @media (min-aspect-ratio: $aspectRatio) {
         flex-direction: row;
-        margin: $spacing-l $spacing-xxxl $spacing-l $spacing-xxl;
         align-items: center;
     }
 
-    &__content {
-        flex-basis: 60%;
+    @include min-vw(l) {
+        margin: $spacing-l $spacing-xxxl $spacing-l $spacing-xxl;
+    }
 
+    &__content {
         display: flex;
         flex-direction: column;
+        flex-basis: 55%;
+        flex-shrink: 0;
+
         padding: $spacing-s $spacing-s 0;
         overflow: hidden;
 
@@ -20,7 +26,17 @@
             padding: $spacing-l $spacing-l 0;
         }
 
+        @include min-vw(m) {
+            max-height: 350px;
+        }
+
+        @media (min-aspect-ratio: $aspectRatio) {
+            padding: $spacing-s $spacing-s 0;
+            max-height: 100%;
+        }
+
         @include min-vw(l) {
+            padding: $spacing-l $spacing-l 0 0;
             flex-basis: 50%;
         }
     }
@@ -43,12 +59,14 @@
     }
 
     &__board {
-        flex-basis: 40%;
-        flex-shrink: 0;
+        flex-grow: 1;
+
+        @media (min-aspect-ratio: $aspectRatio) {
+            flex-basis: 50%;
+            height: 100%;
+        }
 
         @include min-vw(l) {
-            height: 100%;
-            flex-basis: 50%;
         }
     }
 }

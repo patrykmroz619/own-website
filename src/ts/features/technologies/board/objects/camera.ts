@@ -7,7 +7,7 @@ export const getCamera = (targetElement: HTMLElement): PerspectiveCamera => {
         0.1,
         1000
     );
-    camera.position.z = 900;
+    camera.position.z = 880;
 
     const onResize = () => {
         camera.aspect = targetElement.offsetWidth / targetElement.offsetHeight;
