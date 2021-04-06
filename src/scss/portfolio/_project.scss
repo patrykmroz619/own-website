@@ -29,7 +29,6 @@
     &__descriptionWrapper {
         margin-bottom: $spacing-xs;
         opacity: 0;
-        overflow-x: auto;
 
         @include min-vw(s) {
             margin-bottom: $spacing-s;

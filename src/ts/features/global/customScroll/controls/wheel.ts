@@ -4,9 +4,9 @@ export const handleWheel = () => {
     const onWheel = (e: WheelEvent) => {
         e.preventDefault();
 
-        if (e.deltaY > 80) {
+        if (e.deltaY > 50) {
             nextSection();
-        } else if (e.deltaY < -80) {
+        } else if (e.deltaY < -50) {
             prevSection();
         }
     };

@@ -45,10 +45,6 @@ $aspectRatio: '8/5';
         margin: 0 auto $spacing-xs;
     }
 
-    &__description {
-        overflow-y: auto;
-    }
-
     &__paragraph {
         margin-bottom: $spacing-xs;
         font-size: 15px;
