@@ -4,6 +4,7 @@
 
     &__heading {
         padding: 0 $spacing-s;
+        user-select: none;
     }
 
     &__background {

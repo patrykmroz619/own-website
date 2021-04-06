@@ -55,14 +55,19 @@ $aspectRatio: '8/5';
     }
 
     &__board {
+        margin-top: -25px;
+        margin-bottom: -15px;
         flex-grow: 1;
 
-        @media (min-aspect-ratio: $aspectRatio) {
-            flex-basis: 50%;
-            height: 100%;
+        @include min-vw(s) {
+            margin-top: -50px;
+            margin-bottom: -30px;
         }
 
-        @include min-vw(l) {
+        @media (min-aspect-ratio: $aspectRatio) {
+            margin-top: 0;
+            flex-basis: 50%;
+            height: 100%;
         }
     }
 }
@@ -110,7 +115,6 @@ $aspectRatio: '8/5';
         content: '';
         @include position(absolute, 0, 0, 0, 0);
         background-color: var(--primary-color);
-        backdrop-filter: blur(5px);
         opacity: 0.1;
     }
 }

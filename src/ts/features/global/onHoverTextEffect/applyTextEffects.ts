@@ -10,7 +10,7 @@ export const applyTextEffects = (classesOfElements: string[]) => {
         chars.push(...splitText(classOfElement))
     );
 
-    const onMouseEnter = (char: HTMLElement) => {
+    const onEnter = (char: HTMLElement) => {
         const tl = gsap.timeline();
 
         const primaryColor = getPrimaryColor();
@@ -26,7 +26,7 @@ export const applyTextEffects = (classesOfElements: string[]) => {
         });
     };
 
-    const onMouseLeave = (char: HTMLElement) => {
+    const onLeave = (char: HTMLElement) => {
         const fontColor = getCssVariable('--font-color');
         gsap.to(char, {
             scale: 1,
@@ -37,7 +37,9 @@ export const applyTextEffects = (classesOfElements: string[]) => {
     };
 
     chars.forEach((char) => {
-        char.addEventListener('mouseenter', () => onMouseEnter(char));
-        char.addEventListener('mouseleave', () => onMouseLeave(char));
+        char.addEventListener('touchstart', () => onEnter(char));
+        char.addEventListener('touchend', () => onLeave(char));
+        char.addEventListener('mouseenter', () => onEnter(char));
+        char.addEventListener('mouseleave', () => onLeave(char));
     });
 };

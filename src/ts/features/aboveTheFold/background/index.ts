@@ -84,8 +84,8 @@ export const setBackgroundAnimation = (): void => {
 
     const resumeAnimation = () => {
         isAnimate = true;
-        resumeShapesAnimation();
         refresh();
+        resumeShapesAnimation();
     };
 
     controlAnimation(resumeAnimation, pauseAnimation);
