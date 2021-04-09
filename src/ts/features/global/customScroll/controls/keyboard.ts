@@ -4,12 +4,7 @@ export const handleKeyboard = () => {
     const onKeyDown = (e: KeyboardEvent) => {
         if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
             e.preventDefault();
-        }
-
-        if (e.key === 'ArrowDown' || e.key === 's' || e.key === 'S') {
-            nextSection();
-        } else if (e.key === 'ArrowUp' || e.key === 'w' || e.key === 'W') {
-            prevSection();
+            e.key === 'ArrowUp' ? prevSection() : nextSection();
         }
     };
 

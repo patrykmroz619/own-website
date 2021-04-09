@@ -6,6 +6,7 @@ const classessOfTextElements = [
     '.contentSection__heading',
     '.portfolio__heading',
     '.technologies__heading',
+    '.contact__heading',
 ];
 
 export const runOnHoverTextEffect = () =>
