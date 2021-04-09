@@ -6,6 +6,7 @@ import { runOnHoverTextEffect } from './global/onHoverTextEffect';
 import { runAboutSectionEffects } from './about';
 import { runPortfolioEffects } from './portfolio';
 import { runTechnologiesEffects } from './technologies';
+import { runContactFeatures } from './contact';
 
 export const runFeatures = () => {
     handleCustomCursor();
@@ -16,6 +17,7 @@ export const runFeatures = () => {
     runAboutSectionEffects();
     runPortfolioEffects();
     runTechnologiesEffects();
+    runContactFeatures();
 
     runCustomScroll();
 };

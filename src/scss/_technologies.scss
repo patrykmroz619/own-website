@@ -58,6 +58,7 @@ $aspectRatio: '8/5';
         margin-top: -25px;
         margin-bottom: -15px;
         flex-grow: 1;
+        opacity: 0;
 
         @include min-vw(s) {
             margin-top: -50px;
