@@ -109,6 +109,10 @@
         @include min-vw(xs) {
             flex-direction: column;
         }
+
+        @include min-vw(m) {
+            display: none;
+        }
     }
 
     &__link {
@@ -117,6 +121,15 @@
 
         @include min-vw(xs) {
             margin-bottom: $spacing-xs;
+        }
+    }
+
+    &__buttonLink {
+        display: none;
+        @include min-vw(m) {
+            display: inline;
+            opacity: 0;
+            margin: $spacing-s $spacing-s 0 0;
         }
     }
 

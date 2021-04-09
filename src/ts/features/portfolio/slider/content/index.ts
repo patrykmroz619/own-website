@@ -13,8 +13,16 @@ const getProjectsElements = (project: Element) => {
     );
     const technologies = project.querySelectorAll('.project__technology');
     const links = project.querySelectorAll('.project__link');
+    const buttonLinks = project.querySelectorAll('.project__buttonLink');
 
-    return { name, description, technologiesHeading, technologies, links };
+    return {
+        name,
+        description,
+        technologiesHeading,
+        technologies,
+        links,
+        buttonLinks,
+    };
 };
 
 let timeline: gsap.core.Timeline;
@@ -26,14 +34,25 @@ const fadeIn = (project: HTMLElement) => {
         technologiesHeading,
         technologies,
         links,
+        buttonLinks,
     } = getProjectsElements(project);
 
     project.style.pointerEvents = 'initial';
 
-    gsap.set([name, description, technologiesHeading, technologies, links], {
-        opacity: 0,
-        y: 25,
-    });
+    gsap.set(
+        [
+            name,
+            description,
+            technologiesHeading,
+            technologies,
+            links,
+            buttonLinks,
+        ],
+        {
+            opacity: 0,
+            y: 25,
+        }
+    );
 
     timeline = gsap.timeline({ delay: 0.6 });
 
@@ -43,7 +62,7 @@ const fadeIn = (project: HTMLElement) => {
     technologies.forEach((technology) => {
         timeline.to(technology, { opacity: 1, y: 0 }, '-=0.45');
     });
-    links.forEach((link) => {
+    [...links, ...buttonLinks].forEach((link) => {
         timeline.to(link, { opacity: 1, y: 0 }, '-=0.3');
     });
 };
@@ -55,6 +74,7 @@ const fadeOut = (project: HTMLElement) => {
         technologiesHeading,
         technologies,
         links,
+        buttonLinks,
     } = getProjectsElements(project);
 
     project.style.pointerEvents = 'none';
@@ -62,7 +82,14 @@ const fadeOut = (project: HTMLElement) => {
     if (timeline) timeline.pause();
 
     gsap.to(
-        [name, description, technologiesHeading, ...technologies, ...links],
+        [
+            name,
+            description,
+            technologiesHeading,
+            ...technologies,
+            ...links,
+            ...buttonLinks,
+        ],
         {
             opacity: 0,
         }
