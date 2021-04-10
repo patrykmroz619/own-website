@@ -1,0 +1,25 @@
+{
+    "name": "patrykmroz/portfolio-api",
+    "authors": [
+        {
+            "name": "Patryk Mróz",
+            "email": "patrykmroz619@wp.pl"
+        }
+    ],
+    "description": "The api for the patrykmroz.pl website.",
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    },
+    "require": {
+        "phpmailer/phpmailer": "^6.4",
+        "vlucas/phpdotenv": "^5.3"
+    },
+    "scripts": {
+        "run-api": "php -S 127.0.0.1:5000"
+    },
+    "config": {
+        "process-timeout": 0
+    }
+}
