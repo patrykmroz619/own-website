@@ -7,10 +7,12 @@ import { runAboutSectionEffects } from './about';
 import { runPortfolioEffects } from './portfolio';
 import { runTechnologiesEffects } from './technologies';
 import { runContactFeatures } from './contact';
+import { handleKeyboardNavigation } from './global/keyboardNavigation';
 
 export const runFeatures = () => {
     handleCustomCursor();
     handleColorSchemes();
+    handleKeyboardNavigation();
     runAboveTheFoldEffects();
 
     runOnHoverTextEffect();

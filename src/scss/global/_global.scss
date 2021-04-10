@@ -2,10 +2,6 @@ body * {
     @include min-vw(l) {
         cursor: none;
     }
-
-    &:focus {
-        outline: 1px solid var(--primary-color);
-    }
 }
 
 html {
@@ -70,4 +66,12 @@ strong {
 .section {
     position: relative;
     height: var(--windowHeight);
+}
+
+.wrapper *:focus {
+    outline: none;
+}
+
+.wrapper.tabbing *:focus {
+    outline: 1px solid var(--primary-color);
 }
