@@ -116,6 +116,7 @@
                             class="colorModeToggler__item colorModeToggler__item--lightMode"
                             data-cursor="true"
                             data-cursor-scale="1.5"
+                            data-keyboard-focus="true"
                         >
                             <svg
                                 version="1.1"
@@ -188,6 +189,7 @@
                             class="colorModeToggler__item colorModeToggler__item--darkMode"
                             data-cursor="true"
                             data-cursor-scale="1.5"
+                            data-keyboard-focus="true"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -218,7 +220,7 @@
                         class="button hero__button"
                         data-cursor="true"
                         data-navigation="portfolio"
-                        tabindex="1"
+                        data-keyboard-focus="true"
                     >
                         <span class="button__border button__border--top"></span>
                         <span
@@ -290,31 +292,46 @@
                 </div>
                 <div class="portfolio__projectsNavigation projectsNavigation">
                     <ul class="projectsNavigation__list">
-                        <li
-                            class="projectsNavigation__item"
-                            data-cursor="true"
-                            data-cursor-scale="2"
-                        ></li>
-                        <li
-                            class="projectsNavigation__item"
-                            data-cursor="true"
-                            data-cursor-scale="2"
-                        ></li>
-                        <li
-                            class="projectsNavigation__item"
-                            data-cursor="true"
-                            data-cursor-scale="2"
-                        ></li>
-                        <li
-                            class="projectsNavigation__item"
-                            data-cursor="true"
-                            data-cursor-scale="2"
-                        ></li>
-                        <li
-                            class="projectsNavigation__item"
-                            data-cursor="true"
-                            data-cursor-scale="2"
-                        ></li>
+                        <li class="projectsNavigation__item">
+                            <button
+                                class="projectsNavigation__button"
+                                data-cursor="true"
+                                data-cursor-scale="1.7"
+                                data-keyboard-focus="true"
+                            ></button>
+                        </li>
+                        <li class="projectsNavigation__item">
+                            <button
+                                class="projectsNavigation__button"
+                                data-cursor="true"
+                                data-cursor-scale="1.7"
+                                data-keyboard-focus="true"
+                            ></button>
+                        </li>
+                        <li class="projectsNavigation__item">
+                            <button
+                                class="projectsNavigation__button"
+                                data-cursor="true"
+                                data-cursor-scale="1.7"
+                                data-keyboard-focus="true"
+                            ></button>
+                        </li>
+                        <li class="projectsNavigation__item">
+                            <button
+                                class="projectsNavigation__button"
+                                data-cursor="true"
+                                data-cursor-scale="1.7"
+                                data-keyboard-focus="true"
+                            ></button>
+                        </li>
+                        <li class="projectsNavigation__item">
+                            <button
+                                class="projectsNavigation__button"
+                                data-cursor="true"
+                                data-cursor-scale="1.7"
+                                data-keyboard-focus="true"
+                            ></button>
+                        </li>
                     </ul>
                 </div>
                 <div class="portfolio__projectsImagesWrapper">
@@ -386,6 +403,7 @@
                                     href="http://ascieciewiercenie.pl"
                                     data-cursor="true"
                                     data-cursor-scale="4"
+                                    tabindex="-1"
                                 >
                                     <span class="link__text"
                                         >Odwiedź stronę</span
@@ -409,10 +427,12 @@
                                 <a
                                     class="project__buttonLink"
                                     href="http://ascieciewiercenie.pl"
+                                    tabindex="-1"
                                 >
                                     <button
                                         class="button project__button"
                                         data-cursor="true"
+                                        tabindex="-1"
                                     >
                                         <span
                                             class="button__border button__border--top"
@@ -472,6 +492,7 @@
                                     href="https://pm-cms.netlify.app"
                                     data-cursor="true"
                                     data-cursor-scale="4"
+                                    tabindex="-1"
                                 >
                                     <span class="link__text"
                                         >Odwiedź stronę</span
@@ -494,6 +515,7 @@
                                     class="project__link link"
                                     data-cursor="true"
                                     data-cursor-scale="4"
+                                    tabindex="-1"
                                 >
                                     <span class="link__text">Github</span>
                                     <svg
@@ -515,10 +537,12 @@
                                 <a
                                     class="project__buttonLink"
                                     href="https://pm-cms.netlify.app"
+                                    tabindex="-1"
                                 >
                                     <button
                                         class="button project__button"
                                         data-cursor="true"
+                                        tabindex="-1"
                                     >
                                         <span
                                             class="button__border button__border--top"
@@ -535,10 +559,15 @@
                                         Odwiedź stronę
                                     </button>
                                 </a>
-                                <a class="project__buttonLink" href="#">
+                                <a
+                                    class="project__buttonLink"
+                                    href="#"
+                                    tabindex="-1"
+                                >
                                     <button
                                         class="button project__button"
                                         data-cursor="true"
+                                        tabindex="-1"
                                     >
                                         <span
                                             class="button__border button__border--top"
@@ -588,6 +617,7 @@
                                     class="project__link link"
                                     data-cursor="true"
                                     data-cursor-scale="4"
+                                    tabindex="-1"
                                 >
                                     <span class="link__text">Github</span>
                                     <svg
@@ -608,31 +638,13 @@
                             <div class="project__buttonsBox">
                                 <a
                                     class="project__buttonLink"
-                                    href="https://patrykmroz.pl"
+                                    href="#"
+                                    tabindex="-1"
                                 >
                                     <button
                                         class="button project__button"
                                         data-cursor="true"
-                                    >
-                                        <span
-                                            class="button__border button__border--top"
-                                        ></span>
-                                        <span
-                                            class="button__border button__border--bottom"
-                                        ></span>
-                                        <span
-                                            class="button__border button__border--left"
-                                        ></span>
-                                        <span
-                                            class="button__border button__border--right"
-                                        ></span>
-                                        Odwiedź stronę
-                                    </button>
-                                </a>
-                                <a class="project__buttonLink" href="#">
-                                    <button
-                                        class="button project__button"
-                                        data-cursor="true"
+                                        tabindex="-1"
                                     >
                                         <span
                                             class="button__border button__border--top"
@@ -682,6 +694,7 @@
                                     href="https://komornik-kedziora.pl"
                                     data-cursor="true"
                                     data-cursor-scale="4"
+                                    tabindex="-1"
                                 >
                                     <span class="link__text"
                                         >Odwiedź stronę</span
@@ -704,6 +717,7 @@
                                     class="project__link link"
                                     data-cursor="true"
                                     data-cursor-scale="4"
+                                    tabindex="-1"
                                 >
                                     <span class="link__text">Github</span>
                                     <svg
@@ -725,10 +739,12 @@
                                 <a
                                     class="project__buttonLink"
                                     href="https://komornik-kedziora.pl"
+                                    tabindex="-1"
                                 >
                                     <button
                                         class="button project__button"
                                         data-cursor="true"
+                                        tabindex="-1"
                                     >
                                         <span
                                             class="button__border button__border--top"
@@ -745,10 +761,15 @@
                                         Odwiedź stronę
                                     </button>
                                 </a>
-                                <a class="project__buttonLink" href="#">
+                                <a
+                                    class="project__buttonLink"
+                                    href="#"
+                                    tabindex="-1"
+                                >
                                     <button
                                         class="button project__button"
                                         data-cursor="true"
+                                        tabindex="-1"
                                     >
                                         <span
                                             class="button__border button__border--top"
@@ -797,6 +818,7 @@
                                     href="https://tauzo.pl"
                                     data-cursor="true"
                                     data-cursor-scale="4"
+                                    tabindex="-1"
                                 >
                                     <span class="link__text"
                                         >Odwiedź stronę</span
@@ -820,10 +842,12 @@
                                 <a
                                     class="project__buttonLink"
                                     href="https://tauzo.pl"
+                                    tabindex="-1"
                                 >
                                     <button
                                         class="button project__button"
                                         data-cursor="true"
+                                        tabindex="-1"
                                     >
                                         <span
                                             class="button__border button__border--top"
@@ -908,6 +932,7 @@
                             placeholder="Imie"
                             max="20"
                             required
+                            data-keyboard-focus="true"
                         />
                         <input
                             class="contact__input contact__input--email"
@@ -916,6 +941,7 @@
                             placeholder="E-mail"
                             max="30"
                             required
+                            data-keyboard-focus="true"
                         />
                         <input
                             class="contact__input contact__input--subject"
@@ -924,6 +950,7 @@
                             placeholder="Temat wiadomości"
                             max="50"
                             required
+                            data-keyboard-focus="true"
                         />
                         <textarea
                             class="contact__input contact__input--content"
@@ -931,6 +958,7 @@
                             placeholder="Treść wiadomości"
                             maxlength="4000"
                             required
+                            data-keyboard-focus="true"
                         ></textarea>
                         <p class="contact__info contact__info--error"></p>
                         <p class="contact__info contact__info--success">
@@ -940,6 +968,7 @@
                             class="button contact__button"
                             type="submit"
                             data-cursor="true"
+                            data-keyboard-focus="true"
                         >
                             <span
                                 class="button__border button__border--top"
@@ -964,6 +993,7 @@
                         title="Facebook"
                         data-cursor="true"
                         data-cursor-scale="1.7"
+                        data-keyboard-focus="true"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -980,6 +1010,7 @@
                         title="Linkedin"
                         data-cursor="true"
                         data-cursor-scale="1.7"
+                        data-keyboard-focus="true"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -996,6 +1027,7 @@
                         title="GitHub"
                         data-cursor="true"
                         data-cursor-scale="1.7"
+                        data-keyboard-focus="true"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"

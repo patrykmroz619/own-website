@@ -64,6 +64,7 @@ $aspectRatio: '6/8';
         @media (min-aspect-ratio: $aspectRatio) {
             flex-basis: 50%;
             flex-grow: 0;
+            margin-left: $spacing-xs;
         }
     }
 

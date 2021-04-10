@@ -64,6 +64,7 @@ const fadeIn = (project: HTMLElement) => {
     });
     [...links, ...buttonLinks].forEach((link) => {
         timeline.to(link, { opacity: 1, y: 0 }, '-=0.3');
+        link.setAttribute('tabindex', '1');
     });
 };
 
@@ -80,6 +81,10 @@ const fadeOut = (project: HTMLElement) => {
     project.style.pointerEvents = 'none';
 
     if (timeline) timeline.pause();
+
+    [...links, ...buttonLinks].forEach((link) =>
+        link.setAttribute('tabindex', '-1')
+    );
 
     gsap.to(
         [
