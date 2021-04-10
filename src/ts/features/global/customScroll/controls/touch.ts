@@ -40,7 +40,7 @@ export const handleTouch = () => {
         distance = 0;
     };
 
-    pageWrapper.addEventListener('touchstart', onTouchStart);
-    pageWrapper.addEventListener('touchmove', onTouchMove);
-    pageWrapper.addEventListener('touchend', onTouchEnd);
+    pageWrapper.addEventListener('touchstart', onTouchStart, { passive: true });
+    pageWrapper.addEventListener('touchmove', onTouchMove, { passive: true });
+    pageWrapper.addEventListener('touchend', onTouchEnd, { passive: true });
 };

@@ -33,7 +33,7 @@ const onSectionChange = (from: string, to: string) => {
 
     if (fromSection && toSection) {
         setTabIndexesOnFocusableElements(fromSection, '-1');
-        setTabIndexesOnFocusableElements(toSection, '1');
+        setTabIndexesOnFocusableElements(toSection, '0');
     }
 };
 

@@ -64,7 +64,7 @@ const fadeIn = (project: HTMLElement) => {
     });
     [...links, ...buttonLinks].forEach((link) => {
         timeline.to(link, { opacity: 1, y: 0 }, '-=0.3');
-        link.setAttribute('tabindex', '1');
+        link.setAttribute('tabindex', '0');
     });
 };
 

@@ -24,7 +24,9 @@ export const runMoveEffectOnScene = (scene: Scene) => {
     };
 
     window.addEventListener('mousemove', (e) => onMove(e.clientX, e.clientY));
-    window.addEventListener('touchmove', (e) =>
-        onMove(e.touches[0].clientX, e.touches[0].clientY)
+    window.addEventListener(
+        'touchmove',
+        (e) => onMove(e.touches[0].clientX, e.touches[0].clientY),
+        { passive: true }
     );
 };

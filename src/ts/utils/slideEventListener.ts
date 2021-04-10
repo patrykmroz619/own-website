@@ -59,13 +59,13 @@ export const slideEventListener: SlideEventListener = (
         }
     };
 
-    root.addEventListener('touchstart', onTouchStart);
+    root.addEventListener('touchstart', onTouchStart, { passive: true });
     root.addEventListener('mousedown', onMouseDown);
 
-    root.addEventListener('touchmove', onTouchMove);
+    root.addEventListener('touchmove', onTouchMove, { passive: true });
     root.addEventListener('mousemove', onMouseMove);
 
-    root.addEventListener('touchend', onTouchEnd);
+    root.addEventListener('touchend', onTouchEnd, { passive: true });
     root.addEventListener('mouseup', onMouseUp);
 
     const unsubscribe = () => {

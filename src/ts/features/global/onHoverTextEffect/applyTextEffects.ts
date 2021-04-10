@@ -37,8 +37,12 @@ export const applyTextEffects = (classesOfElements: string[]) => {
     };
 
     chars.forEach((char) => {
-        char.addEventListener('touchstart', () => onEnter(char));
-        char.addEventListener('touchend', () => onLeave(char));
+        char.addEventListener('touchstart', () => onEnter(char), {
+            passive: true,
+        });
+        char.addEventListener('touchend', () => onLeave(char), {
+            passive: true,
+        });
         char.addEventListener('mouseenter', () => onEnter(char));
         char.addEventListener('mouseleave', () => onLeave(char));
     });
