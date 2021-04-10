@@ -898,12 +898,13 @@
                 <div class="contact__formWrapper">
                     <p class="contact__formLabel">
                         Zapraszam do kontaktu za pomocą formularza poniżej bądź
-                        też za pośrednictwem facebook'a lub linkedin.
+                        też za pośrednictwem facebook lub linkedin.
                     </p>
-                    <form class="contact__form">
+                    <form class="contact__form" name="contact">
                         <input
                             class="contact__input contact__input--name"
                             type="text"
+                            name="name"
                             placeholder="Imie"
                             max="20"
                             required
@@ -911,6 +912,7 @@
                         <input
                             class="contact__input contact__input--email"
                             type="email"
+                            name="email"
                             placeholder="E-mail"
                             max="30"
                             required
@@ -918,16 +920,25 @@
                         <input
                             class="contact__input contact__input--subject"
                             type="text"
+                            name="subject"
                             placeholder="Temat wiadomości"
                             max="50"
+                            required
                         />
                         <textarea
                             class="contact__input contact__input--content"
+                            name="content"
                             placeholder="Treść wiadomości"
+                            maxlength="4000"
                             required
                         ></textarea>
+                        <p class="contact__info contact__info--error"></p>
+                        <p class="contact__info contact__info--success">
+                            Dziękuję za wiadomość!
+                        </p>
                         <button
                             class="button contact__button"
+                            type="submit"
                             data-cursor="true"
                         >
                             <span

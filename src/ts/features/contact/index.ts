@@ -1,4 +1,5 @@
 import { addSectionScrollListener } from '@utils/sectionScrollListener';
+import { handleContactForm } from './form';
 import { fadeIn, fadeOut } from './scrollAnimation';
 
 export const runContactFeatures = () => {
@@ -9,4 +10,6 @@ export const runContactFeatures = () => {
             fadeOut();
         }
     });
+
+    handleContactForm();
 };

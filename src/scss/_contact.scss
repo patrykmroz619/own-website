@@ -97,6 +97,27 @@
         }
     }
 
+    &__info {
+        display: none;
+        margin: 5px;
+        padding: 5px;
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+        border: 2px solid var(--primary-color);
+
+        &--success {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+            background-color: rgba(125, 125, 125, 0.06);
+        }
+
+        &--error {
+            background-color: #ff000088;
+            border-color: red;
+        }
+    }
+
     &__socialLinks {
         display: flex;
         justify-content: center;
@@ -114,7 +135,6 @@
 
         &:hover {
             fill: var(--primary-color);
-            transform: scale(1.1);
         }
     }
 }

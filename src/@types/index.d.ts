@@ -29,3 +29,15 @@ declare type Technology = {
 };
 
 declare type TechnologiesBoardScheme = Array<Array<Technology | null>>;
+
+declare type Message = {
+    name: string;
+    email: string;
+    subject: string;
+    content: string;
+};
+
+declare type ApiResponseBody<TData> = {
+    success: boolean;
+    data: TData;
+};
