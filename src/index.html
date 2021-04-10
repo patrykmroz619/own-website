@@ -274,11 +274,24 @@
                 </div>
                 <div class="about__imageSection imageSection">
                     <div class="imageSection__imageBox">
-                        <img
-                            class="imageSection__image"
-                            src="assets/images/me.jpg"
-                            alt="Patryk Mróz - fotografia"
-                        />
+                        <picture>
+                            <source
+                                srcset="assets/images/me.webp"
+                                type="image/webp"
+                            />
+                            <source
+                                srcset="assets/images/me.jpg"
+                                type="image/jpeg"
+                            />
+                            <img
+                                class="imageSection__image"
+                                src="assets/images/me.jpg"
+                                width="400"
+                                height="533"
+                                alt="Patryk Mróz - fotografia"
+                                loading="lazy"
+                            />
+                        </picture>
                         <div class="imageSection__background"></div>
                     </div>
                 </div>
@@ -343,31 +356,91 @@
                     <div
                         class="portfolio__projectsImages portfolio__projectsImages--mobile"
                     >
-                        <img
-                            class="portfolio__image"
-                            src="assets/images/as.jpg"
-                            draggable="false"
-                        />
-                        <img
-                            class="portfolio__image"
-                            src="assets/images/pm-cms.jpg"
-                            draggable="false"
-                        />
-                        <img
-                            class="portfolio__image"
-                            src="assets/images/portfolio.jpg"
-                            draggable="false"
-                        />
-                        <img
-                            class="portfolio__image"
-                            src="assets/images/komornik.jpg"
-                            draggable="false"
-                        />
-                        <img
-                            class="portfolio__image"
-                            src="assets/images/tauzo.jpg"
-                            draggable="false"
-                        />
+                        <picture>
+                            <source
+                                srcset="assets/images/as.webp"
+                                type="image/webp"
+                            />
+                            <source
+                                srcset="assets/images/as.jpg"
+                                type="image/jpeg"
+                            />
+                            <img
+                                class="portfolio__image"
+                                src="assets/images/as.webp"
+                                alt="Screenshot z ascieciewiercenie.pl"
+                                loading="lazy"
+                                draggable="false"
+                            />
+                        </picture>
+                        <picture>
+                            <source
+                                srcset="assets/images/pm-cms.webp"
+                                type="image/webp"
+                            />
+                            <source
+                                srcset="assets/images/pm-cms.jpg"
+                                type="image/jpeg"
+                            />
+                            <img
+                                src="assets/images/pm-cms.webp"
+                                alt="Screenshot z strony pm-cms"
+                                class="portfolio__image"
+                                loading="lazy"
+                                draggable="false"
+                            />
+                        </picture>
+                        <picture>
+                            <source
+                                srcset="assets/images/portfolio.webp"
+                                type="image/webp"
+                            />
+                            <source
+                                srcset="assets/images/portfolio.jpg"
+                                type="image/jpeg"
+                            />
+                            <img
+                                src="assets/images/portfolio.webp"
+                                alt="Screenshot z strony patrykmroz.pl"
+                                class="portfolio__image"
+                                loading="lazy"
+                                draggable="false"
+                            />
+                        </picture>
+                        <picture>
+                            <source
+                                srcset="assets/images/komornik.webp"
+                                type="image/webp"
+                            />
+                            <source
+                                srcset="assets/images/komornik.jpg"
+                                type="image/jpeg"
+                            />
+                            <img
+                                src="assets/images/komornik.webp"
+                                alt="Screenshot z strony komornik-kedziora.pl"
+                                class="portfolio__image"
+                                loading="lazy"
+                                draggable="false"
+                            />
+                        </picture>
+                        <picture>
+                            <source
+                                srcset="assets/images/tauzo.webp"
+                                type="image/webp"
+                            />
+                            <source
+                                srcset="assets/images/tauzo.jpg"
+                                type="image/jpeg"
+                            />
+                            <img
+                                src="assets/images/tauzo.webp"
+                                alt="Screenshot z strony tauzo.pl"
+                                class="portfolio__image"
+                                loading="lazy"
+                                draggable="false"
+                            />
+                        </picture>
                     </div>
                 </div>
                 <div class="portfolio__content">
