@@ -48,7 +48,7 @@ export const shapesAnimation: ShapesAnimationType = (cubes) => {
         pausableTimeout.start(currentAnimationName == 'cube' ? 23000 : 8000);
     };
 
-    const pausableTimeout = new PausableTimeout(animate, 5000);
+    const pausableTimeout = new PausableTimeout(animate, 1000);
     pausableTimeout.start();
 
     const pause = () => pausableTimeout.pause();
