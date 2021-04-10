@@ -1,7 +1,7 @@
 import { addAllSectionsScrollListener } from '@utils/sectionScrollListener';
 import { backgroundTextChange, closeMenu, openMenu } from './actions';
 
-const burger = document.querySelector('.burger') as HTMLButtonElement;
+export const burger = document.querySelector('.burger') as HTMLButtonElement;
 const menu = document.querySelector('.mobileMenu') as HTMLElement;
 const menuItems = [
     ...document.querySelectorAll('.mobileMenu__item'),
@@ -13,7 +13,7 @@ const backgroundText = document.querySelector(
 let isMobileMenuOpen = false;
 
 const onBurgerClick = () => {
-    if (isMobileMenuOpen) {
+    if (!isMobileMenuOpen) {
         burger.classList.add('active');
         openMenu(menu, menuItems);
     } else {
