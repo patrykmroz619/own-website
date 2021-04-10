@@ -33,14 +33,22 @@ export const fadeIn = () => {
         '-=0.1'
     );
 
-    timeline.to(board, {
-        opacity: 1,
-        x: 0,
-    });
+    timeline.fromTo(
+        board,
+        {
+            opacity: 0,
+        },
+        {
+            opacity: 1,
+            x: 0,
+        }
+    );
 };
 
 export const fadeOut = () => {
-    timeline.pause();
+    if (timeline) {
+        timeline.pause();
+    }
 
     gsap.to([headingWrapper, description], { opacity: 0, x: -100 });
     gsap.to(board, { opacity: 0, x: 100 });

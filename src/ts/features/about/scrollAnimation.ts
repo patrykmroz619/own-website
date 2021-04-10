@@ -55,7 +55,9 @@ export const fadeOutContent = () => {
         x: -100,
     });
 
-    contentTimeline.clear(true);
+    if (contentTimeline) {
+        contentTimeline.clear(true);
+    }
 
     gsap.to([headingWrapper, texts], { opacity: 0, x: 100 });
 };

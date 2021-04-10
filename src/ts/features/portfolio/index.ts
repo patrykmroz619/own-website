@@ -12,4 +12,6 @@ export const runPortfolioEffects = () => {
             fadeOutElements();
         }
     });
+
+    runPortfolioSlider();
 };

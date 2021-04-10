@@ -55,7 +55,6 @@
 
         &__text {
             margin-bottom: $spacing-xs;
-            opacity: 0;
 
             @include min-vw(s) {
                 margin-bottom: $spacing-s;
@@ -68,7 +67,6 @@
             font-size: 18px;
             font-weight: bold;
             color: var(--primary-color);
-            opacity: 0;
 
             @include min-vw(xs) {
                 font-size: 20px;
@@ -102,8 +100,6 @@
     .imageSection {
         &__imageBox {
             position: relative;
-            opacity: 0;
-            transform: translateX(-100px);
         }
 
         &__image {

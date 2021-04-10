@@ -10,6 +10,9 @@ module.exports = {
     packageOptions: {
         types: true,
     },
+    buildOptions: {
+        sourcemap: true,
+    },
     plugins: [
         '@snowpack/plugin-typescript',
         [

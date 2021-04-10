@@ -12,4 +12,6 @@ export const runTechnologiesEffects = () => {
             fadeOut();
         }
     });
+
+    runTechnologiesBoard();
 };

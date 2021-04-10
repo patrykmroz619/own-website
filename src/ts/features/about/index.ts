@@ -12,4 +12,6 @@ export const runAboutSectionEffects = () => {
             pauseTyping();
         }
     });
+
+    runTyping();
 };

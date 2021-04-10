@@ -72,7 +72,7 @@ const fadeOut = () => {
     });
 };
 
-export const runScrollAnimation = () => {
+export const runScrollAnimationOnStartSection = () => {
     addSectionScrollListener('start', (isSectionVisible) => {
         if (isSectionVisible) {
             fadeIn();

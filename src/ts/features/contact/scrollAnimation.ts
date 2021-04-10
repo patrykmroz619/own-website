@@ -43,7 +43,9 @@ export const fadeIn = () => {
 };
 
 export const fadeOut = () => {
-    timeline.pause();
+    if (timeline) {
+        timeline.pause();
+    }
 
     gsap.to([headingWrapper, formWrapper, linksWrapper], { y: 30, opacity: 0 });
 };

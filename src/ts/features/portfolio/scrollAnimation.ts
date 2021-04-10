@@ -52,7 +52,9 @@ export const fadeInElements = () => {
 };
 
 export const fadeOutElements = () => {
-    timeline.pause();
+    if (timeline) {
+        timeline.pause();
+    }
 
     gsap.to([navigation, projectImagesWrapper, headingWrapper], { opacity: 0 });
 
