@@ -90,5 +90,7 @@ export const setBackgroundAnimation = (): void => {
 
     controlAnimation(resumeAnimation, pauseAnimation);
 
-    refresh();
+    setTimeout(() => {
+        resumeAnimation();
+    }, 3000);
 };

@@ -10,6 +10,10 @@
         padding: $spacing-m;
     }
 
+    @include min-vw(xs) {
+        padding-bottom: $spacing-l;
+    }
+
     @include min-vw(l) {
         margin-left: $spacing-xxl;
         margin-right: $spacing-xxxl;

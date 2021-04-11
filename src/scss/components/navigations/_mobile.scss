@@ -58,11 +58,12 @@ $burger-height: 25px;
 }
 
 .mobileMenu {
+    width: 100vw;
     height: var(--windowHeight);
     background-color: var(--bg-color);
     opacity: 0;
-    z-index: 10;
     overflow: hidden;
+    z-index: 2;
 
     &__itemList {
         @include position(absolute, 50%, 50%);

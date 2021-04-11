@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 let timeline: gsap.core.Timeline;
 
 export const openMenu = (menu: HTMLElement, menuItems: Element[]) => {
+    menu.style.display = 'block';
     gsap.set(menuItems, { opacity: 0, x: 20 });
 
     timeline = gsap.timeline();

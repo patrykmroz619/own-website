@@ -50,6 +50,7 @@ export const shapesAnimation: ShapesAnimationType = (cubes) => {
 
     const pausableTimeout = new PausableTimeout(animate, 1000);
     pausableTimeout.start();
+    pausableTimeout.pause();
 
     const pause = () => pausableTimeout.pause();
     const resume = () => pausableTimeout.resume();
