@@ -5,7 +5,6 @@ body * {
 }
 
 html {
-    font-family: 'Roboto Mono', sans-serif;
     touch-action: none;
 }
 
@@ -16,22 +15,9 @@ body {
     overflow: hidden;
 }
 
-.wrapper {
-    position: relative;
-    width: 100vw;
-    overflow: hidden;
-}
-
 svg,
 svg * {
     pointer-events: none;
-}
-
-h1,
-h2,
-h3,
-h4 {
-    font-family: 'Montserrat';
 }
 
 h2 {
@@ -52,19 +38,11 @@ h2 {
     }
 }
 
-p {
-    font-size: $mobile-font-size;
-    @include min-vw(m) {
-        font-size: $descop-font-size;
-    }
-}
-
 strong {
     color: var(--primary-color);
 }
 
 .section {
-    position: relative;
     height: var(--windowHeight);
 }
 

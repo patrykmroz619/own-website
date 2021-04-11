@@ -19,6 +19,221 @@
         <meta name="og:image" content="./assets/images/portfolio.jpg" />
         <meta name="og:url" content="https://patrykmroz.pl" />
 
+        <style>
+            html * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+
+            button {
+                background-color: transparent;
+                border: none;
+            }
+
+            body {
+                font-family: 'Roboto Mono', 'arial', sans-serif;
+                background-color: #152028;
+                color: #eee;
+                overflow: hidden;
+                width: 100vw;
+                height: 100vh;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4 {
+                font-family: 'Montserrat';
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            .wrapper {
+                position: relative;
+                width: 100vw;
+                overflow: hidden;
+            }
+
+            .section {
+                position: relative;
+                height: 100vh;
+            }
+
+            .main {
+                position: relative;
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-end;
+                height: 100vh;
+            }
+
+            .descopMenu {
+                display: none;
+            }
+
+            .mobileMenu {
+                position: fixed;
+                top: 0;
+                left: 0;
+                opacity: 0;
+            }
+
+            .burger {
+                position: fixed;
+                top: 15px;
+                right: 15px;
+                width: 32px;
+                height: 25px;
+                background-color: transparent;
+                border: none;
+            }
+
+            .burger__belt {
+                position: absolute;
+                top: auto;
+                left: 0;
+                bottom: auto;
+                right: 0;
+                width: 32px;
+                height: 4px;
+                background-color: #eee;
+            }
+
+            .burger__belt--first {
+                top: 0;
+            }
+
+            .burger__belt--second {
+                top: 10.5px;
+            }
+
+            .burger__belt--third {
+                bottom: 0;
+            }
+
+            .burger__label {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: -15px;
+                font-size: 10px;
+                color: #eee;
+            }
+
+            .header {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                padding: 15px;
+                z-index: 10;
+            }
+
+            .colorModeToggler {
+                height: 25px;
+            }
+
+            .colorModeToggler__item {
+                width: 25px;
+                height: 25px;
+                opacity: 0.5;
+                transform: scale(0.6);
+            }
+
+            .hero {
+                position: absolute;
+                top: 32%;
+                left: 15px;
+                transform: translateY(-50%);
+                padding: 10px;
+            }
+
+            @media (min-width: 410px) {
+                .hero {
+                    left: 20px;
+                }
+            }
+
+            @media (min-width: 640px) {
+                .hero {
+                    left: 25px;
+                    top: 50%;
+                }
+
+                p {
+                    font-size: 18px;
+                }
+            }
+
+            @media (min-width: 1024px) {
+                .hero {
+                    left: 100px;
+                }
+
+                .burger {
+                    display: none;
+                }
+            }
+
+            @media (min-width: 1200px) {
+                .hero {
+                    left: 150px;
+                }
+            }
+
+            .hero__heading {
+                font-size: 36px;
+            }
+
+            .hero__subheading {
+                margin: 15px 0;
+                font-size: 20px;
+                font-weight: 400;
+            }
+
+            @media (min-width: 410px) {
+                .hero__heading {
+                    font-size: 40px;
+                }
+            }
+
+            @media (min-width: 640px) {
+                .hero__heading {
+                    font-size: 60px;
+                }
+
+                .hero__subheading {
+                    margin: 25px 0;
+                    font-size: 24px;
+                }
+            }
+
+            .button {
+                position: relative;
+                z-index: 1;
+
+                width: 100%;
+                max-width: 250px;
+                height: 45px;
+
+                font-family: 'Roboto Mono', sans-serif;
+                font-size: 16px;
+                text-transform: uppercase;
+                font-weight: bold;
+                text-align: center;
+                line-height: 45px;
+
+                color: #eee;
+                background-color: rgba(125, 125, 125, 0.06);
+                border: none;
+
+                overflow: hidden;
+            }
+        </style>
+
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
             rel="preload"
@@ -31,7 +246,12 @@
             media="print"
             onload="this.media='all'"
         />
-        <link rel="stylesheet" href="scss/index.css" />
+        <link
+            rel="stylesheet"
+            href="scss/index.css"
+            media="print"
+            onload="this.media='all'"
+        />
     </head>
     <body>
         <div class="wrapper">
@@ -389,6 +609,8 @@
                                 class="portfolio__image"
                                 src="assets/images/as.webp"
                                 alt="Screenshot z ascieciewiercenie.pl"
+                                width="400"
+                                height="238"
                                 loading="lazy"
                                 draggable="false"
                             />
@@ -405,6 +627,8 @@
                             <img
                                 src="assets/images/pm-cms.webp"
                                 alt="Screenshot z strony pm-cms"
+                                width="400"
+                                height="238"
                                 class="portfolio__image"
                                 loading="lazy"
                                 draggable="false"
@@ -422,6 +646,8 @@
                             <img
                                 src="assets/images/portfolio.webp"
                                 alt="Screenshot z strony patrykmroz.pl"
+                                width="400"
+                                height="238"
                                 class="portfolio__image"
                                 loading="lazy"
                                 draggable="false"
@@ -439,6 +665,8 @@
                             <img
                                 src="assets/images/komornik.webp"
                                 alt="Screenshot z strony komornik-kedziora.pl"
+                                width="400"
+                                height="238"
                                 class="portfolio__image"
                                 loading="lazy"
                                 draggable="false"
@@ -456,6 +684,8 @@
                             <img
                                 src="assets/images/tauzo.webp"
                                 alt="Screenshot z strony tauzo.pl"
+                                width="400"
+                                height="238"
                                 class="portfolio__image"
                                 loading="lazy"
                                 draggable="false"

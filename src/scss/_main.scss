@@ -1,10 +1,4 @@
 .main {
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    height: var(--windowHeight);
-
     &__background {
         position: relative;
         width: 100%;
@@ -14,59 +8,15 @@
 }
 
 .hero {
-    @include position(absolute, 32%, auto, auto, $spacing-s);
-    transform: translateY(-50%);
-    padding: $spacing-xs;
     background-color: var(--bg-transparent-layer);
     transition: background-color 0.6s;
 
-    @include min-vw(s) {
-        left: $spacing-m;
-    }
-
-    @include min-vw(m) {
-        left: $spacing-l;
-        top: 50%;
-    }
-
-    @include min-vw(l) {
-        left: $spacing-xxl;
-    }
-
-    @include min-vw(xl) {
-        left: $spacing-xxxl;
-    }
-
     &__heading {
-        font-size: 36px;
         transition: color 0.6s;
         user-select: none;
 
-        @include min-vw(s) {
-            font-size: 40px;
-        }
-
-        @include min-vw(m) {
-            font-size: 60px;
-        }
-
         &--first-line {
             color: var(--primary-color);
-        }
-    }
-
-    &__subheading {
-        margin: $spacing-s 0;
-        font-size: 20px;
-        font-weight: 400;
-
-        span {
-            transition: color 0.6s;
-        }
-
-        @include min-vw(m) {
-            margin: $spacing-l 0;
-            font-size: 24px;
         }
     }
 }

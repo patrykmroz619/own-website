@@ -1,24 +1,13 @@
-.header {
-    @include position(absolute, 0, 0, auto, 0);
-    padding: $spacing-s;
-    z-index: 10;
-}
-
 .colorModeToggler {
     position: relative;
 
     $item-size: 25px;
     height: $item-size;
-    opacity: 0;
 
     &__item {
-        position: relative;
-        width: $item-size;
-        height: $item-size;
         z-index: 1;
 
         transition: 1s;
-        opacity: 0.5;
         transform: scale(0.6);
 
         &.active {

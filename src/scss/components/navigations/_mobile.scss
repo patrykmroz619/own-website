@@ -8,14 +8,11 @@ $burger-height: 25px;
     z-index: 15;
 
     &__belt {
-        @include position(absolute, auto, 0, auto, 0);
         width: $burger-width;
-        height: 4px;
         background-color: var(--font-color);
         transition: background-color 0.6s;
 
         &--first {
-            top: 0;
             transform-origin: center;
             transform: rotate(0deg) translateY(0);
             transition: 0.5s;
@@ -29,7 +26,6 @@ $burger-height: 25px;
         }
 
         &--third {
-            bottom: 0;
             transform: rotate(0deg);
             transition: 0.5s;
         }
@@ -40,10 +36,6 @@ $burger-height: 25px;
         font-size: 10px;
         color: var(--font-color);
         transition: color 0.6s;
-    }
-
-    @include min-vw(l) {
-        display: none;
     }
 }
 
@@ -66,8 +58,6 @@ $burger-height: 25px;
 }
 
 .mobileMenu {
-    @include position(fixed, 0, auto, auto, 0);
-    width: 100vw;
     height: var(--windowHeight);
     background-color: var(--bg-color);
     opacity: 0;
