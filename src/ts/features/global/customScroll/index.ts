@@ -13,13 +13,15 @@ let isScrolling = false;
 
 const onScrollComplete = () => (isScrolling = false);
 
+const getSectionId = (idx: number) => sections[idx].id;
+
 export const scrollToSectionByIdx = (sectionIdx: number) => {
     const isScrollingEnable =
         sectionIdx >= 0 && sectionIdx < sections.length && !isScrolling;
 
     if (isScrollingEnable) {
-        const fromSectionIdentifier = sections[currentSectionIdx].id;
-        const toSectionIdentifier = sections[sectionIdx].id;
+        const fromSectionIdentifier = getSectionId(currentSectionIdx);
+        const toSectionIdentifier = getSectionId(sectionIdx);
 
         if (
             isSectionId(fromSectionIdentifier) &&
@@ -63,6 +65,8 @@ const setInitialScrollPosition = () => {
         scrollToSectionByIdentifier('start');
     }
 };
+
+export const getCurrentSection = () => getSectionId(currentSectionIdx);
 
 export const runCustomScroll = () => {
     handleControls();
