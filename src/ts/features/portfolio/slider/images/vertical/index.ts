@@ -85,7 +85,8 @@ const onSpeedUpdate = (newSpeed: number) => {
 const onRootScroll = (e: WheelEvent) => {
     e.preventDefault();
     e.stopImmediatePropagation();
-    speed += e.deltaY;
+    //Support for firefox where wheel delta is equal 3 or -3
+    speed += Math.abs(e.deltaY) === 3 ? e.deltaY * 30 : e.deltaY;
     onSpeedUpdate(speed);
 };
 

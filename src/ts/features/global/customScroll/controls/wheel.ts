@@ -4,9 +4,10 @@ export const handleWheel = () => {
     const onWheel = (e: WheelEvent) => {
         e.preventDefault();
 
-        if (e.deltaY > 50) {
+        // In the firefox delta is equal 3 or -3
+        if (e.deltaY > 30 || e.deltaY === 3) {
             nextSection();
-        } else if (e.deltaY < -50) {
+        } else if (e.deltaY < -30 || e.deltaY === -3) {
             prevSection();
         }
     };
