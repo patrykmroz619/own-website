@@ -202,6 +202,14 @@
                 font-weight: 400;
             }
 
+            .hero__subheading::before {
+                content: '<';
+            }
+
+            .hero__subheading::after {
+                content: '  />';
+            }
+
             @media (min-width: 410px) {
                 .hero__heading {
                     font-size: 40px;
@@ -458,7 +466,7 @@
                             >jestem Patryk</span
                         >
                     </h1>
-                    <p class="hero__subheading">&lt;Web developer&nbsp;/></p>
+                    <p class="hero__subheading">Web developer</p>
                     <button
                         class="button hero__button"
                         data-cursor="true"
