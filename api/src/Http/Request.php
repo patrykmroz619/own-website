@@ -21,4 +21,9 @@ class Request
 
     return $parsedUrl['path'] ?? $defaultPath;
   }
+
+  public static function getMethod(): string
+  {
+    return $_SERVER['REQUEST_METHOD'];
+  }
 }

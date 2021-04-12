@@ -48,7 +48,6 @@ export const handleContactForm = () => {
                         return;
                     }
                 }
-                setErrorSendingMessage();
             });
     };
     contactForm.addEventListener('submit', onSubmit);

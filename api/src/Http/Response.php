@@ -6,11 +6,20 @@ namespace Http;
 
 class Response
 {
-  public function __invoke(int $statusCode, array $body): void
+  private ?array $data = null;
+
+  public function __invoke(int $statusCode): void
   {
     http_response_code($statusCode);
 
-    echo json_encode($body);
+    if($this->data) {
+      echo json_encode($this->data);
+    }
     exit();
+  }
+
+  public function withData(array $data): void
+  {
+    $this->data = $data;
   }
 }

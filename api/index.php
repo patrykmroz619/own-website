@@ -9,41 +9,55 @@ use Http\Response;
 use ContactForm\ContactFormHandler;
 use Dotenv\Dotenv;
 
-$dotenv = Dotenv::createImmutable(__DIR__);
-$dotenv->load();
+try {
+  $dotenv = Dotenv::createImmutable(__DIR__);
+  $dotenv->load();
 
-header('Access-Control-Allow-Origin: ' . $_ENV['URL']);
-header('Access-Control-Allow-Headers: Content-Type');
-header('Access-Control-Allow-Methods: POST');
-header('Content-Type: application/json');
+  header('Access-Control-Allow-Origin: ' . $_ENV['URL']);
+  header('Access-Control-Allow-Headers: Content-Type');
+  header('Access-Control-Allow-Methods: POST');
+  header('Content-Type: application/json');
 
-$path = Request::getPath();
-$response = new Response();
+  $path = Request::getPath();
+  $method = Request::getMethod();
+  $response = new Response();
 
-if($path === '/contact') {
-  $requestBody = Request::getBody();
+  if($path === '/contact' && $method === 'POST') {
+    $requestBody = Request::getBody();
 
-  $formData = [
-    'name' => $requestBody['name'] ?? null,
-    'email' => $requestBody['email'] ?? null,
-    'subject' => $requestBody['subject'] ?? null,
-    'content' => $requestBody['content'] ?? null
-  ];
+    $formData = [
+      'name' => $requestBody['name'] ?? null,
+      'email' => $requestBody['email'] ?? null,
+      'subject' => $requestBody['subject'] ?? null,
+      'content' => $requestBody['content'] ?? null
+    ];
 
-  $contactFormHandler = new ContactFormHandler($formData);
+    $contactFormHandler = new ContactFormHandler($formData);
 
-  $errors = $contactFormHandler->validate();
+    $errors = $contactFormHandler->validate();
 
   if($errors) {
-    $response(422, ['success' => false, 'data' => $errors]);
+    $response->withData(['success' => false, 'data' => $errors]);
+    $response(422);
   }
 
   $completed = $contactFormHandler->sendEmail();
 
-  if($completed)
-    $response(200, ['success' => true, 'data' => []]);
-  else
-    $response(500, ['success' => false, 'data' => []]);
+  if($completed) {
+    $response->withData(['success' => true, 'data' => []]);
+    $response(200);
+  } else {
+    $response->withData(['success' => false, 'data' => []]);
+    $response(500);
+  }
 }
 
-$response(404, ['success' => false, 'data' => []]);
+if($method === 'OPTIONS') {
+  $response(200);
+}
+
+$response(404);
+
+} catch (Throwable $e) {
+  $response(500);
+}
