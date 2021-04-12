@@ -30,9 +30,9 @@ export const handleTouch = () => {
 
     const onTouchEnd = () => {
         if (scroll) {
-            if (distance < -120) {
+            if (distance < -70) {
                 nextSection();
-            } else if (distance > 120) {
+            } else if (distance > 70) {
                 prevSection();
             }
         }
