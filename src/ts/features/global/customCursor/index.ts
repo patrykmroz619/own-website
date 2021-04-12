@@ -7,7 +7,7 @@ const cursorShadowElement = document.querySelector(
     '.cursorShadow'
 ) as HTMLDivElement;
 
-export const cursorSize = cursorElement.offsetWidth;
+export const cursorSize = 50;
 export const halfOfCursorSize = cursorSize / 2;
 
 export const handleCustomCursor = () => {
