@@ -1,0 +1,61 @@
+.async {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: 10;
+        top: -100px;
+        left: -100px;
+        right: 0;
+        bottom: 0;
+        background-color: transparent;
+        pointer-events: none;
+        transition: 0.5s;
+    }
+
+    &.loading::before {
+        background-color: var(--bg-color);
+        pointer-events: all;
+    }
+
+    @keyframes loading {
+        from {
+            transform: rotateZ(0deg) scale(1);
+            background-color: var(--font-color);
+        }
+
+        50% {
+            background-color: var(--primary-color);
+        }
+
+        to {
+            transform: rotateZ(360deg) scale(1);
+            background-color: var(--font-color);
+        }
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: calc(50% - 30px);
+        left: calc(50% - 30px);
+        width: 60px;
+        height: 60px;
+        z-index: 11;
+        background-color: var(--font-color);
+        animation-name: loading;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease;
+        animation-play-state: paused;
+        pointer-events: none;
+        opacity: 0;
+        transition: 0.5s;
+    }
+
+    &.loading::after {
+        opacity: 1;
+        animation-play-state: running;
+    }
+}

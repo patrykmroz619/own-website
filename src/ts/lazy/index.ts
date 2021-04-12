@@ -13,45 +13,53 @@ const state = {
 
 let isAllSectionLoaded = false;
 
-const onSection = (section: SectionId) => {
+const getSectionElement = (sectionId: SectionId) =>
+    document.getElementById(sectionId) as HTMLElement;
+
+const onSection = (sectionId: SectionId) => {
     if (!isAllSectionLoaded) {
-        if ((section === 'start' || section === 'about') && !state.start) {
+        if ((sectionId === 'start' || sectionId === 'about') && !state.start) {
             state.start = true;
-            lazyFeatures.background();
+            const startSection = getSectionElement('start');
+            lazyFeatures.background(startSection);
         }
         if (
-            (section === 'start' ||
-                section === 'about' ||
-                section === 'portfolio') &&
+            (sectionId === 'start' ||
+                sectionId === 'about' ||
+                sectionId === 'portfolio') &&
             !state.about
         ) {
             state.about = true;
-            lazyFeatures.about();
+            const aboutSection = getSectionElement('about');
+            lazyFeatures.about(aboutSection);
         }
         if (
-            (section === 'about' ||
-                section === 'portfolio' ||
-                section === 'technologies') &&
+            (sectionId === 'about' ||
+                sectionId === 'portfolio' ||
+                sectionId === 'technologies') &&
             !state.portfolio
         ) {
             state.portfolio = true;
-            lazyFeatures.portfolio();
+            const portfolioSection = getSectionElement('portfolio');
+            lazyFeatures.portfolio(portfolioSection);
         }
         if (
-            (section === 'portfolio' ||
-                section === 'technologies' ||
-                section === 'contact') &&
+            (sectionId === 'portfolio' ||
+                sectionId === 'technologies' ||
+                sectionId === 'contact') &&
             !state.technologies
         ) {
             state.technologies = true;
-            lazyFeatures.technologies();
+            const technologiesSection = getSectionElement('technologies');
+            lazyFeatures.technologies(technologiesSection);
         }
         if (
-            (section === 'technologies' || section === 'contact') &&
+            (sectionId === 'technologies' || sectionId === 'contact') &&
             !state.contact
         ) {
             state.contact = true;
-            lazyFeatures.contact();
+            const contactSection = getSectionElement('contact');
+            lazyFeatures.contact(contactSection);
         }
 
         isAllSectionLoaded = Object.values(state).every((x) => x);

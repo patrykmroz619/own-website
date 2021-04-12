@@ -27,6 +27,8 @@ module.exports = {
             '@snowpack/plugin-webpack',
             {
                 extendConfig: (config) => {
+                    config.devtool = 'source-map';
+
                     config.module.rules.push({
                         test: /.js$/,
                         exclude: /node_modules/,

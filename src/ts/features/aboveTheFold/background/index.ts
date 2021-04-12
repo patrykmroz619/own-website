@@ -8,7 +8,9 @@ import { getPrimaryColor } from '@utils/primaryColor';
 import { addMediaQueryListener } from '@utils/mediaQueryListener';
 import { controlAnimation } from './controls';
 
-const root = document.querySelector('.main__background') as HTMLDivElement;
+export const root = document.querySelector(
+    '.main__background'
+) as HTMLDivElement;
 
 const CUBES_AMOUNT = 125;
 
@@ -92,5 +94,6 @@ export const setBackgroundAnimation = (): void => {
 
     setTimeout(() => {
         resumeAnimation();
-    }, 3000);
+        root.classList.remove('loading');
+    }, 2000);
 };

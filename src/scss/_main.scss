@@ -5,6 +5,14 @@
         height: 100%;
         opacity: 0.8;
         z-index: -1;
+
+        &::after {
+            top: 62%;
+            @include min-vw(m) {
+                top: calc(50% - 30px);
+                left: 63%;
+            }
+        }
     }
 }
 
