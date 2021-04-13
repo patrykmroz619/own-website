@@ -67,22 +67,22 @@ $aspectRatio: '6/8';
             flex-grow: 0;
             margin-left: $spacing-xs;
             margin-bottom: 0;
-        }
 
-        &::after {
-            content: 's c r o l l';
-            position: absolute;
-            top: 50%;
-            left: 0;
-            width: 5px;
-            font-size: 14px;
-            transform: translateY(-50%);
-            opacity: 0;
-            transition: 1s;
-        }
+            &::after {
+                content: 's c r o l l';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                width: 5px;
+                font-size: 14px;
+                transform: translateY(-50%);
+                opacity: 0;
+                transition: 1s;
+            }
 
-        &:hover::after {
-            opacity: 0.3;
+            &:hover::after {
+                opacity: 0.3;
+            }
         }
     }
 
