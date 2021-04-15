@@ -34,6 +34,7 @@ export const handleContactForm = () => {
                 switch (response.status) {
                     case 200:
                         setSuccessMessage();
+                        contactForm.reset();
                         break;
                     case 422:
                         return response.json();
