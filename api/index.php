@@ -4,10 +4,12 @@ declare(strict_types=1);
 
 require __DIR__ . '/vendor/autoload.php';
 
-use Http\Request;
+use Actions\MailAction;
+use Actions\PreflightAction;
+use Actions\ReportErrorAction;
 use Http\Response;
-use ContactForm\ContactFormHandler;
 use Dotenv\Dotenv;
+use Http\Router;
 
 try {
   $dotenv = Dotenv::createImmutable(__DIR__);
@@ -18,46 +20,15 @@ try {
   header('Access-Control-Allow-Methods: POST');
   header('Content-Type: application/json');
 
-  $path = Request::getPath();
-  $method = Request::getMethod();
-  $response = new Response();
+  Router::add('/contact', 'POST', new MailAction);
 
-  if($path === '/contact' && $method === 'POST') {
-    $requestBody = Request::getBody();
+  Router::add('/report', 'POST', new ReportErrorAction);
 
-    $formData = [
-      'name' => $requestBody['name'] ?? null,
-      'email' => $requestBody['email'] ?? null,
-      'subject' => $requestBody['subject'] ?? null,
-      'content' => $requestBody['content'] ?? null
-    ];
+  Router::add('*', 'OPTIONS', new PreflightAction);
 
-    $contactFormHandler = new ContactFormHandler($formData);
-
-    $errors = $contactFormHandler->validate();
-
-  if($errors) {
-    $response->withData(['success' => false, 'data' => $errors]);
-    $response(422);
-  }
-
-  $completed = $contactFormHandler->sendEmail();
-
-  if($completed) {
-    $response->withData(['success' => true, 'data' => []]);
-    $response(200);
-  } else {
-    $response->withData(['success' => false, 'data' => []]);
-    $response(500);
-  }
-}
-
-if($method === 'OPTIONS') {
-  $response(200);
-}
-
-$response(404);
+  Router::run();
 
 } catch (Throwable $e) {
+  $response = new Response();
   $response(500);
 }

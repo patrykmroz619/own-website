@@ -6,14 +6,14 @@ namespace Http;
 
 class Request
 {
-  public static function getBody(): array
+  public function getBody(): array
   {
     $bodyJSON = file_get_contents('php://input');
 
-    return json_decode($bodyJSON, true);
+    return json_decode($bodyJSON, true) ?? [];
   }
 
-  public static function getPath(): string
+  public function getPath(): string
   {
     $defaultPath = '/';
 
@@ -22,7 +22,7 @@ class Request
     return $parsedUrl['path'] ?? $defaultPath;
   }
 
-  public static function getMethod(): string
+  public function getMethod(): string
   {
     return $_SERVER['REQUEST_METHOD'];
   }

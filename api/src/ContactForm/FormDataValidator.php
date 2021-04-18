@@ -29,7 +29,7 @@ class FormDataValidator
     return $errors;
   }
 
-  private static function validateName(string $name): ?string
+  private static function validateName(?string $name): ?string
   {
     if(!$name) {
       return 'The name is required.';
@@ -46,7 +46,7 @@ class FormDataValidator
     return null;
   }
 
-  private static function validateEmail(string $email): ?string
+  private static function validateEmail(?string $email): ?string
   {
     if(!$email) {
       return 'The e-mail is required.';
@@ -59,7 +59,7 @@ class FormDataValidator
     return null;
   }
 
-  private static function validateSubject(string $subject): ?string
+  private static function validateSubject(?string $subject): ?string
   {
     if(!$subject) {
       return 'The subject is required.';
@@ -68,7 +68,7 @@ class FormDataValidator
     return null;
   }
 
-  private static function validateContent(string $subject): ?string
+  private static function validateContent(?string $subject): ?string
   {
     if(!$subject) {
       return 'The message\'s content is required.';

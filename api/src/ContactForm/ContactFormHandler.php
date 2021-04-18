@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace ContactForm;
 
-class ContactFormHandler extends AbstractContactFormHandler
+use Services\AbstractMailService;
+
+class ContactFormHandler extends AbstractMailService
 {
   private array $formData;
 
@@ -27,8 +29,6 @@ class ContactFormHandler extends AbstractContactFormHandler
   public function sendEmail(): bool
   {
     $mail = $this->getConfiguredMail();
-    $mail->CharSet = 'UTF-8';
-    $mail->Encoding = 'base64';
 
     $senderData = $this->getSenterData();
 

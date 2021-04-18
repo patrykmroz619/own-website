@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace ContactForm;
+namespace Services;
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 
-abstract class AbstractContactFormHandler
+abstract class AbstractMailService
 {
   private PHPMailer $mail;
 
@@ -31,5 +31,8 @@ abstract class AbstractContactFormHandler
     $this->mail->SMTPAuth = true;
     $this->mail->Username = $_ENV['SMTP_USERNAME'];
     $this->mail->Password = $_ENV['SMTP_PASSWORD'];
+
+    $this->mail->CharSet = 'UTF-8';
+    $this->mail->Encoding = 'base64';
   }
 }
