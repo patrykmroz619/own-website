@@ -248,6 +248,10 @@
 
                 overflow: hidden;
             }
+
+            .error {
+                display: none;
+            }
         </style>
 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1358,6 +1362,14 @@
             </section>
             <div class="cursor"></div>
             <div class="cursorShadow"></div>
+        </div>
+        <div class="error">
+            <p class="error__text">
+                Wystąpił błąd na stronie, zachęcam do skorzystania z nowszej
+                wersji przeglądarki. Jeśli problem nie leży po stronie
+                przeglądarki, otrzymam zgłoszenie o błędzie i niezwłocznie
+                zacznę pracę nad jego rozwiązaniem.
+            </p>
         </div>
         <script type="module" src="./ts/index.js"></script>
     </body>

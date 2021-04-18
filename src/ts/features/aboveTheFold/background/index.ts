@@ -63,7 +63,7 @@ export const setBackgroundAnimation = (): void => {
         cubes
     );
 
-    let isAnimate = true;
+    let isAnimate = false;
 
     const refresh = () => {
         if (isAnimate) {
@@ -80,14 +80,18 @@ export const setBackgroundAnimation = (): void => {
     };
 
     const pauseAnimation = () => {
-        isAnimate = false;
-        pauseShapesAnimation();
+        if (isAnimate) {
+            isAnimate = false;
+            pauseShapesAnimation();
+        }
     };
 
     const resumeAnimation = () => {
-        isAnimate = true;
-        refresh();
-        resumeShapesAnimation();
+        if (!isAnimate) {
+            isAnimate = true;
+            refresh();
+            resumeShapesAnimation();
+        }
     };
 
     controlAnimation(resumeAnimation, pauseAnimation);
