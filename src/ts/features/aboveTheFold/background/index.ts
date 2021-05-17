@@ -64,17 +64,27 @@ export const setBackgroundAnimation = (): void => {
     );
 
     let isAnimate = false;
+    const fps = 60;
+    const interval = 1000 / fps;
+    let then = Date.now();
 
     const refresh = () => {
         if (isAnimate) {
-            sceneOfCubes.rotation.y += 0.003;
-            sceneOfCubes.rotation.z += 0.001;
-            sceneOfLights1.rotation.z += 0.005;
-            sceneOfLights2.rotation.z -= 0.007;
-            sceneOfLights1.rotation.x -= 0.003;
-            sceneOfLights2.rotation.x += 0.005;
+            const now = new Date().getTime();
+            const delta = now - then;
 
-            renderer.render(scene, camera);
+            if (delta >= interval) {
+                then = now;
+
+                sceneOfCubes.rotation.y += 0.003;
+                sceneOfCubes.rotation.z += 0.001;
+                sceneOfLights1.rotation.z += 0.005;
+                sceneOfLights2.rotation.z -= 0.007;
+                sceneOfLights1.rotation.x -= 0.003;
+                sceneOfLights2.rotation.x += 0.005;
+
+                renderer.render(scene, camera);
+            }
             requestAnimationFrame(refresh);
         }
     };
