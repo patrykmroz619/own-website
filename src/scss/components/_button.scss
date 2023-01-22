@@ -83,7 +83,7 @@
             transform: translateY(100%);
 
             animation-name: vertical-left;
-            animation-delay: $duration / 2;
+            animation-delay: calc($duration / 2);
         }
 
         @keyframes vertical-right {
@@ -110,7 +110,7 @@
             transform: translateY(-100%);
 
             animation-name: vertical-right;
-            animation-delay: $duration / 2;
+            animation-delay: calc($duration / 2);
         }
     }
 }

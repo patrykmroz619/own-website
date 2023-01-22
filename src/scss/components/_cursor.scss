@@ -8,7 +8,7 @@ $cursorSize: 50px;
     width: $cursorSize;
     height: $cursorSize;
     border: 2px dotted var(--primary-color);
-    border-radius: $cursorSize / 2;
+    border-radius: calc($cursorSize / 2);
     pointer-events: none;
 
     @media (hover: hover) {
@@ -25,7 +25,7 @@ $cursorSize: 50px;
     height: $cursorSize;
 
     border: 2px dotted var(--primary-color);
-    border-radius: $cursorSize / 2;
+    border-radius: calc($cursorSize / 2);
     pointer-events: none;
     opacity: 0.3;
 

@@ -19,7 +19,7 @@ $burger-height: 25px;
         }
 
         &--second {
-            top: $burger-height / 2 - 2px;
+            top: calc($burger-height / 2) - 2px;
             opacity: 1;
             transform: translateX(0%);
             transition: 0.5s;
@@ -42,7 +42,7 @@ $burger-height: 25px;
 .active.burger {
     .burger__belt {
         &--first {
-            transform: translateY($burger-height / 2 - 2px) rotate(45deg);
+            transform: translateY(calc($burger-height / 2) - 2px) rotate(45deg);
         }
 
         &--second {
@@ -52,7 +52,8 @@ $burger-height: 25px;
         }
 
         &--third {
-            transform: translateY(-($burger-height / 2 - 2px)) rotate(-45deg);
+            transform: translateY(-(calc($burger-height / 2) - 2px))
+                rotate(-45deg);
         }
     }
 }
