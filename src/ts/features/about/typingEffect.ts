@@ -1,4 +1,9 @@
-const words = ['Wydajność.', 'Miły dla oka design.', 'Responsywność.'];
+const words = [
+    'Jakość kodu.',
+    'Wydajność.',
+    'Miły dla oka design.',
+    'Responsywność.',
+];
 
 const textElement = document.querySelector(
     '.contentSection__advantages'
