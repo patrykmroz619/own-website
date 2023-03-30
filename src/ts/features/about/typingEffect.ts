@@ -3,6 +3,7 @@ const words = [
     'Wydajność.',
     'Miły dla oka design.',
     'Responsywność.',
+    'Bezpieczeństwo.',
 ];
 
 const textElement = document.querySelector(

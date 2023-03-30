@@ -6,13 +6,13 @@ const react = {
     name: 'React',
     iconSrc: 'assets/icons/react.svg',
 };
-const wordpress = {
-    name: 'Wordpress',
-    iconSrc: 'assets/icons/wordpress.svg',
+const solidity = {
+    name: 'Solidity',
+    iconSrc: 'assets/icons/solidity.svg',
 };
-const woocommerce = {
-    name: 'WooCommerce',
-    iconSrc: 'assets/icons/woocommerce.svg',
+const evmBlockchains = {
+    name: 'EVM blockchain',
+    iconSrc: 'assets/icons/ethereum.svg',
 };
 const mongo = {
     name: 'Mongo db',
@@ -26,17 +26,17 @@ const redux = {
     name: 'Redux',
     iconSrc: 'assets/icons/redux.svg',
 };
-const gsap = {
-    name: 'GSAP',
-    iconSrc: 'assets/icons/gsap.svg',
+const openzeppeling = {
+    name: 'OpenZeppelin',
+    iconSrc: 'assets/icons/openzeppelin.svg',
 };
 const git = {
     name: 'Git',
     iconSrc: 'assets/icons/git.svg',
 };
-const adobeXd = {
-    name: 'Adobe XD',
-    iconSrc: 'assets/icons/adobexd.svg',
+const hardhat = {
+    name: 'Hardhat',
+    iconSrc: 'assets/icons/hardhat.svg',
 };
 const vscode = {
     name: 'Visual Studio Code',
@@ -58,13 +58,13 @@ const webpack = {
     name: 'Webpack',
     iconSrc: 'assets/icons/webpack.svg',
 };
-const snowpack = {
-    name: 'Snowpack',
-    iconSrc: 'assets/icons/snowpack.svg',
+const vite = {
+    name: 'Vite',
+    iconSrc: 'assets/icons/vitejs.svg',
 };
-const testingLibrary = {
-    name: 'Testing Library',
-    iconSrc: 'assets/icons/testing-library.png',
+const ethers = {
+    name: 'Ethers.js',
+    iconSrc: 'assets/icons/ethers.svg',
 };
 const typeScript = {
     name: 'TypeScript',
@@ -78,9 +78,9 @@ const nodejs = {
     name: 'Node.js',
     iconSrc: 'assets/icons/node.svg',
 };
-const php = {
-    name: 'PHP',
-    iconSrc: 'assets/icons/php.svg',
+const nest = {
+    name: 'NestJS',
+    iconSrc: 'assets/icons/nestjs.svg',
 };
 const next = {
     name: 'Next.js',
@@ -90,9 +90,9 @@ const gatsby = {
     name: 'Gatsby',
     iconSrc: 'assets/icons/gatsby.svg',
 };
-const slim = {
-    name: 'Slim framework',
-    iconSrc: 'assets/icons/slim.svg',
+const cryptoWallets = {
+    name: 'Portfele krypto',
+    iconSrc: 'assets/icons/metamask.svg',
 };
 
 const html = {
@@ -111,11 +111,11 @@ const sass = {
 };
 
 export const boardScheme: TechnologiesBoardScheme = [
-    [null, null, testingLibrary, cypress, jest, null, null],
-    [adobeXd, sass, css, html, gatsby, next, gsap],
-    [typeScript, javaScript, react, redux, nodejs, mongo, sql],
-    [git, slim, php, wordpress, woocommerce, express, vscode],
-    [null, null, webpack, snowpack, three, null, null],
+    [null, null, jest, cypress, three, null, null],
+    [git, sass, css, html, gatsby, next, redux],
+    [openzeppeling, javaScript, react, typeScript, nodejs, mongo, sql],
+    [hardhat, evmBlockchains, solidity, cryptoWallets, nest, express, vscode],
+    [null, null, webpack, vite, ethers, null, null],
 ];
 
 export const boardXElements = boardScheme[0].length;

@@ -45,8 +45,8 @@ const fadeIn = (project: HTMLElement) => {
             description,
             technologiesHeading,
             technologies,
-            links,
-            buttonLinks,
+            links.length > 0 ? links : undefined,
+            buttonLinks.length > 0 ? buttonLinks : undefined,
         ],
         {
             opacity: 0,
